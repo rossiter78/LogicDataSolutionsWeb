@@ -52,7 +52,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={linkClass(item.href, "quiet" in item && item.quiet)}
+              className={linkClass(item.href, Boolean("quiet" in item && item.quiet))}
             >
               {item.label}
             </Link>
@@ -102,7 +102,7 @@ export default function Header() {
                   onClick={() => setOpen(false)}
                   className={`block rounded-md px-3 py-2.5 ${linkClass(
                     item.href,
-                    "quiet" in item && item.quiet
+                    Boolean("quiet" in item && item.quiet)
                   )}`}
                 >
                   {item.label}
