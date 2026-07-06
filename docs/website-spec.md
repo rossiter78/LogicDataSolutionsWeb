@@ -323,11 +323,11 @@ Full testimonial block (all available) + LinkedIn recommendations link.
 - **Subhead:** A 30-minute conversation about what you're trying to do and the most direct way to get there. No pressure, no obligation.
 
 ### 8.2 Booking
-- Embedded Google Workspace appointment scheduling (see `seo-and-build-notes.md` for the embed mechanics; the actual snippet/URL is supplied via env, not committed).
+- Inline Cal.com scheduler themed to the dark palette, backed by Trent's Google Calendar (see `seo-and-build-notes.md` §2 for the embed mechanics; the event slug is supplied via the `NEXT_PUBLIC_CAL_LINK` env var, not committed).
 - To the side, "What to expect": three bullets — *We'll discuss your goals and current setup · We'll flag the highest-value, lowest-risk starting points · You'll leave with a clear sense of next steps, whether or not we work together.*
 
 ### 8.3 Alternative contact
-Email and phone shown as fallback. Optional minimal contact form (name, email, message) only if a non-calendar path is wanted — keep it simple; no personal data beyond that.
+Email shown as fallback beneath the scheduler (phone and location intentionally omitted). Optional minimal contact form (name, email, message) only if a non-calendar path is wanted — keep it simple; no personal data beyond that.
 
 ### 8.4 Light track framing
 Two small prompts so visitors land right: *"Exploring AI for your business?"* and *"Need enterprise data architecture / Denodo expertise?"* — both lead to the same booking, just reassuring each audience they're in the right place.

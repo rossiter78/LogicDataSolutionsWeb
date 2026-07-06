@@ -26,7 +26,7 @@ Full strategy, sitemap, and page-by-page copy: `docs/website-spec.md`.
 - **Hosting:** Cloudflare Pages, **free tier**. Prefer static generation / static export. Avoid features that force paid Workers usage at launch.
 - **Styling:** Tailwind CSS with the design tokens below mapped to CSS variables / theme config.
 - **Analytics:** Cloudflare Web Analytics (free, privacy-friendly, no cookie banner needed). No Google Analytics.
-- **Booking:** Google Workspace appointment scheduling, embedded. See `docs/seo-and-build-notes.md`.
+- **Booking:** Cal.com inline embed on `/contact`, themed to the dark palette, backed by Trent's Google Calendar (availability set in Cal.com). Event slug via `NEXT_PUBLIC_CAL_LINK` env var. See `docs/seo-and-build-notes.md` §2.
 - **No live AI at launch.** A "Lab" slot is defined for a future Cloudflare Workers AI demo. Do not wire any LLM API at launch. See `docs/content-templates.md`.
 
 ## Design tokens

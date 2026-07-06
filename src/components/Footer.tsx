@@ -13,7 +13,7 @@ const footerNav = [
 export default function Footer() {
   return (
     <footer className="border-t border-ink-800 bg-ink-900">
-      <Container className="mx-auto flex max-w-4xl flex-col items-center gap-4 py-8 text-center">
+      <Container className="mx-auto flex max-w-4xl flex-col items-center gap-4 pb-4 pt-8 text-center">
         <div className="flex w-full flex-col items-center gap-4 md:flex-row md:items-center md:justify-between md:text-left">
           <Link href="/" className="flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
       </Container>
       <div className="border-t border-ink-800">
-        <Container className="py-3">
+        <Container className="py-2">
           <p className="text-center text-xs text-titanium md:text-left">
             © {new Date().getFullYear()} Logic Data Solutions
           </p>

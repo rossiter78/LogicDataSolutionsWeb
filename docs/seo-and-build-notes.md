@@ -44,15 +44,16 @@ Targeting "Denodo partner"/"Denodo consultant" is allowed and encouraged in text
 
 ---
 
-## 2. Booking Integration (Google Workspace)
+## 2. Booking Integration (Cal.com, backed by Google Calendar)
 
-- Trent uses Google Workspace **appointment scheduling** (Calendar). The contact page embeds the public booking page.
-- Two options; prefer (A):
-  - **(A) Embed** the Google appointment scheduling page via its provided `<iframe>` embed snippet on `/contact`.
-  - **(B) Button/link** out to the booking URL in a new tab (fallback if the iframe styling is unacceptable on mobile).
-- **The booking URL / embed snippet is configuration, not content.** Store it as an env var (e.g. `NEXT_PUBLIC_BOOKING_URL`) and reference it; do **not** hardcode or commit the actual URL in these markdown files or in source. Provide a `.env.example` with the variable name and a placeholder.
-- Ensure the embed is responsive and keyboard-accessible; provide the email/phone fallback beneath it.
-- All "Book a call" / "Book a free assessment" CTAs across the site route to `/contact` (or directly open the booking, per final UX decision).
+> **Update (2026-07):** booking switched from Google Workspace appointment scheduling to **Cal.com**. Google's appointment scheduler only exposes a cross-origin `<iframe>` (or popup) — its slot picker can't be re-themed and there's no API to render availability ourselves, so it would always look like Google's white UI inside our dark page. Cal.com renders **inline, on `/contact`, in the site's dark theme** while still using **Trent's Google Calendar** as the source of truth. This supersedes the earlier Google-iframe plan.
+
+- **Widget:** Cal.com inline embed via `@calcom/embed-react`, wrapped in `src/components/BookingEmbed.tsx` (a client component). Themed `theme: "dark"` with the brand accent set to Corporate Red (`cal-brand: #c0222e`); layout `month_view`.
+- **How it connects to Google:** in Cal.com, Trent connects his **Google Calendar** (Settings → Connected Calendars). Cal reads existing events for **conflict-checking** and **writes new bookings** back to that calendar. **Bookable hours are configured in Cal.com's Availability tab** — Cal.com does *not* import the availability from Google's own appointment-scheduling page; that setup lives only inside Google's product and is not reused.
+- **The event link is configuration, not content.** Store the Cal.com event **slug** (e.g. `username/event`, not the full URL) as `NEXT_PUBLIC_CAL_LINK`; do **not** hardcode or commit the real value in these markdown files or in source. `.env.example` carries the variable name only; the real value lives in `.env.local` (gitignored) and in the Cloudflare Pages env vars for the live deploy.
+- `BookingEmbed` renders an **email fallback** (`site.email`) if `NEXT_PUBLIC_CAL_LINK` is unset, so the page never shows an empty embed. `/contact` also shows an email fallback beneath the widget. (Phone and location were removed from the contact fallback at Trent's request.)
+- Ensure the embed is responsive and keyboard-accessible.
+- All "Book a call" / "Book a free assessment" CTAs across the site route to `/contact`, where the inline widget lives.
 
 ---
 
@@ -79,14 +80,14 @@ Targeting "Denodo partner"/"Denodo consultant" is allowed and encouraged in text
 
 - WCAG 2.1 AA. Color contrast checked against the palette (note: **Titanium #878681 on Off-White fails for body text — use Charcoal**; Titanium is for large/secondary text and dividers only).
 - Visible focus states; full keyboard navigation; skip-to-content link.
-- All interactive elements labeled; the booking iframe has an accessible title.
+- All interactive elements labeled; the Cal.com booking embed exposes an accessible title.
 
 ---
 
 ## 6. Secrets & Config — Do Not Commit
 
 Keep all of the following out of the repo (use `.env.local`, provide `.env.example` with names only):
-- Booking URL / embed snippet (`NEXT_PUBLIC_BOOKING_URL`).
+- Cal.com event slug (`NEXT_PUBLIC_CAL_LINK`).
 - Cloudflare Web Analytics token.
 - Any future Workers AI / model keys or account IDs (Lab demo, deferred).
 - Contact-form handler keys, if a form is added.

@@ -46,7 +46,7 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 - Configure Tailwind theme from the design tokens; load Montserrat + Source Sans Pro via `next/font`.
 - Build global layout: header/nav (AI-forward order; Enterprise Data quieter), footer, CTA button component, section-label component, card component, **RecognitionCard component**.
 - Stub all routes: `/`, `/ai-solutions`, `/enterprise-data`, `/work`, `/about`, `/contact`, `/lab`.
-- Add `.env.example` (booking URL, analytics token — names only).
+- Add `.env.example` (Cal.com event slug, analytics token — names only).
 **Your action items before Session 3:**
 - [ ] Create a **Cloudflare account** (for Pages + Web Analytics) — free.
 - [ ] Decide where the repo lives (GitHub recommended for Cloudflare Pages CI).
@@ -80,7 +80,7 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 **Your action items before Session 6:**
 - [ ] Supply **3–5 anonymized client outcomes** (headline metric + one-line result, cleared against NDA).
 - [ ] Confirm final wording for the **4 lab showcases** (and flag any IP concern).
-- [ ] Set up the **Google Workspace appointment scheduling** page; capture the embed URL.
+- [ ] Finish **Cal.com** setup: connect Google Calendar (conflict-check + writes bookings), set bookable hours in the Availability tab, and confirm the event slug for `NEXT_PUBLIC_CAL_LINK`.
 - [ ] (Optional) Provide a **headshot** for About.
 - [ ] Have **3 testimonials** in hand (≥1 AI-related) with attribution permissions recorded.
 
@@ -97,10 +97,10 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 ## Session 8 — Content Load, Deploy & Launch ⬜ (Claude Code)
 
 **Goal:** Live on Cloudflare with real content.
-**Tasks:** Connect repo to Cloudflare Pages; set env vars (booking URL, analytics token); enable Cloudflare Web Analytics; final content pass; deploy; submit sitemap to Google Search Console; plan DNS cutover from the WordPress site.
+**Tasks:** Connect repo to Cloudflare Pages; set env vars (`NEXT_PUBLIC_CAL_LINK`, analytics token); enable Cloudflare Web Analytics; final content pass; deploy; submit sitemap to Google Search Console; plan DNS cutover from the WordPress site.
 **Your action items before Session 8:**
 - [ ] Decide **domain cutover** timing; ensure you can move DNS for logicdatasolutions.com to Cloudflare.
-- [ ] Provide the **real booking URL** and analytics token for env config at deploy.
+- [ ] Provide the **Cal.com event slug** (`NEXT_PUBLIC_CAL_LINK`) and analytics token for env config at deploy.
 - [ ] Final review/sign-off on all copy.
 
 ---
@@ -132,10 +132,10 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 **Accounts & setup**
 - [ ] Cloudflare account (Pages + Web Analytics).
 - [ ] GitHub repo for the project.
-- [ ] Google Workspace appointment scheduling page → embed URL.
+- [ ] Cal.com account → Google Calendar connected, availability set, event slug captured.
 - [ ] Ability to move logicdatasolutions.com DNS to Cloudflare.
 - [ ] (Tidy) LinkedIn profile — it's your writing home and where recommendations live. One company page (not two).
 
 **Provide at deploy (as env, never committed)**
-- [ ] Booking URL.
+- [ ] Cal.com event slug (`NEXT_PUBLIC_CAL_LINK`).
 - [ ] Cloudflare Web Analytics token.
