@@ -33,7 +33,7 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 **Still outstanding from this session (do before Session 3–4):**
 - [ ] Confirm the **assessment is free** (vs. low-cost) for launch copy.
 - [ ] Confirm you're comfortable naming **aerospace + NASA** (but not the client) in public "why it'll work" copy.
-- [ ] Produce the **SVG hero mock** (settled state) against the §9 brief and approve it. *(Deferred from this session by choice — banking the strategy came first.)*
+- [x] ~~Produce the SVG hero mock (settled state) against the §9 brief and approve it.~~ **Superseded (Session 3):** the SVG architecture-diagram concept was mocked, reviewed live on the built site, and rejected as too indirect/enterprise-feeling for the AI-forward hero. Replaced with a kinetic rotating headline + live agent-demo prompt box, designed and shipped directly (no separate mock-then-animate step). See `website-spec.md` §9.
 
 ---
 
@@ -50,14 +50,14 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 **Your action items before Session 3:**
 - [ ] Create a **Cloudflare account** (for Pages + Web Analytics) — free.
 - [ ] Decide where the repo lives (GitHub recommended for Cloudflare Pages CI).
-- [ ] Approve the hero mock (carried over from Session 2) if not already done.
+- [x] ~~Approve the hero mock (carried over from Session 2).~~ Superseded — see Session 2 note above.
 
 ---
 
 ## Session 4 — Home Page ⬜ (Claude Code)
 
-**Goal:** Complete, responsive Home page with final copy and a hero placeholder (static SVG).
-**Tasks:** Build sections 3.1–3.11 from the spec, mobile-first; recognition cards (rescue card last); demoted capabilities grid; quiet enterprise handoff band; wire all primary CTAs to the free assessment on `/contact`; insert the static hero SVG (animation comes later).
+**Goal:** Complete, responsive Home page with final copy and the hero built (kinetic headline + agent-demo prompt box, done directly rather than in mock-then-animate stages — see `website-spec.md` §9).
+**Tasks:** Build sections 3.1–3.11 from the spec, mobile-first; recognition cards (rescue card last); demoted capabilities grid; quiet enterprise handoff band; wire all primary CTAs to the free assessment on `/contact`; build the hero (`RotatingWord` + `HeroPrompt` components).
 **Your action items before Session 4:**
 - [ ] Send the **3 testimonial requests** (templates already drafted) so quotes are arriving.
 - [ ] Send anyone you'd want an **AI-specific** testimonial from (≥1 needed).
@@ -86,10 +86,10 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 
 ---
 
-## Session 7 — Hero Animation + Polish ⬜ (Claude Code)
+## Session 7 — Polish ⬜ (Claude Code)
 
-**Goal:** Animate the hero; pass performance and accessibility bars.
-**Tasks:** Wire the hero SVG animation (reduced-motion fallback); Lighthouse pass (target 95+ perf & a11y); contrast/keyboard/focus audit; image optimization; metadata, OG tags, sitemap, robots, canonical.
+**Goal:** Pass performance and accessibility bars. (Hero motion already built and shipped in Session 3 — see `website-spec.md` §9 — including its reduced-motion fallback; nothing hero-specific remains here.)
+**Tasks:** Lighthouse pass (target 95+ perf & a11y); contrast/keyboard/focus audit; image optimization; metadata, OG tags, sitemap, robots, canonical.
 **Your action items before Session 7:** none new — review the staging build when shared.
 
 ---
@@ -120,7 +120,7 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 **Decisions to confirm (from Session 2)**
 - [ ] Assessment is **free** (vs low-cost) for launch.
 - [ ] Comfortable naming **aerospace + NASA** (not the client) in public copy.
-- [ ] Approve the **hero visual mock** (settled state).
+- [x] ~~Approve the hero visual mock (settled state).~~ Superseded — hero built directly, see Session 2/3 notes above.
 
 **Content to gather**
 - [ ] 3 testimonials collected, ≥1 AI-related, attribution + permission recorded.

@@ -32,7 +32,7 @@ Use Next.js Metadata API. Keep titles ~55–60 chars, descriptions ~150–160.
 ### 1.3 On-page & technical SEO
 - One `<h1>` per page (the page hero H1 in the spec).
 - Semantic headings in the order given in `website-spec.md`.
-- Descriptive alt text on all imagery; the hero visual needs an alt describing the architecture concept.
+- Descriptive alt text on all imagery. The hero has no diagram/image to caption (see `website-spec.md` §9) — it's a rotating headline plus a DOM-based agent-demo prompt box, both already accessible text (the prompt-box demo content is `aria-hidden`, wrapped in one link with a descriptive `aria-label`).
 - `sitemap.xml` and `robots.txt` generated; submit to Google Search Console.
 - **Structured data (JSON-LD):** `ProfessionalService` / `Organization` with name, logo, location (Westminster, CO), `sameAs` → LinkedIn; `Person` for Trent as principal; `FAQPage` on the AI Solutions FAQ; `BreadcrumbList` site-wide.
 - Open Graph + Twitter card per page (reuse the brand OG image or a per-page variant).
@@ -71,7 +71,7 @@ Targeting "Denodo partner"/"Denodo consultant" is allowed and encouraged in text
 - **Performance budget:** Lighthouse 95+ performance and accessibility on Home and both track pages. LCP < 2.5s; CLS < 0.1.
 - Fonts via `next/font` (Montserrat, Source Sans Pro) with `display: swap`; subset and preload.
 - Images: Next.js image optimization; modern formats; explicit dimensions to protect CLS. Compress the existing brand assets.
-- The hero visual ships as lightweight animated SVG with a static fallback (see `website-spec.md` §9); it must not block LCP.
+- The hero ships as static server-rendered headline text (fast LCP) plus a DOM/CSS-animated agent-demo panel that hydrates and animates after paint (see `website-spec.md` §9) — no SVG, no WebGL.
 - Respect `prefers-reduced-motion` globally.
 
 ---

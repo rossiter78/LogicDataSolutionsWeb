@@ -3,6 +3,8 @@
 This is the authoritative content and layout spec. Copy here is final unless marked `[PLACEHOLDER]` (awaiting real content from Trent — see `content-templates.md`). The build agent should treat headings and copy as written, and the section order as the page structure.
 
 > **Session 2 revision.** §1 (positioning), §3 (Home), §4 (AI Solutions), §5 (Enterprise, standalone-behavior note), and §9 (hero brief) were rewritten to reflect the refined direction: an **AI-forward front of house for SMBs, with Denodo as a credentialed referral annex.** Where older text described a balanced, symmetrical two-track site, this version supersedes it.
+>
+> **Session 3 revision.** §3.1 (H1) and §9 (hero visual) were rewritten again after the animated architecture-diagram hero was built, reviewed, and rejected in favor of a more AI-forward, kinetic hero (a rotating headline paired with a live agent-demo prompt box). The architecture-diagram concept described in older §9 text is superseded — the diagram no longer ships anywhere on the site.
 
 ---
 
@@ -89,11 +91,11 @@ Note: this replaces the old standalone "Testimonials" and split "AI Services / D
 
 ### 3.1 Hero (Dark Charcoal band)
 - **Eyebrow** (Corporate Red, small caps): AI & ENTERPRISE DATA CONSULTING
-- **H1:** AI for your business — even if you're not sure where to start.
+- **H1 (kinetic):** AI that **[rotating word slot]** — working inside your business. The rotating slot cycles through concrete jobs in the visitor's language: "answers your customers," "reads your paperwork," "drafts your proposals," "digs through your files," "watches your numbers." First value renders server-side as static text (fast LCP, complete sentence with no JS); rotation starts after hydration and is skipped entirely under `prefers-reduced-motion`.
 - **Subhead:** We help you find where AI actually fits, then build it — assistants, automations, and custom tools that work in the real world, not just in a demo. Built by an engineer with deep enterprise data roots, so what we ship holds up after launch day.
 - **Primary CTA:** Book a free AI Opportunity Assessment → `/contact`
 - **Secondary CTA:** See what we've built → `/work`
-- **Hero visual:** animated architecture diagram (see §9). Sits right/center of the band. Static fallback required.
+- **Hero visual:** an agent-demo prompt box (see §9), not an architecture diagram. Sits right of the headline. Settled/reduced-motion state required.
 
 *Why this H1:* it **permits confusion.** The guest of honor's reason to bounce is "I don't know enough to even ask." The headline removes it. The subhead carries the trust-builder (enterprise roots) in one clause without gating comprehension.
 
@@ -336,35 +338,30 @@ Two small prompts so visitors land right: *"Exploring AI for your business?"* an
 
 ## 9. Hero Visual — Design-Level Spec
 
-> **Sharpened brief (Session 2):** the hero greets an **optimistic, possibly non-technical SMB owner** — the guest of honor. It must *feel like clarity and capability,* not enterprise data plumbing. It reads as "this person builds systems that work," welcoming rather than intimidating. The build does **not** finalize this from text; it will be mocked as an SVG in a dedicated design pass and approved before animation is wired.
+> **Session 3 rewrite.** The animated architecture diagram originally briefed here (scattered sources → governed layer → AI agent) was mocked, reviewed, and set aside: it read as enterprise data plumbing, not as "AI, right now, for my business" — too indirect for the guest of honor's first three seconds. It replaced with a more direct, more AI-forward concept: a kinetic headline paired with a live demo of an agent working, shown inside a familiar chat/prompt interface. This is the shipped design (`src/components/RotatingWord.tsx` and `src/components/HeroPrompt.tsx`), not a future mock — no separate animation pass remains outstanding.
 
 ### 9.1 Concept
-An **animated architecture diagram** that visualizes the core thesis in one glance — kept clean and approachable, not dense:
-- **Left:** several scattered, mismatched source systems (databases, cloud, files, apps) — small distinct nodes, slightly disordered.
-- **Center:** these converge into a single clean **governed data layer** — one horizontal "spine"/lens that unifies them (the data-foundation idea, shown generically — no Denodo branding).
-- **Top:** an **AI/agent layer** — a node that reasons and sends queries *down* through the governed layer to the live sources, and receives clean answers back.
+Two coordinated pieces, side by side in the hero band:
+- **Left — kinetic headline (`RotatingWord`):** "AI that **[rotating word]** — working inside your business." The bracketed slot cycles through concrete, plain-language jobs (see §3.1). This carries the "capability and clarity" read on its own — it's the visitor's own words coming back animated, not a diagram they have to decode.
+- **Right — agent-demo prompt box (`HeroPrompt`):** a familiar AI chat input, styled as an inert (non-editable) demo. It types out a real small-business question, shows the agent visibly checking sources step by step (e.g. "▸ querying invoices…", "▸ cross-checking job costs… ✓"), then streams a grounded answer into a card labeled **"Answer — grounded in your data.”** That label is the entire data-foundation differentiator, delivered as a trust signal inside the demo itself — no jargon, no diagram, no Denodo reference — matching the Hard Rules requirement that the differentiator be a trust-builder, not the hook.
+- The panel cycles through three scenarios covering the three flavors of "an AI thing" a curious beginner might imagine: analysis (margin question), workflow (stale quotes), and support (customer email assistant).
+- The whole panel is a single link to `/contact` (with a descriptive `aria-label`) — clicking the "input" doesn't dead-end, it converts. This avoids the fake-input frustration risk of a non-functional chat box.
 
-*Keep the emotional read on the AI side "capability and clarity." If a choice arises between looking more "AI-reasoning" vs. more "governed-foundation," lean slightly toward the approachable AI read for the front-of-house audience.*
+### 9.2 Motion (on load, then continuous loop)
+- Headline: eyebrow, H1, subhead, and CTAs fade/rise in staggered (`sg-fade-in`, ~0.15s steps).
+- Rotating word: cross-fades to the next word every ~2.9s once hydrated.
+- Prompt box: question types in character-by-character, a send-button pulses, each verification step appears with a trailing check mark, then the answer card fades in and types out. Holds ~3.4s before looping to the next scenario.
 
-### 9.2 Motion (on load, ~2–3s, then settle)
-- Sources fade/slide in scattered.
-- Connectors draw from sources into the governed layer (line-draw animation).
-- The governed layer "locks in" (subtle highlight in Corporate Red).
-- The agent node activates and a query pulse travels down and back up.
-- Settles into a calm steady state with a slow, low-key ambient loop (optional, must be subtle).
+### 9.3 Technical direction
+- Plain React components (DOM text + CSS transitions/keyframes), not SVG or canvas — no WebGL/particle effects, matching the Hard Rules performance constraint.
+- H1, subhead, and CTAs render as static server text for a fast LCP; the rotating word and prompt-box demo hydrate and animate after paint.
+- Respect `prefers-reduced-motion`: both components skip all animation and render a settled, complete state (headline shows its first word with no transition; the prompt box shows its first scenario fully typed and answered, no caret, no loop).
+- Colors strictly from the palette: rotating word and "lock-in" accents in Corporate Red / `red-bright`, panel chrome in the ink/titanium/mist scale.
 
-### 9.3 Optional light interaction
-Hover/tap a layer to reveal a one-line, *plain-language* label ("Your data sources" / "One trusted, always-current layer" / "AI that can trust the answer"). Keep optional; not required for v1.
-
-### 9.4 Technical direction
-- **Animated SVG** with CSS/JS-orchestrated motion. **Not** WebGL/three.js — keep it light, fast, and crisp.
-- Must render as a fast LCP element; ship a **static SVG fallback** (the settled state) for no-JS and reduced-motion.
-- Respect `prefers-reduced-motion`: show the settled state immediately, no looping motion.
-- Colors strictly from the palette; lines in Charcoal/Titanium, the "lock-in" and agent pulse in Corporate Red.
-
-### 9.5 Why not the obvious options
-- Stock skyline / abstract photo: says nothing, looks generic.
-- Glowing particle/nebula field: the default AI-site cliché; hurts performance and undercuts a brand built on clarity and rigor. A precise, approachable diagram signals "this person builds systems that work."
+### 9.4 Why not the architecture diagram
+- It required the visitor to parse a data-flow metaphor before feeling anything — the opposite of "permits confusion" from §3.1.
+- It couldn't demonstrate the product; it could only symbolize it. The agent-demo prompt box shows the actual gesture (ask a question, get a grounded answer) that the rest of the page is selling.
+- A glowing particle/nebula field was also rejected as the default AI-site cliché — see the original reasoning, which still holds.
 
 ---
 
