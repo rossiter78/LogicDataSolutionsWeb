@@ -50,7 +50,7 @@ Targeting "Denodo partner"/"Denodo consultant" is allowed and encouraged in text
 
 - **Widget:** Cal.com inline embed via `@calcom/embed-react`, wrapped in `src/components/BookingEmbed.tsx` (a client component). Themed `theme: "dark"` with the brand accent set to Corporate Red (`cal-brand: #c0222e`); layout `month_view`.
 - **How it connects to Google:** in Cal.com, Trent connects his **Google Calendar** (Settings → Connected Calendars). Cal reads existing events for **conflict-checking** and **writes new bookings** back to that calendar. **Bookable hours are configured in Cal.com's Availability tab** — Cal.com does *not* import the availability from Google's own appointment-scheduling page; that setup lives only inside Google's product and is not reused.
-- **The event link is configuration, not content.** Store the Cal.com event **slug** (e.g. `username/event`, not the full URL) as `NEXT_PUBLIC_CAL_LINK`; do **not** hardcode or commit the real value in these markdown files or in source. `.env.example` carries the variable name only; the real value lives in `.env.local` (gitignored) and in the Cloudflare Pages env vars for the live deploy.
+- **The event slug is public, not a secret** (it's visible in the booking page source), so — unlike a real key — it's committed as the **default** in `src/lib/site.ts` (`calLink`). This lets the Cloudflare Git build produce a working widget with **zero dashboard configuration**. `NEXT_PUBLIC_CAL_LINK` still **overrides** the default when set (e.g. to point a local/preview build at a test event); `.env.example` documents the variable name. Only genuine secrets (keys, account IDs, analytics token) stay out of the repo — see §6.
 - `BookingEmbed` renders an **email fallback** (`site.email`) if `NEXT_PUBLIC_CAL_LINK` is unset, so the page never shows an empty embed. `/contact` also shows an email fallback beneath the widget. (Phone and location were removed from the contact fallback at Trent's request.)
 - Ensure the embed is responsive and keyboard-accessible.
 - All "Book a call" / "Book a free assessment" CTAs across the site route to `/contact`, where the inline widget lives.
@@ -87,7 +87,6 @@ Targeting "Denodo partner"/"Denodo consultant" is allowed and encouraged in text
 ## 6. Secrets & Config — Do Not Commit
 
 Keep all of the following out of the repo (use `.env.local`, provide `.env.example` with names only):
-- Cal.com event slug (`NEXT_PUBLIC_CAL_LINK`).
 - Cloudflare Web Analytics token.
 - Any future Workers AI / model keys or account IDs (Lab demo, deferred).
 - Contact-form handler keys, if a form is added.
