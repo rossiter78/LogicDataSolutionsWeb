@@ -1,6 +1,6 @@
 /*
   Recognition Card content (content-templates.md §4).
-  `hiddenCapability` is BUILD-SIDE ONLY — never rendered on the site.
+  `hiddenCapability` is BUILD-SIDE ONLY - never rendered on the site.
   Ordering rule: hopeful first, any `rescue` card LAST.
 */
 export type RecognitionCardData = {
@@ -17,7 +17,7 @@ export const recognitionCards: RecognitionCardData[] = [
     id: "same-questions",
     symptomHeadline: "You answer the same questions all day.",
     promise:
-      "A customer-facing assistant that actually knows your business — your policies, products, and documents — and handles the repetitive questions so your people don't.",
+      "A customer-facing assistant that actually knows your business (your policies, products, and documents) and handles the repetitive questions so your people don't.",
     hiddenCapability: "RAG",
     tone: "hopeful",
     icon: "chat",
@@ -35,23 +35,23 @@ export const recognitionCards: RecognitionCardData[] = [
     id: "unused-information",
     symptomHeadline: "You're sitting on information nobody has time to use.",
     promise:
-      "Documents, images, records, spreadsheets — we turn the pile into something you can search, ask questions of, and act on.",
+      "Documents, images, records, spreadsheets: we turn the pile into something you can search, ask questions of, and act on.",
     hiddenCapability: "RAG + vision",
     tone: "hopeful",
     icon: "archive",
   },
   {
     id: "tried-ai",
-    symptomHeadline: "You already tried AI — and it didn't quite work.",
+    symptomHeadline: "You already tried AI, and it didn't quite work.",
     promise:
-      "Maybe you built an AI assistant or a chatbot over your data, and it gives vague, wrong, or unreliable answers. Usually the problem isn't the AI — it's what it's reaching into underneath. We diagnose why it's failing and rebuild it on a foundation that gives you answers you can trust.",
+      "Maybe you built an AI assistant or a chatbot over your data, and it gives vague, wrong, or unreliable answers. Usually the problem isn't the AI: it's what it's reaching into underneath. We diagnose why it's failing and rebuild it on a foundation that gives you answers you can trust.",
     hiddenCapability: "RAG diagnosis / rescue",
     tone: "rescue",
     icon: "rebuild",
   },
 ];
 
-/* Optional 5th "idea but unsure" catch card — AI Solutions page only. */
+/* Optional 5th "idea but unsure" catch card - AI Solutions page only. */
 export const catchCard: RecognitionCardData = {
   id: "idea-unsure",
   symptomHeadline: "You have an idea but don't know if it's possible.",

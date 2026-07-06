@@ -1,5 +1,5 @@
 /*
-  AI Solutions — service offerings. Copy supplied by Trent (2026-07-06),
+  AI Solutions - service offerings. Copy supplied by Trent (2026-07-06),
   converted to company voice per CLAUDE.md; engagement/pricing lines
   intentionally omitted for now.
 */

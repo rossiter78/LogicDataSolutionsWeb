@@ -6,27 +6,27 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 
 ---
 
-## Session 1 — Discovery & Strategy ✅
+## Session 1 - Discovery & Strategy ✅
 
 **Goal:** Decide positioning, resolve the two-audience problem, lock format and constraints.
 **Output:** This spec set (`CLAUDE.md` + `docs/`). Positioning = "AI that works because the data underneath it does"; two-track with AI as the front door; company voice, principal named; Denodo nameable but no logo / no representation; Cloudflare free tier; book-a-call conversion; no live AI at launch.
 
 ---
 
-## Session 2 — Spec Review + Positioning Refinement ✅
+## Session 2 - Spec Review + Positioning Refinement ✅
 
 **Goal:** Approve the written spec and lock the hero visual brief before any build.
-**What actually happened (this session was a bigger strategic turn than planned — captured here so it isn't lost):**
+**What actually happened (this session was a bigger strategic turn than planned - captured here so it isn't lost):**
 
 - **Homepage stays AI-forward, not Denodo-forward.** The home's job is to *route*, not to sell either practice. AI is the wide net; Denodo buyers arrive referred and land deep. Confirmed in copy.
-- **ICP chosen:** the **curious beginner** — a small-business owner who wants "an AI thing" but doesn't yet know what. Guest of honor; hero and home tuned to permit their confusion ("even if you're not sure where to start").
-- **Second persona added as a *welcome addition* (not the main event):** the **burned buyer** — a small/mid business whose earlier AI attempt (e.g. a RAG assistant giving wrong answers) stalled. Served via *diagnosis + rescue* woven into the AI page: one recognition card (placed **last**), one diagnostic beat in the "why it'll work" section, one FAQ. No rescue track / no `/ai-rescue` page / no homepage rescue band at launch. Rescue kept below the recognition section, phrased conditionally.
-- **Front-of-house / back-of-house model locked.** One legal entity, one website, one LinkedIn company page, two *practices* inside. A two-site / two-company-page split was considered and **rejected** (it would amputate the rarest asset — the AI-builder-with-enterprise-pedigree combination — and double the solo-principal maintenance tax).
-- **The differentiator's JOB changed** — from *hook* to *trust-builder that closes the sale.* Lead wide in the visitor's language; win deep with pedigree. Data-foundation story moves from doorway to closing table. "Accessible in the hook, unmistakable in the proof."
+- **ICP chosen:** the **curious beginner** - a small-business owner who wants "an AI thing" but doesn't yet know what. Guest of honor; hero and home tuned to permit their confusion ("even if you're not sure where to start").
+- **Second persona added as a *welcome addition* (not the main event):** the **burned buyer** - a small/mid business whose earlier AI attempt (e.g. a RAG assistant giving wrong answers) stalled. Served via *diagnosis + rescue* woven into the AI page: one recognition card (placed **last**), one diagnostic beat in the "why it'll work" section, one FAQ. No rescue track / no `/ai-rescue` page / no homepage rescue band at launch. Rescue kept below the recognition section, phrased conditionally.
+- **Front-of-house / back-of-house model locked.** One legal entity, one website, one LinkedIn company page, two *practices* inside. A two-site / two-company-page split was considered and **rejected** (it would amputate the rarest asset - the AI-builder-with-enterprise-pedigree combination - and double the solo-principal maintenance tax).
+- **The differentiator's JOB changed** - from *hook* to *trust-builder that closes the sale.* Lead wide in the visitor's language; win deep with pedigree. Data-foundation story moves from doorway to closing table. "Accessible in the hook, unmistakable in the proof."
 - **AI Solutions page rewritten** from a capabilities menu into a narrative: recognize me → reassure me it'll work → show me it's safe/clear → prove it → make the first step trivial. Full copy in `website-spec.md` §4.
 - **Home rebalanced** (`website-spec.md` §3): symmetrical two-track replaced with an AI-forward "what could AI do for you?" recognition section, capabilities grid demoted to proof-of-competence, a quiet enterprise handoff band (not a co-equal panel), and the **AI Opportunity Assessment (free) threaded as the conversion spine.**
-- **Enterprise page** (`/enterprise-data`) confirmed as a **standalone referral landing** with a peer-to-peer expert voice — must work for a visitor who never saw the homepage.
-- **Hero visual brief sharpened** (`website-spec.md` §9): it greets the optimistic, possibly non-technical SMB — must feel like *clarity and capability,* not data plumbing.
+- **Enterprise page** (`/enterprise-data`) confirmed as a **standalone referral landing** with a peer-to-peer expert voice - must work for a visitor who never saw the homepage.
+- **Hero visual brief sharpened** (`website-spec.md` §9): it greets the optimistic, possibly non-technical SMB - must feel like *clarity and capability,* not data plumbing.
 
 **Docs updated to reflect all of the above:** `CLAUDE.md`, `website-spec.md` (§1, §3, §4, §5 note, §9), `content-templates.md` (new Recognition Card component §4 + Assessment spine §5), `seo-and-build-notes.md` (AI Solutions metadata retuned to the new H1/positioning). Replace the project copies with these before Session 3.
 
@@ -37,7 +37,7 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 
 ---
 
-## Session 3 — Scaffold & Global Layout ⬜ (Claude Code)
+## Session 3 - Scaffold & Global Layout ⬜ (Claude Code)
 
 **Goal:** A running Next.js project on the design system, with nav/footer and routes stubbed.
 **Tasks:**
@@ -46,17 +46,17 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 - Configure Tailwind theme from the design tokens; load Montserrat + Source Sans Pro via `next/font`.
 - Build global layout: header/nav (AI-forward order; Enterprise Data quieter), footer, CTA button component, section-label component, card component, **RecognitionCard component**.
 - Stub all routes: `/`, `/ai-solutions`, `/enterprise-data`, `/work`, `/about`, `/contact`, `/lab`.
-- Add `.env.example` (Cal.com event slug, analytics token — names only).
+- Add `.env.example` (Cal.com event slug, analytics token - names only).
 **Your action items before Session 3:**
-- [ ] Create a **Cloudflare account** (for Pages + Web Analytics) — free.
+- [ ] Create a **Cloudflare account** (for Pages + Web Analytics) - free.
 - [ ] Decide where the repo lives (GitHub recommended for Cloudflare Pages CI).
-- [x] ~~Approve the hero mock (carried over from Session 2).~~ Superseded — see Session 2 note above.
+- [x] ~~Approve the hero mock (carried over from Session 2).~~ Superseded - see Session 2 note above.
 
 ---
 
-## Session 4 — Home Page ⬜ (Claude Code)
+## Session 4 - Home Page ⬜ (Claude Code)
 
-**Goal:** Complete, responsive Home page with final copy and the hero built (kinetic headline + agent-demo prompt box, done directly rather than in mock-then-animate stages — see `website-spec.md` §9).
+**Goal:** Complete, responsive Home page with final copy and the hero built (kinetic headline + agent-demo prompt box, done directly rather than in mock-then-animate stages - see `website-spec.md` §9).
 **Tasks:** Build sections 3.1–3.11 from the spec, mobile-first; recognition cards (rescue card last); demoted capabilities grid; quiet enterprise handoff band; wire all primary CTAs to the free assessment on `/contact`; build the hero (`RotatingWord` + `HeroPrompt` components).
 **Your action items before Session 4:**
 - [ ] Send the **3 testimonial requests** (templates already drafted) so quotes are arriving.
@@ -64,19 +64,19 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 
 ---
 
-## Session 5 — Track Pages: AI Solutions + Enterprise Data ⬜ (Claude Code)
+## Session 5 - Track Pages: AI Solutions + Enterprise Data ⬜ (Claude Code)
 
 **Goal:** Both track pages complete with final copy and FAQ/JSON-LD.
-**Tasks:** Build `/ai-solutions` (§4 — the narrative flow with recognition cards, the "why it'll work" turn carrying the pedigree, rescue insertions) and `/enterprise-data` (§5 — standalone, peer-to-peer voice); add FAQ structured data; verify Denodo-naming guardrail; add the quiet cross-links (AI → enterprise for scale; enterprise self-contained).
+**Tasks:** Build `/ai-solutions` (§4 - the narrative flow with recognition cards, the "why it'll work" turn carrying the pedigree, rescue insertions) and `/enterprise-data` (§5 - standalone, peer-to-peer voice); add FAQ structured data; verify Denodo-naming guardrail; add the quiet cross-links (AI → enterprise for scale; enterprise self-contained).
 **Your action items before Session 5:**
 - [ ] Confirm the **Denodo specialization** wording in §5.5 is accurate and safe for your partner agreement.
 
 ---
 
-## Session 6 — Work, About, Contact ⬜ (Claude Code)
+## Session 6 - Work, About, Contact ⬜ (Claude Code)
 
 **Goal:** Proof, story, and conversion pages complete.
-**Tasks:** Build `/work` with the `CaseStudy` component (4 lab showcases — relatable ones featured first — + client outcome slots), `/about`, and `/contact` with the booking embed (via env) + fallback.
+**Tasks:** Build `/work` with the `CaseStudy` component (4 lab showcases - relatable ones featured first - + client outcome slots), `/about`, and `/contact` with the booking embed (via env) + fallback.
 **Your action items before Session 6:**
 - [ ] Supply **3–5 anonymized client outcomes** (headline metric + one-line result, cleared against NDA).
 - [ ] Confirm final wording for the **4 lab showcases** (and flag any IP concern).
@@ -86,15 +86,15 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 
 ---
 
-## Session 7 — Polish ⬜ (Claude Code)
+## Session 7 - Polish ⬜ (Claude Code)
 
-**Goal:** Pass performance and accessibility bars. (Hero motion already built and shipped in Session 3 — see `website-spec.md` §9 — including its reduced-motion fallback; nothing hero-specific remains here.)
+**Goal:** Pass performance and accessibility bars. (Hero motion already built and shipped in Session 3 - see `website-spec.md` §9 - including its reduced-motion fallback; nothing hero-specific remains here.)
 **Tasks:** Lighthouse pass (target 95+ perf & a11y); contrast/keyboard/focus audit; image optimization; metadata, OG tags, sitemap, robots, canonical.
-**Your action items before Session 7:** none new — review the staging build when shared.
+**Your action items before Session 7:** none new - review the staging build when shared.
 
 ---
 
-## Session 8 — Content Load, Deploy & Launch ⬜ (Claude Code)
+## Session 8 - Content Load, Deploy & Launch ⬜ (Claude Code)
 
 **Goal:** Live on Cloudflare with real content.
 **Tasks:** Connect repo to Cloudflare Pages; set env vars (`NEXT_PUBLIC_CAL_LINK`, analytics token); enable Cloudflare Web Analytics; final content pass; deploy; submit sitemap to Google Search Console; plan DNS cutover from the WordPress site.
@@ -105,7 +105,7 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 
 ---
 
-## Future — Lab Demo ⬜ (optional, post-launch)
+## Future - Lab Demo ⬜ (optional, post-launch)
 
 **Goal:** Add interactive proof without a redesign.
 **Tasks:** Record walkthroughs of the lab systems (CRM/agents/RAG) for `/lab`; optionally add the client-side scripted agent animation; later, if desired, the rate-limited Cloudflare Workers AI live demo.
@@ -120,7 +120,7 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 **Decisions to confirm (from Session 2)**
 - [ ] Assessment is **free** (vs low-cost) for launch.
 - [ ] Comfortable naming **aerospace + NASA** (not the client) in public copy.
-- [x] ~~Approve the hero visual mock (settled state).~~ Superseded — hero built directly, see Session 2/3 notes above.
+- [x] ~~Approve the hero visual mock (settled state).~~ Superseded - hero built directly, see Session 2/3 notes above.
 
 **Content to gather**
 - [ ] 3 testimonials collected, ≥1 AI-related, attribution + permission recorded.
@@ -134,7 +134,7 @@ Status legend: ✅ done · ▶️ next · ⬜ upcoming
 - [ ] GitHub repo for the project.
 - [ ] Cal.com account → Google Calendar connected, availability set, event slug captured.
 - [ ] Ability to move logicdatasolutions.com DNS to Cloudflare.
-- [ ] (Tidy) LinkedIn profile — it's your writing home and where recommendations live. One company page (not two).
+- [ ] (Tidy) LinkedIn profile - it's your writing home and where recommendations live. One company page (not two).
 
 **Provide at deploy (as env, never committed)**
 - [ ] Cal.com event slug (`NEXT_PUBLIC_CAL_LINK`).

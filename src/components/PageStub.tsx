@@ -30,7 +30,7 @@ export default function PageStub({
           </div>
         )}
         <p className="mt-6 rounded-md border border-dashed border-ink-700 bg-ink-900 px-4 py-3 text-sm text-titanium">
-          Full page content is coming in the next build session — this route is
+          Full page content is coming in the next build session. This route is
           scaffolded so the site structure can be reviewed.
         </p>
       </Container>

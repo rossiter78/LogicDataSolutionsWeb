@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
   Inline Cal.com scheduler, themed to the site's dark palette.
 
   Cal.com reads availability from Trent's connected Google Calendar, so Google
-  stays the source of truth — but the slot picker renders here, on-page, in our
+  stays the source of truth - but the slot picker renders here, on-page, in our
   theme instead of Google's white iframe. Brand accent is Corporate Red; white
   text on that fill passes AA (matching CtaButton).
 

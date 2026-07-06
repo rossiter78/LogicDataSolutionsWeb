@@ -20,11 +20,11 @@ const sourceSans = Source_Sans_3({
 export const metadata: Metadata = {
   metadataBase: new URL("https://logicdatasolutions.com"),
   title: {
-    default: "Logic Data Solutions — AI That Works, Built on Data You Can Trust",
+    default: "Logic Data Solutions: AI That Works, Built on Data You Can Trust",
     template: "%s | Logic Data Solutions",
   },
   description:
-    "Custom AI — assistants, automation, and apps — for small and growing businesses, built by an engineer with deep enterprise data roots so it holds up in the real world.",
+    "Custom AI (assistants, automation, and apps) for small and growing businesses, built by an engineer with deep enterprise data roots so it holds up in the real world.",
 };
 
 export default function RootLayout({

@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 
 /*
-  One animated SVG per service — simple, clean, brand-palette, CSS-driven
+  One animated SVG per service - simple, clean, brand-palette, CSS-driven
   (sg-* utilities in globals.css). Each graphic's static state reads
   complete on its own, so prefers-reduced-motion loses nothing essential.
 */
@@ -14,7 +14,7 @@ const label: CSSProperties = {
 
 const v = (vars: Record<string, string>) => vars as CSSProperties;
 
-/* 01 — Assessment: a roadmap that lights up step by step. */
+/* 01 - Assessment: a roadmap that lights up step by step. */
 function GraphicAssessment() {
   const steps = [
     { x: 80, y: 220, n: "1", t: "Review", d: "0s" },
@@ -22,7 +22,7 @@ function GraphicAssessment() {
     { x: 320, y: 80, n: "3", t: "Plan", d: "0.7s" },
   ];
   return (
-    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: a three-step roadmap — review, prioritize, plan — lighting up in order.">
+    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: a three-step roadmap (review, prioritize, plan) lighting up in order.">
       <line
         x1="80"
         y1="220"
@@ -70,7 +70,7 @@ function GraphicAssessment() {
   );
 }
 
-/* 02 — RAG chatbot: question → metadata layer → data, answer comes back checked. */
+/* 02 - RAG chatbot: question → metadata layer → data, answer comes back checked. */
 function GraphicRag() {
   return (
     <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: a question flows through a curated business-metadata layer into your data, and a verified answer comes back.">
@@ -99,7 +99,7 @@ function GraphicRag() {
       </g>
       <path d="M70 190h260" stroke="var(--color-red)" strokeWidth="2.5" strokeLinecap="round" className="sg-glow" style={v({ "--min": "0.5", "--dur": "4s" })} />
       <text x="200" y="210" textAnchor="middle" style={label}>
-        Curated metadata — your business vocabulary
+        Curated metadata: your business vocabulary
       </text>
 
       {/* your data */}
@@ -120,7 +120,7 @@ function GraphicRag() {
   );
 }
 
-/* 03 — Workflow agent: a pulse runs the pipeline inside guardrails, checking every step. */
+/* 03 - Workflow agent: a pulse runs the pipeline inside guardrails, checking every step. */
 function GraphicAgent() {
   const steps = [
     { x: 70, t: "Fetch" },
@@ -130,7 +130,7 @@ function GraphicAgent() {
   ];
   const checkDelays = ["0.6s", "2s", "3.4s", "4.8s"];
   return (
-    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: an agent runs a four-step workflow — fetch, decide, act, verify — between guardrails, checking off each step.">
+    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: an agent runs a four-step workflow (fetch, decide, act, verify) between guardrails, checking off each step.">
       <text x="370" y="80" textAnchor="end" style={label}>
         guardrails
       </text>
@@ -156,7 +156,7 @@ function GraphicAgent() {
   );
 }
 
-/* 04 — Custom app: one application, operated by your team and your agents. */
+/* 04 - Custom app: one application, operated by your team and your agents. */
 function GraphicApp() {
   return (
     <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: a custom application with an API and MCP layer, used by both people and AI agents.">
@@ -222,10 +222,10 @@ function GraphicApp() {
   );
 }
 
-/* 05 — On-prem: AI inside your walls; nothing crosses the boundary. */
+/* 05 - On-prem: AI inside your walls; nothing crosses the boundary. */
 function GraphicOnPrem() {
   return (
-    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: AI running on your own servers inside a secure boundary — data stays in; nothing reaches the outside cloud.">
+    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: AI running on your own servers inside a secure boundary: data stays in; nothing reaches the outside cloud.">
       {/* secure boundary */}
       <rect
         x="70"
@@ -281,7 +281,7 @@ function GraphicOnPrem() {
   );
 }
 
-/* 06 — Training: knowledge flows to the team; capability bars fill. */
+/* 06 - Training: knowledge flows to the team; capability bars fill. */
 function GraphicTraining() {
   const people = [
     { x: 100, line: "M195 82 108 148", dash: "120", d: "0.2s", bar: "0.9s" },

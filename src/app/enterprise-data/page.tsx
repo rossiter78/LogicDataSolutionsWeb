@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 };
 
 /*
-  Enterprise Data & AI Foundations — the "back of house" referral landing page
+  Enterprise Data & AI Foundations - the "back of house" referral landing page
   (website-spec §5). Written to stand entirely on its own: enterprise leads
   arrive referred and land here directly, so it carries its own hero, thesis,
-  credibility, and CTA. Voice shifts to peer-to-peer expert — denser than the
+  credibility, and CTA. Voice shifts to peer-to-peer expert - denser than the
   AI/front-of-house pages, assumes the reader knows data virtualization.
 
   Denodo hard rules (CLAUDE.md): name + partner/subcontractor status are stated
@@ -23,15 +23,15 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Platform architecture",
-    body: "Lead architecture across every layer of the Denodo Platform — logical data warehouse, data fabric, and data mesh designs — modeled for governance and performance from the base view up.",
+    body: "Lead architecture across every layer of the Denodo Platform (logical data warehouse, data fabric, and data mesh designs), modeled for governance and performance from the base view up.",
   },
   {
     title: "Administration & operations",
-    body: "SSL, identity and AD integration, RBAC and FGAC security models, caching strategy, license management, upgrades, and cluster configuration — the day-two work that keeps the platform trustworthy.",
+    body: "SSL, identity and AD integration, RBAC and FGAC security models, caching strategy, license management, upgrades, and cluster configuration: the day-two work that keeps the platform trustworthy.",
   },
   {
     title: "Denodo for AI",
-    body: "Full-stack Denodo AI SDK deployments: vector store, metadata indexing, multi-LLM integration (cloud and on-prem), DeepQuery, and both MCP server variants — Platform MCP and AI SDK MCP.",
+    body: "Full-stack Denodo AI SDK deployments: vector store, metadata indexing, multi-LLM integration (cloud and on-prem), DeepQuery, and both MCP server variants, Platform MCP and AI SDK MCP.",
   },
   {
     title: "Integration & performance",
@@ -39,12 +39,12 @@ const services = [
   },
   {
     title: "Governance & enablement",
-    body: "Metadata strategy, deployment governance, managed citizen-development programs, and team training — so the platform scales without losing its guarantees.",
+    body: "Metadata strategy, deployment governance, managed citizen-development programs, and team training, so the platform scales without losing its guarantees.",
   },
 ];
 
 /*
-  Proof cards — layout is final; the anonymized outcome stories that fill them
+  Proof cards - layout is final; the anonymized outcome stories that fill them
   are an open action item (Trent supplies the metrics). Each card links out to
   /work per spec §5.7 / §6.2. Placeholder copy below is intentionally generic
   and must be replaced before launch.
@@ -66,7 +66,7 @@ const proofCards = [
     sector: "Enterprise AI enablement",
     metric: "Metric to come",
     placeholder:
-      "Denodo-for-AI enablement — AI SDK, DeepQuery, and MCP — connecting an enterprise LLM to live governed data. Anonymized outcome and numbers pending.",
+      "Denodo-for-AI enablement (AI SDK, DeepQuery, and MCP) connecting an enterprise LLM to live governed data. Anonymized outcome and numbers pending.",
   },
 ];
 
@@ -81,8 +81,8 @@ export default function EnterpriseDataPage() {
             The governed, real-time data foundation your AI needs.
           </h1>
           <p className="text-lg leading-relaxed text-mist">
-            Deep Denodo data-virtualization expertise — architecture,
-            administration, and AI enablement — so your enterprise AI can reason
+            Deep Denodo data-virtualization expertise (architecture,
+            administration, and AI enablement) so your enterprise AI can reason
             over all your data, in real time, under full governance.
           </p>
           <div className="mt-2">
@@ -97,12 +97,12 @@ export default function EnterpriseDataPage() {
           <div className="flex flex-col gap-5">
             <SectionLabel>Who it&rsquo;s for</SectionLabel>
             <h2 className="text-3xl font-bold sm:text-4xl">
-              For enterprises serious about data — and about AI on top of it.
+              For enterprises serious about data, and about AI on top of it.
             </h2>
             <p className="text-lg leading-relaxed text-mist">
               If your data lives across clouds, warehouses, and on-prem systems,
-              and you need a single governed, real-time access layer — for
-              analytics, for AI, or both — this is the core of our practice. We
+              and you need a single governed, real-time access layer (for
+              analytics, for AI, or both), this is the core of our practice. We
               work with organizations adopting, scaling, or getting more from the
               Denodo Platform.
             </p>
@@ -119,7 +119,7 @@ export default function EnterpriseDataPage() {
               Agentic AI fails on the data foundation, not the model.
             </h2>
             <p className="text-lg leading-relaxed text-mist">
-              The hardest part of enterprise AI isn&rsquo;t the model — it&rsquo;s
+              The hardest part of enterprise AI isn&rsquo;t the model: it&rsquo;s
               giving it secure, real-time, governed access to data spread across
               dozens of systems. Data virtualization solves exactly this: a
               logical layer that unifies your sources without copying them, with
@@ -178,10 +178,10 @@ export default function EnterpriseDataPage() {
                 subcontractor that collaborates directly with Denodo&rsquo;s AI
                 engineering team
               </strong>
-              , working at the leading edge of the platform&rsquo;s AI features —
+              , working at the leading edge of the platform&rsquo;s AI features:
               AI SDK, DeepQuery, and MCP. We extend the open-source AI SDK at the
-              source level — for example, adding OAuth for secure enterprise
-              chatbot deployments — so you&rsquo;re not limited to what&rsquo;s
+              source level (for example, adding OAuth for secure enterprise
+              chatbot deployments), so you&rsquo;re not limited to what&rsquo;s
               available out of the box.
             </p>
           </div>
@@ -195,7 +195,7 @@ export default function EnterpriseDataPage() {
             <SectionLabel>Heritage</SectionLabel>
             <p className="text-lg leading-relaxed text-mist">
               Our principal served as enterprise architect and administrator for
-              the Denodo Platform at a major aerospace company — owning design,
+              the Denodo Platform at a major aerospace company: owning design,
               installation, upgrades, and roadmap; delivering a
               proof-of-concept that launched a dedicated Data Science and Data
               Engineering organization; and scaling the platform community from
@@ -206,7 +206,7 @@ export default function EnterpriseDataPage() {
         </Container>
       </section>
 
-      {/* 5.7 Proof — card layout final; contents are an open action item */}
+      {/* 5.7 Proof - card layout final; contents are an open action item */}
       <section>
         <Container className="py-16 lg:py-24">
           <div className="flex max-w-3xl flex-col gap-4">

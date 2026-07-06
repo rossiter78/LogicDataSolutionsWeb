@@ -3,11 +3,11 @@
 
   Two groups render on /work:
   - Lab showcases: the four independent R&D builds, shown in full. Copy is
-    pre-filled from content-templates §1.1 (marked "ready to use — confirm
+    pre-filled from content-templates §1.1 (marked "ready to use - confirm
     wording"). Headline metrics were bracketed suggestions in the doc; the
     de-bracketed versions below are defaults pending Trent's sign-off.
   - Client outcomes: anonymized engagement stories. These are an OPEN ACTION
-    ITEM — Trent supplies each headline metric + one-line outcome, cleared
+    ITEM - Trent supplies each headline metric + one-line outcome, cleared
     against the relevant NDA (content-templates §1.2). The entries below are
     layout placeholders drawn from the "suggested starting set"; every metric
     reads "Pending clearance" until confirmed shareable.
@@ -30,7 +30,7 @@ export type CaseStudy = {
   outcome: string;
   tech: string[];
   confidential: boolean;
-  // Empty scaffold card — renders as a muted "coming soon" slot with no story.
+  // Empty scaffold card - renders as a muted "coming soon" slot with no story.
   placeholder?: boolean;
   // Client testimonial. `pull` is the short card-face quote; `full` is the
   // complete recommendation shown inside the expanded story.
@@ -46,9 +46,9 @@ export const labShowcases: CaseStudy[] = [
     client: "Logic Data Solutions lab",
     headlineMetric: "Day-to-day CRM workflows automated end to end",
     summary:
-      "A full-stack CRM built from the ground up for AI agents to operate directly — not a SaaS tool with bolt-on automation.",
+      "A full-stack CRM built from the ground up for AI agents to operate directly, not a SaaS tool with bolt-on automation.",
     problem:
-      "A consultancy needed a CRM that AI agents could operate directly — not a SaaS tool with bolt-on automation.",
+      "A consultancy needed a CRM that AI agents could operate directly, not a SaaS tool with bolt-on automation.",
     approach:
       "Built from the ground up for agentic workloads, with a clean API and an MCP layer designed for agents first.",
     whatWeBuilt:
@@ -123,7 +123,7 @@ export const labShowcases: CaseStudy[] = [
   Client outcomes. Two slots are intentional PLACEHOLDERS (empty scaffolds) for
   stories still to be written/cleared; the third is the Ball Aerospace story,
   shared with the client's permission (named testimonial from Mark Veile).
-  Denodo is named in body/testimonial text only — no logo, no implication that
+  Denodo is named in body/testimonial text only - no logo, no implication that
   Trent represents Denodo (CLAUDE.md hard rules).
 */
 export const clientOutcomes: CaseStudy[] = [
@@ -169,13 +169,13 @@ export const clientOutcomes: CaseStudy[] = [
     summary:
       "When Ball Aerospace stood up a new Data Science organization, it needed access to far more data than the existing enterprise data warehouse could feasibly support. Data virtualization with Denodo became the foundation.",
     problem:
-      "Ball Aerospace created a new Data Science organization, led by Mark Veile. The team needed fast access to far more data — from systems across the enterprise — than the existing enterprise data warehouse (EDW) could feasibly support.",
+      "Ball Aerospace created a new Data Science organization, led by Mark Veile. The team needed fast access to far more data, from systems across the enterprise, than the existing enterprise data warehouse (EDW) could feasibly support.",
     approach:
       "Rather than push the EDW past what it could handle, we implemented data virtualization with Denodo: a governed logical layer that unifies data from across the enterprise in real time, without copying it.",
     whatWeBuilt:
       "A Denodo data-virtualization layer that gave the Data Science team unified, governed, high-speed access to data from all over the enterprise.",
     outcome:
-      "The team could reach unified and governed enterprise data quickly — the cornerstone of the organization's success.",
+      "The team could reach unified and governed enterprise data quickly: the cornerstone of the organization's success.",
     tech: ["Denodo", "Data virtualization"],
     confidential: false,
     quote: {

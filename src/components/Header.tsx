@@ -7,7 +7,7 @@ import { nav, site } from "@/lib/site";
 
 /*
   Dark header. Brand = icon-only logo (approved on Dark Charcoal) + white
-  wordmark — the full-color logo is restricted to Off-White/Light Grey
+  wordmark - the full-color logo is restricted to Off-White/Light Grey
   backgrounds. Nav is AI-forward; Enterprise Data sits last and quieter.
 */
 export default function Header() {

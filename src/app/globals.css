@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
-  Logic Data Solutions — dark theme design tokens.
+  Logic Data Solutions - dark theme design tokens.
 
   Brand palette (CLAUDE.md) plus dark-surface derivations in the same hue
   family as Dark Charcoal (#3D4F5C). Corporate Red (#C0222E) fails WCAG AA
@@ -36,7 +36,7 @@
 }
 
 /*
-  Service-graphic animations (sg-*). Pure CSS on SVG — light, crisp, no JS.
+  Service-graphic animations (sg-*). Pure CSS on SVG - light, crisp, no JS.
   Per-instance values come through CSS custom properties (--delay, --dur,
   --tx, --ty, --dash). Everything is disabled under prefers-reduced-motion;
   each graphic is designed so its static state reads complete on its own
@@ -206,7 +206,7 @@
     opacity: 1 !important;
     transform: none !important;
   }
-  /* moving pulses are decoration — hidden in the settled state */
+  /* moving pulses are decoration - hidden in the settled state */
   .sg-travel {
     animation: none !important;
     opacity: 0 !important;

@@ -14,7 +14,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# env files — secrets never committed (booking URL, analytics token, etc.)
+# env files - secrets never committed (booking URL, analytics token, etc.)
 .env
 .env.local
 .env*.local

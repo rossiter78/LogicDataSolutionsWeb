@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 /*
-  Hero prompt panel — the "agent visibly at work" demo (approved mock,
+  Hero prompt panel - the "agent visibly at work" demo (approved mock,
   Session 3). A familiar AI prompt box types a real small-business question,
   the agent checks real sources step by step, then a grounded answer streams
   into a card. Cycles through three scenarios.
@@ -17,7 +17,7 @@ const SCENARIOS = [
   {
     q: "Where did we lose margin last quarter?",
     steps: ["querying invoices", "cross-checking job costs"],
-    a: "Rush orders in May — 3 clients drove 80% of the dip.",
+    a: "Rush orders in May: 3 clients drove 80% of the dip.",
   },
   {
     q: "Which quotes are still waiting on us?",
@@ -27,7 +27,7 @@ const SCENARIOS = [
   {
     q: "Can something answer our customer emails?",
     steps: ["reading your docs and policies"],
-    a: "Yes — a support assistant that cites your own documents.",
+    a: "Yes, a support assistant that cites your own documents.",
   },
 ];
 
@@ -108,7 +108,7 @@ export default function HeroPrompt({ className = "" }: { className?: string }) {
   return (
     <Link
       href="/contact"
-      aria-label="Watch an AI assistant answer real business questions from live data — book a free assessment to ask your own"
+      aria-label="Watch an AI assistant answer real business questions from live data. Book a free assessment to ask your own"
       className={`group block ${className}`}
     >
       <div aria-hidden="true">
@@ -154,7 +154,7 @@ export default function HeroPrompt({ className = "" }: { className?: string }) {
           }`}
         >
           <p className="font-display text-[0.65rem] font-bold uppercase tracking-[0.14em] text-red-bright">
-            Answer — grounded in your data
+            Answer: grounded in your data
           </p>
           <p className="mt-1 min-h-[2.8rem] text-sm leading-relaxed text-offwhite">
             {answer}

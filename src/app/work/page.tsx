@@ -8,7 +8,7 @@ import { labShowcases, clientOutcomes } from "@/lib/caseStudies";
 export const metadata: Metadata = {
   title: "Case Studies & AI Showcases",
   description:
-    "Production AI systems and enterprise data architectures we've built — agentic apps, RAG, computer vision, and anonymized client outcomes.",
+    "Production AI systems and enterprise data architectures we've built: agentic apps, RAG, computer vision, and anonymized client outcomes.",
 };
 
 export default function WorkPage() {
@@ -22,7 +22,7 @@ export default function WorkPage() {
             Real systems, real results.
           </h1>
           <p className="text-lg leading-relaxed text-mist">
-            A selection of what we&rsquo;ve built — from production AI
+            A selection of what we&rsquo;ve built, from production AI
             applications to enterprise data architectures. Client work is shown
             with permission, or anonymized to respect confidentiality; our
             independent builds are shown in full.
@@ -30,7 +30,7 @@ export default function WorkPage() {
         </Container>
       </section>
 
-      {/* 6.2 Grid — Built in our lab (full detail) */}
+      {/* 6.2 Grid - Built in our lab (full detail) */}
       <section className="border-y border-ink-800 bg-ink-900">
         <Container className="py-16 lg:py-24">
           <div className="flex max-w-3xl flex-col gap-4">
@@ -39,7 +39,7 @@ export default function WorkPage() {
               Independent builds, shown in full.
             </h2>
             <p className="text-lg leading-relaxed text-mist">
-              Systems we designed and built on our own infrastructure — the
+              Systems we designed and built on our own infrastructure: the
               R&amp;D that de-risks client work. Expand any one for the full
               story.
             </p>
@@ -52,7 +52,7 @@ export default function WorkPage() {
         </Container>
       </section>
 
-      {/* 6.2 Grid — Client outcomes (anonymized) */}
+      {/* 6.2 Grid - Client outcomes (anonymized) */}
       <section>
         <Container className="py-16 lg:py-24">
           <div className="flex max-w-3xl flex-col gap-4">
@@ -61,7 +61,7 @@ export default function WorkPage() {
               Outcomes from real engagements.
             </h2>
             <p className="text-lg leading-relaxed text-mist">
-              Outcome stories from engagements across enterprise data and AI —
+              Outcome stories from engagements across enterprise data and AI,
               each led by its result. Some are shared with the client&rsquo;s
               permission; others are anonymized to respect confidentiality.
             </p>

@@ -4,7 +4,7 @@ import PageStub from "@/components/PageStub";
 export const metadata: Metadata = {
   title: "The Lab",
   description:
-    "Where we build and break things first — walkthroughs of the real systems running in our private AI development lab.",
+    "Where we build and break things first: walkthroughs of the real systems running in our private AI development lab.",
   robots: { index: false }, // not linked in nav until content is ready
 };
 
@@ -18,7 +18,7 @@ export default function LabPage() {
     <PageStub
       eyebrow="The Lab"
       h1="Coming soon."
-      subhead="Recorded walkthroughs of the real systems in our private AI lab — agents driving a custom CRM, always-on agent operations, and a production RAG chatbot."
+      subhead="Recorded walkthroughs of the real systems in our private AI lab: agents driving a custom CRM, always-on agent operations, and a production RAG chatbot."
       cta={null}
     />
   );

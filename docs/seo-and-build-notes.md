@@ -16,23 +16,23 @@ The site serves two search intents; map them to the two track pages so each rank
 
 **Enterprise Data cluster** (narrow, high-intent, high-value):
 - "Denodo consultant", "Denodo partner", "Denodo subcontractor", "Denodo architect", "Denodo administrator", "Denodo AI SDK", "Denodo DeepQuery", "Denodo MCP", "data virtualization consultant", "logical data warehouse / data fabric consultant".
-- These are low-volume but extremely high-value and under-served — they are worth ranking for. The `/enterprise-data` page is built to target them and names Denodo in body copy for exactly this reason.
+- These are low-volume but extremely high-value and under-served - they are worth ranking for. The `/enterprise-data` page is built to target them and names Denodo in body copy for exactly this reason.
 
-**Rescue intent (noted for the future — not a launch task).** The "burned buyer" persona (see `website-spec.md` §1) maps to a real, under-served, high-intent search cluster: "why is my AI chatbot giving wrong answers", "RAG returning inaccurate results", "fix AI project", "AI pilot failed". At launch, rescue is woven into `/ai-solutions` (not its own page), consistent with the "welcome addition, not the main event" decision. **If** the burned buyer later proves to be a sweet-spot segment, a dedicated `/ai-rescue` landing page targeting these terms is the natural, low-risk expansion — architected without disturbing the current structure. Do not build it at launch.
+**Rescue intent (noted for the future - not a launch task).** The "burned buyer" persona (see `website-spec.md` §1) maps to a real, under-served, high-intent search cluster: "why is my AI chatbot giving wrong answers", "RAG returning inaccurate results", "fix AI project", "AI pilot failed". At launch, rescue is woven into `/ai-solutions` (not its own page), consistent with the "welcome addition, not the main event" decision. **If** the burned buyer later proves to be a sweet-spot segment, a dedicated `/ai-rescue` landing page targeting these terms is the natural, low-risk expansion - architected without disturbing the current structure. Do not build it at launch.
 
 ### 1.2 Per-page metadata (titles & descriptions)
 Use Next.js Metadata API. Keep titles ~55–60 chars, descriptions ~150–160.
-- **Home** — Title: `Logic Data Solutions — AI That Works, Built on Data You Can Trust`. Desc: Custom AI — assistants, automation, and apps — for small and growing businesses, built by an engineer with deep enterprise data roots so it holds up in the real world.
-- **AI Solutions** — Title: `AI for Your Business — Custom AI That Actually Works | Logic Data Solutions`. Desc: Not sure where AI fits? We help you find out, then build it — assistants, automation, and custom tools that work in production. Start with a free AI Opportunity Assessment.
-- **Enterprise Data** — Title: `Denodo Consulting & Data Virtualization for AI | Logic Data Solutions`. Desc: Denodo partner and subcontractor: data-virtualization architecture, administration, and AI SDK / DeepQuery / MCP enablement for governed, real-time enterprise AI.
-- **Work** — Title: `Case Studies & AI Showcases | Logic Data Solutions`. Desc: Production AI systems and enterprise data architectures we've built — agentic apps, RAG, computer vision, and anonymized client outcomes.
-- **About** — Title: `About — Boutique AI & Data Consulting | Logic Data Solutions`. Desc: Led by Trent Rossiter, an AI architect and data engineer with enterprise pedigree who builds the systems, not just the strategy.
-- **Contact** — Title: `Book a Free AI Opportunity Assessment | Logic Data Solutions`. Desc: A 30-minute conversation about your goals and the most direct path to production AI. No pressure, no obligation.
+- **Home** - Title: `Logic Data Solutions - AI That Works, Built on Data You Can Trust`. Desc: Custom AI - assistants, automation, and apps - for small and growing businesses, built by an engineer with deep enterprise data roots so it holds up in the real world.
+- **AI Solutions** - Title: `AI for Your Business - Custom AI That Actually Works | Logic Data Solutions`. Desc: Not sure where AI fits? We help you find out, then build it - assistants, automation, and custom tools that work in production. Start with a free AI Opportunity Assessment.
+- **Enterprise Data** - Title: `Denodo Consulting & Data Virtualization for AI | Logic Data Solutions`. Desc: Denodo partner and subcontractor: data-virtualization architecture, administration, and AI SDK / DeepQuery / MCP enablement for governed, real-time enterprise AI.
+- **Work** - Title: `Case Studies & AI Showcases | Logic Data Solutions`. Desc: Production AI systems and enterprise data architectures we've built - agentic apps, RAG, computer vision, and anonymized client outcomes.
+- **About** - Title: `About - Boutique AI & Data Consulting | Logic Data Solutions`. Desc: Led by Trent Rossiter, an AI architect and data engineer with enterprise pedigree who builds the systems, not just the strategy.
+- **Contact** - Title: `Book a Free AI Opportunity Assessment | Logic Data Solutions`. Desc: A 30-minute conversation about your goals and the most direct path to production AI. No pressure, no obligation.
 
 ### 1.3 On-page & technical SEO
 - One `<h1>` per page (the page hero H1 in the spec).
 - Semantic headings in the order given in `website-spec.md`.
-- Descriptive alt text on all imagery. The hero has no diagram/image to caption (see `website-spec.md` §9) — it's a rotating headline plus a DOM-based agent-demo prompt box, both already accessible text (the prompt-box demo content is `aria-hidden`, wrapped in one link with a descriptive `aria-label`).
+- Descriptive alt text on all imagery. The hero has no diagram/image to caption (see `website-spec.md` §9) - it's a rotating headline plus a DOM-based agent-demo prompt box, both already accessible text (the prompt-box demo content is `aria-hidden`, wrapped in one link with a descriptive `aria-label`).
 - `sitemap.xml` and `robots.txt` generated; submit to Google Search Console.
 - **Structured data (JSON-LD):** `ProfessionalService` / `Organization` with name, logo, location (Westminster, CO), `sameAs` → LinkedIn; `Person` for Trent as principal; `FAQPage` on the AI Solutions FAQ; `BreadcrumbList` site-wide.
 - Open Graph + Twitter card per page (reuse the brand OG image or a per-page variant).
@@ -46,11 +46,11 @@ Targeting "Denodo partner"/"Denodo consultant" is allowed and encouraged in text
 
 ## 2. Booking Integration (Cal.com, backed by Google Calendar)
 
-> **Update (2026-07):** booking switched from Google Workspace appointment scheduling to **Cal.com**. Google's appointment scheduler only exposes a cross-origin `<iframe>` (or popup) — its slot picker can't be re-themed and there's no API to render availability ourselves, so it would always look like Google's white UI inside our dark page. Cal.com renders **inline, on `/contact`, in the site's dark theme** while still using **Trent's Google Calendar** as the source of truth. This supersedes the earlier Google-iframe plan.
+> **Update (2026-07):** booking switched from Google Workspace appointment scheduling to **Cal.com**. Google's appointment scheduler only exposes a cross-origin `<iframe>` (or popup) - its slot picker can't be re-themed and there's no API to render availability ourselves, so it would always look like Google's white UI inside our dark page. Cal.com renders **inline, on `/contact`, in the site's dark theme** while still using **Trent's Google Calendar** as the source of truth. This supersedes the earlier Google-iframe plan.
 
 - **Widget:** Cal.com inline embed via `@calcom/embed-react`, wrapped in `src/components/BookingEmbed.tsx` (a client component). Themed `theme: "dark"` with the brand accent set to Corporate Red (`cal-brand: #c0222e`); layout `month_view`.
-- **How it connects to Google:** in Cal.com, Trent connects his **Google Calendar** (Settings → Connected Calendars). Cal reads existing events for **conflict-checking** and **writes new bookings** back to that calendar. **Bookable hours are configured in Cal.com's Availability tab** — Cal.com does *not* import the availability from Google's own appointment-scheduling page; that setup lives only inside Google's product and is not reused.
-- **The event slug is public, not a secret** (it's visible in the booking page source), so — unlike a real key — it's committed as the **default** in `src/lib/site.ts` (`calLink`). This lets the Cloudflare Git build produce a working widget with **zero dashboard configuration**. `NEXT_PUBLIC_CAL_LINK` still **overrides** the default when set (e.g. to point a local/preview build at a test event); `.env.example` documents the variable name. Only genuine secrets (keys, account IDs, analytics token) stay out of the repo — see §6.
+- **How it connects to Google:** in Cal.com, Trent connects his **Google Calendar** (Settings → Connected Calendars). Cal reads existing events for **conflict-checking** and **writes new bookings** back to that calendar. **Bookable hours are configured in Cal.com's Availability tab** - Cal.com does *not* import the availability from Google's own appointment-scheduling page; that setup lives only inside Google's product and is not reused.
+- **The event slug is public, not a secret** (it's visible in the booking page source), so - unlike a real key - it's committed as the **default** in `src/lib/site.ts` (`calLink`). This lets the Cloudflare Git build produce a working widget with **zero dashboard configuration**. `NEXT_PUBLIC_CAL_LINK` still **overrides** the default when set (e.g. to point a local/preview build at a test event); `.env.example` documents the variable name. Only genuine secrets (keys, account IDs, analytics token) stay out of the repo - see §6.
 - `BookingEmbed` renders an **email fallback** (`site.email`) if `NEXT_PUBLIC_CAL_LINK` is unset, so the page never shows an empty embed. `/contact` also shows an email fallback beneath the widget. (Phone and location were removed from the contact fallback at Trent's request.)
 - Ensure the embed is responsive and keyboard-accessible.
 - All "Book a call" / "Book a free assessment" CTAs across the site route to `/contact`, where the inline widget lives.
@@ -59,7 +59,7 @@ Targeting "Denodo partner"/"Denodo consultant" is allowed and encouraged in text
 
 ## 3. Analytics & Privacy
 
-- Use **Cloudflare Web Analytics** (free, no cookies, no PII) — fits the Cloudflare hosting and avoids a cookie-consent banner.
+- Use **Cloudflare Web Analytics** (free, no cookies, no PII) - fits the Cloudflare hosting and avoids a cookie-consent banner.
 - No Google Analytics, no third-party ad/tracking pixels.
 - Privacy page: a short, plain-language privacy note is sufficient given no tracking cookies; include it linked from the footer.
 
@@ -71,20 +71,20 @@ Targeting "Denodo partner"/"Denodo consultant" is allowed and encouraged in text
 - **Performance budget:** Lighthouse 95+ performance and accessibility on Home and both track pages. LCP < 2.5s; CLS < 0.1.
 - Fonts via `next/font` (Montserrat, Source Sans Pro) with `display: swap`; subset and preload.
 - Images: Next.js image optimization; modern formats; explicit dimensions to protect CLS. Compress the existing brand assets.
-- The hero ships as static server-rendered headline text (fast LCP) plus a DOM/CSS-animated agent-demo panel that hydrates and animates after paint (see `website-spec.md` §9) — no SVG, no WebGL.
+- The hero ships as static server-rendered headline text (fast LCP) plus a DOM/CSS-animated agent-demo panel that hydrates and animates after paint (see `website-spec.md` §9) - no SVG, no WebGL.
 - Respect `prefers-reduced-motion` globally.
 
 ---
 
 ## 5. Accessibility
 
-- WCAG 2.1 AA. Color contrast checked against the palette (note: **Titanium #878681 on Off-White fails for body text — use Charcoal**; Titanium is for large/secondary text and dividers only).
+- WCAG 2.1 AA. Color contrast checked against the palette (note: **Titanium #878681 on Off-White fails for body text - use Charcoal**; Titanium is for large/secondary text and dividers only).
 - Visible focus states; full keyboard navigation; skip-to-content link.
 - All interactive elements labeled; the Cal.com booking embed exposes an accessible title.
 
 ---
 
-## 6. Secrets & Config — Do Not Commit
+## 6. Secrets & Config - Do Not Commit
 
 Keep all of the following out of the repo (use `.env.local`, provide `.env.example` with names only):
 - Cloudflare Web Analytics token.

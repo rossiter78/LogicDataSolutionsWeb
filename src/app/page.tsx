@@ -25,7 +25,7 @@ const capabilities = [
   {
     icon: IconRag,
     title: "Query & Knowledge RAG",
-    body: "Retrieval pipelines with full control over vector stores, embeddings, and tuning — answers grounded in your real data.",
+    body: "Retrieval pipelines with full control over vector stores, embeddings, and tuning, so answers stay grounded in your real data.",
   },
   {
     icon: IconMcp,
@@ -45,7 +45,7 @@ const capabilities = [
   {
     icon: IconApp,
     title: "Custom AI Applications",
-    body: "Full-stack apps with AI built in — APIs, automation, and the infrastructure agents need to do real work.",
+    body: "Full-stack apps with AI built in: APIs, automation, and the infrastructure agents need to do real work.",
   },
 ];
 
@@ -62,7 +62,7 @@ const whyUs = [
   },
   {
     title: "We build on what's real.",
-    body: "Governed, live data — not static exports or unmanaged lakes — so your AI is accurate and auditable.",
+    body: "Governed, live data, not static exports or unmanaged lakes, so your AI is accurate and auditable.",
   },
   {
     title: "Open standards, your ownership.",
@@ -70,7 +70,7 @@ const whyUs = [
   },
 ];
 
-/* Placeholder slots — real quotes arriving via the testimonial requests
+/* Placeholder slots - real quotes arriving via the testimonial requests
    (content-templates.md §2). Layout is final; copy is not. */
 const testimonialPlaceholders = [
   { tag: "AI project" },
@@ -83,23 +83,28 @@ export default function Home() {
     <>
       {/* 3.1 Hero */}
       <section className="relative overflow-hidden">
-        <Container className="grid items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
+        <Container className="grid items-center gap-12 py-20 lg:py-28 xl:grid-cols-[1.25fr_0.75fr]">
           <div className="flex flex-col items-start gap-6">
             <div className="sg-fade-in">
               <SectionLabel>AI &amp; Enterprise Data Consulting</SectionLabel>
             </div>
             <h1
-              className="sg-fade-in text-4xl font-bold leading-tight sm:text-5xl"
-              style={{ "--delay": "0.15s" } as CSSProperties}
+              className="sg-fade-in font-bold leading-tight"
+              style={
+                {
+                  "--delay": "0.15s",
+                  fontSize: "clamp(1.5rem, 5.2vw, 3rem)",
+                } as CSSProperties
+              }
             >
               AI that <RotatingWord />
-              <br />— working inside your business.
+              <br />working inside your business.
             </h1>
             <p
               className="sg-fade-in max-w-xl text-lg leading-relaxed text-mist"
               style={{ "--delay": "0.35s" } as CSSProperties}
             >
-              We help you find where AI actually fits, then build it —
+              We help you find where AI actually fits, then build it:
               assistants, automations, and custom tools that work in the real
               world, not just in a demo. Built by an engineer with deep
               enterprise data roots, so what we ship holds up after launch day.
@@ -135,7 +140,7 @@ export default function Home() {
               almost always underneath: data that&rsquo;s scattered across
               systems, ungoverned, or frozen in exports that were already out
               of date when they were made. We start where AI actually succeeds
-              or fails — at the data foundation — and build up from there.
+              or fails, at the data foundation, and build up from there.
               That&rsquo;s why our chatbots, agents, and pipelines hold up in
               production instead of demos.
             </p>
@@ -143,7 +148,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 3.4 What could AI do for you? — recognition cards, rescue last */}
+      {/* 3.4 What could AI do for you? - recognition cards, rescue last */}
       <section className="border-y border-ink-800 bg-ink-900">
         <Container className="py-20 lg:py-24">
           <div className="flex flex-col gap-5">
@@ -169,7 +174,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 3.5 Capabilities — proof of competence, not the pitch */}
+      {/* 3.5 Capabilities - proof of competence, not the pitch */}
       <section>
         <Container className="py-20 lg:py-24">
           <div className="flex flex-col gap-5">
@@ -214,8 +219,8 @@ export default function Home() {
                 Agentic CRM with a custom MCP server
               </h3>
               <p className="leading-relaxed text-mist">
-                A full-stack CRM built from the ground up for agentic workloads
-                — local AI agents run day-to-day workflows end to end through a
+                A full-stack CRM built from the ground up for agentic workloads:
+                local AI agents run day-to-day workflows end to end through a
                 custom MCP server, and a vision pipeline reads business cards
                 straight into contacts.
               </p>
@@ -272,7 +277,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 3.8 Entry offer — the conversion spine */}
+      {/* 3.8 Entry offer - the conversion spine */}
       <section>
         <Container className="pb-20 lg:pb-24">
           <div className="rounded-xl border border-ink-700 bg-ink-800 px-8 py-12 sm:px-12 lg:px-16">
@@ -282,7 +287,7 @@ export default function Home() {
                 Start with a free AI Opportunity Assessment.
               </h2>
               <p className="max-w-2xl text-lg leading-relaxed text-mist">
-                Not sure where AI fits — or whether your data is ready for it?
+                Not sure where AI fits, or whether your data is ready for it?
                 We&rsquo;ll review your goals, systems, and data foundation,
                 then map the highest-value, lowest-risk places to start, with a
                 clear path to production. No pressure, no obligation.
@@ -295,12 +300,12 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 3.9 Enterprise handoff — quiet, dignified */}
+      {/* 3.9 Enterprise handoff - quiet, dignified */}
       <section className="border-y border-ink-800 bg-ink-900">
         <Container className="py-8">
           <p className="text-center text-[0.95rem] leading-relaxed text-titanium">
             Enterprise data leaders: we also run a specialized Denodo
-            data-virtualization practice — governed, real-time data foundations
+            data-virtualization practice: governed, real-time data foundations
             for enterprise AI.{" "}
             <Link
               href="/enterprise-data"
@@ -326,11 +331,11 @@ export default function Home() {
                   {t.tag}
                 </p>
                 <blockquote className="italic leading-relaxed text-titanium">
-                  &ldquo;Testimonial placeholder — final quote and attribution
+                  &ldquo;Testimonial placeholder: final quote and attribution
                   arriving via the requests already in flight.&rdquo;
                 </blockquote>
                 <figcaption className="mt-auto text-sm text-titanium">
-                  — Name, Title, Organization
+                  Name, Title, Organization
                 </figcaption>
               </figure>
             ))}
@@ -357,7 +362,7 @@ export default function Home() {
           </h2>
           <p className="max-w-xl text-lg leading-relaxed text-mist">
             Tell us what you&rsquo;re trying to do. We&rsquo;ll tell you the
-            most direct way to get there — honestly, whether or not we&rsquo;re
+            most direct way to get there, honestly, whether or not we&rsquo;re
             the ones to build it.
           </p>
           <CtaButton href="/contact" className="mt-2">
