@@ -14,7 +14,7 @@ export default function ServiceSection({
   return (
     <section
       id={service.id}
-      className={`scroll-mt-20 ${flip ? "border-y border-ink-800 bg-ink-900" : ""}`}
+      className={`section-grad scroll-mt-20 ${flip ? "border-y border-ink-800 bg-ink-900" : ""}`}
     >
       <Container className="grid items-center gap-12 py-16 lg:grid-cols-2 lg:gap-16 lg:py-24">
         <div

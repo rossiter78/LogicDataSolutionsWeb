@@ -82,7 +82,7 @@ export default function Home() {
   return (
     <>
       {/* 3.1 Hero */}
-      <section className="relative overflow-hidden">
+      <section className="section-grad relative overflow-hidden">
         <Container className="grid items-center gap-12 py-20 lg:py-28 xl:grid-cols-[1.25fr_0.75fr]">
           <div className="flex flex-col items-start gap-6">
             <div className="sg-fade-in">
@@ -126,7 +126,7 @@ export default function Home() {
       </section>
 
       {/* 3.3 The insight / the bridge */}
-      <section>
+      <section className="section-grad border-y border-ink-800 bg-ink-900">
         <Container className="max-w-3xl py-20 lg:py-24">
           <div className="flex flex-col gap-5">
             <SectionLabel>Why most AI stalls</SectionLabel>
@@ -149,7 +149,7 @@ export default function Home() {
       </section>
 
       {/* 3.4 What could AI do for you? - recognition cards, rescue last */}
-      <section className="border-y border-ink-800 bg-ink-900">
+      <section className="section-grad">
         <Container className="py-20 lg:py-24">
           <div className="flex flex-col gap-5">
             <SectionLabel>Where could you start?</SectionLabel>
@@ -175,7 +175,7 @@ export default function Home() {
       </section>
 
       {/* 3.5 Capabilities - proof of competence, not the pitch */}
-      <section>
+      <section className="section-grad border-y border-ink-800 bg-ink-900">
         <Container className="py-20 lg:py-24">
           <div className="flex flex-col gap-5">
             <SectionLabel>Under the hood</SectionLabel>
@@ -198,7 +198,7 @@ export default function Home() {
       </section>
 
       {/* 3.6 Featured proof */}
-      <section className="border-y border-ink-800 bg-ink-900">
+      <section className="section-grad">
         <Container className="py-20 lg:py-24">
           <div className="flex flex-col gap-5">
             <SectionLabel>Proof</SectionLabel>
@@ -256,7 +256,7 @@ export default function Home() {
       </section>
 
       {/* 3.7 Why work with us */}
-      <section>
+      <section className="section-grad border-y border-ink-800 bg-ink-900">
         <Container className="py-20 lg:py-24">
           <div className="flex flex-col gap-5">
             <SectionLabel>Why Logic Data Solutions</SectionLabel>
@@ -278,7 +278,7 @@ export default function Home() {
       </section>
 
       {/* 3.8 Entry offer - the conversion spine */}
-      <section>
+      <section className="section-grad">
         <Container className="pb-20 lg:pb-24">
           <div className="rounded-xl border border-ink-700 bg-ink-800 px-8 py-12 sm:px-12 lg:px-16">
             <div className="flex flex-col items-start gap-5">
@@ -301,7 +301,7 @@ export default function Home() {
       </section>
 
       {/* 3.9 Enterprise handoff - quiet, dignified */}
-      <section className="border-y border-ink-800 bg-ink-900">
+      <section className="section-grad border-y border-ink-800 bg-ink-900">
         <Container className="py-8">
           <p className="text-center text-[0.95rem] leading-relaxed text-titanium">
             Enterprise data leaders: we also run a specialized Denodo
@@ -318,7 +318,7 @@ export default function Home() {
       </section>
 
       {/* 3.10 Testimonials */}
-      <section>
+      <section className="section-grad">
         <Container className="py-20 lg:py-24">
           <h2 className="text-3xl font-bold sm:text-4xl">What clients say.</h2>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -354,7 +354,7 @@ export default function Home() {
       </section>
 
       {/* 3.11 Final CTA */}
-      <section className="border-t border-ink-800 bg-ink-900">
+      <section className="section-grad border-t border-ink-800 bg-ink-900">
         <Container className="flex flex-col items-center gap-6 py-20 text-center lg:py-24">
           <h2 className="max-w-2xl text-3xl font-bold sm:text-4xl">
             Not sure if AI is right for you? That&rsquo;s the perfect place to

@@ -15,7 +15,7 @@ export default function WorkPage() {
   return (
     <>
       {/* 6.1 Intro */}
-      <section>
+      <section className="section-grad">
         <Container className="flex max-w-3xl flex-col items-start gap-6 py-20 lg:py-28">
           <SectionLabel>Work</SectionLabel>
           <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
@@ -31,7 +31,7 @@ export default function WorkPage() {
       </section>
 
       {/* 6.2 Grid - Built in our lab (full detail) */}
-      <section className="border-y border-ink-800 bg-ink-900">
+      <section className="section-grad border-y border-ink-800 bg-ink-900">
         <Container className="py-16 lg:py-24">
           <div className="flex max-w-3xl flex-col gap-4">
             <SectionLabel>Built in our lab</SectionLabel>
@@ -53,7 +53,7 @@ export default function WorkPage() {
       </section>
 
       {/* 6.2 Grid - Client outcomes (anonymized) */}
-      <section>
+      <section className="section-grad">
         <Container className="py-16 lg:py-24">
           <div className="flex max-w-3xl flex-col gap-4">
             <SectionLabel>Client outcomes</SectionLabel>
@@ -75,7 +75,7 @@ export default function WorkPage() {
       </section>
 
       {/* 6.3 CTA */}
-      <section className="border-t border-ink-800 bg-ink-900">
+      <section className="section-grad border-t border-ink-800 bg-ink-900">
         <Container className="flex flex-col items-center gap-6 py-20 text-center lg:py-24">
           <h2 className="max-w-2xl text-3xl font-bold sm:text-4xl">
             Want something like this built for you?

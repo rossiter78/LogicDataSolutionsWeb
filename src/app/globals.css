@@ -185,6 +185,24 @@
   animation: hero-caret 1s steps(1) infinite;
 }
 
+/*
+  Soft brand-red bloom rising from the bottom of each home-page section. This
+  echoes the ambient horizon glow on the reference (skills.new), but spread
+  wide and horizontal instead of a hard curved arc, and recoloured to the brand
+  red. It's a background-image, so it composes over whatever background-color
+  the section already has: transparent (showing the near-black body, ink-950)
+  on the darker bands, or ink-900 on the charcoal bands. Kept low-alpha so it
+  reads as atmosphere that ties the page to the brand red, never a colour block.
+*/
+.section-grad {
+  background-image: radial-gradient(
+    130% 90% at 50% 100%,
+    rgba(192, 34, 46, 0.25) 0%,
+    rgba(192, 34, 46, 0.08) 33%,
+    rgba(192, 34, 46, 0) 62%
+  );
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-caret {
     animation: none !important;

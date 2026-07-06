@@ -74,7 +74,7 @@ export default function EnterpriseDataPage() {
   return (
     <>
       {/* 5.1 Hero */}
-      <section>
+      <section className="section-grad">
         <Container className="flex max-w-3xl flex-col items-start gap-6 py-20 lg:py-28">
           <SectionLabel>Enterprise Data &amp; AI Foundations</SectionLabel>
           <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
@@ -92,7 +92,7 @@ export default function EnterpriseDataPage() {
       </section>
 
       {/* 5.2 Who it's for */}
-      <section className="border-y border-ink-800 bg-ink-900">
+      <section className="section-grad border-y border-ink-800 bg-ink-900">
         <Container className="max-w-3xl py-16 lg:py-20">
           <div className="flex flex-col gap-5">
             <SectionLabel>Who it&rsquo;s for</SectionLabel>
@@ -111,7 +111,7 @@ export default function EnterpriseDataPage() {
       </section>
 
       {/* 5.3 The thesis */}
-      <section>
+      <section className="section-grad">
         <Container className="max-w-3xl py-16 lg:py-20">
           <div className="flex flex-col gap-5">
             <SectionLabel>The thesis</SectionLabel>
@@ -131,7 +131,7 @@ export default function EnterpriseDataPage() {
       </section>
 
       {/* 5.4 Services */}
-      <section className="border-y border-ink-800 bg-ink-900">
+      <section className="section-grad border-y border-ink-800 bg-ink-900">
         <Container className="py-16 lg:py-24">
           <div className="flex max-w-3xl flex-col gap-4">
             <SectionLabel>Services</SectionLabel>
@@ -164,7 +164,7 @@ export default function EnterpriseDataPage() {
       </section>
 
       {/* 5.5 The specialization (differentiator) */}
-      <section>
+      <section className="section-grad">
         <Container className="max-w-3xl py-16 lg:py-20">
           <div className="flex flex-col gap-5">
             <SectionLabel>The specialization</SectionLabel>
@@ -189,7 +189,7 @@ export default function EnterpriseDataPage() {
       </section>
 
       {/* 5.6 Heritage / credibility */}
-      <section className="border-y border-ink-800 bg-ink-900">
+      <section className="section-grad border-y border-ink-800 bg-ink-900">
         <Container className="max-w-3xl py-16 lg:py-20">
           <div className="flex flex-col gap-5">
             <SectionLabel>Heritage</SectionLabel>
@@ -207,7 +207,7 @@ export default function EnterpriseDataPage() {
       </section>
 
       {/* 5.7 Proof - card layout final; contents are an open action item */}
-      <section>
+      <section className="section-grad">
         <Container className="py-16 lg:py-24">
           <div className="flex max-w-3xl flex-col gap-4">
             <SectionLabel>Proof</SectionLabel>
@@ -246,7 +246,7 @@ export default function EnterpriseDataPage() {
       </section>
 
       {/* 5.8 CTA */}
-      <section className="border-t border-ink-800 bg-ink-900">
+      <section className="section-grad border-t border-ink-800 bg-ink-900">
         <Container className="flex flex-col items-center gap-6 py-20 text-center lg:py-24">
           <h2 className="max-w-2xl text-3xl font-bold sm:text-4xl">
             Let&rsquo;s talk about your data foundation.

@@ -19,7 +19,7 @@ export default function PageStub({
   cta?: { href: string; label: string } | null;
 }) {
   return (
-    <section>
+    <section className="section-grad">
       <Container className="flex min-h-[55vh] max-w-3xl flex-col justify-center gap-6 py-24">
         <SectionLabel>{eyebrow}</SectionLabel>
         <h1 className="text-4xl font-bold leading-tight sm:text-5xl">{h1}</h1>

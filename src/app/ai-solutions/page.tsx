@@ -15,7 +15,7 @@ export default function AiSolutionsPage() {
   return (
     <>
       {/* Hero */}
-      <section>
+      <section className="section-grad">
         <Container className="flex max-w-3xl flex-col items-start gap-6 py-20 lg:py-28">
           <SectionLabel>AI Solutions</SectionLabel>
           <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
@@ -37,7 +37,7 @@ export default function AiSolutionsPage() {
       </section>
 
       {/* The frame - why this works when other AI projects don't */}
-      <section className="border-y border-ink-800 bg-ink-900">
+      <section className="section-grad border-y border-ink-800 bg-ink-900">
         <Container className="max-w-3xl py-16 lg:py-20">
           <div className="flex flex-col gap-5">
             <SectionLabel>Services</SectionLabel>
@@ -73,7 +73,7 @@ export default function AiSolutionsPage() {
       ))}
 
       {/* Final CTA */}
-      <section className="border-t border-ink-800 bg-ink-900">
+      <section className="section-grad border-t border-ink-800 bg-ink-900">
         <Container className="flex flex-col items-center gap-6 py-20 text-center lg:py-24">
           <h2 className="max-w-2xl text-3xl font-bold sm:text-4xl">
             Not sure which one fits?
