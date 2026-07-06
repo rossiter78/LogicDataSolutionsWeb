@@ -13,64 +13,58 @@ const footerNav = [
 export default function Footer() {
   return (
     <footer className="border-t border-ink-800 bg-ink-900">
-      <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-3">
-        <div className="flex flex-col gap-4">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={site.logoIcon}
-            alt="Logic Data Solutions"
-            className="h-10 w-10"
-            width={40}
-            height={40}
-          />
-          <p className="max-w-xs text-sm leading-relaxed text-mist">
-            AI that works — because the data underneath it does. A boutique AI
-            and enterprise-data consultancy.
-          </p>
-          <a
-            href={site.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-semibold text-mist transition-colors hover:text-offwhite"
-          >
-            LinkedIn →
-          </a>
-        </div>
+      <Container className="mx-auto flex max-w-4xl flex-col items-center gap-4 py-8 text-center">
+        <div className="flex w-full flex-col items-center gap-4 md:flex-row md:items-center md:justify-between md:text-left">
+          <Link href="/" className="flex items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={site.logoIcon}
+              alt=""
+              className="h-10 w-10"
+              width={40}
+              height={40}
+            />
+            <span className="font-display text-[0.95rem] font-bold tracking-wide text-offwhite">
+              Logic Data Solutions
+            </span>
+          </Link>
 
-        <nav aria-label="Footer">
-          <ul className="flex flex-col gap-2.5">
-            {footerNav.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="text-sm text-mist transition-colors hover:text-offwhite"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+          <nav aria-label="Footer">
+            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+              {footerNav.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-mist transition-colors hover:text-offwhite"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        <div className="flex flex-col gap-2.5 text-sm text-mist">
-          <a
-            href={`mailto:${site.email}`}
-            className="transition-colors hover:text-offwhite"
-          >
-            {site.email}
-          </a>
-          <a
-            href={site.phoneHref}
-            className="transition-colors hover:text-offwhite"
-          >
-            {site.phone}
-          </a>
-          <p>{site.location}</p>
+          <div className="flex flex-col items-center gap-1 text-sm md:items-end">
+            <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-mist transition-colors hover:text-offwhite"
+            >
+              LinkedIn →
+            </a>
+            <a
+              href={`mailto:${site.email}`}
+              className="text-mist transition-colors hover:text-offwhite"
+            >
+              {site.email}
+            </a>
+          </div>
         </div>
       </Container>
       <div className="border-t border-ink-800">
-        <Container className="py-5">
-          <p className="text-xs text-titanium">
+        <Container className="py-3">
+          <p className="text-center text-xs text-titanium md:text-left">
             © {new Date().getFullYear()} Logic Data Solutions
           </p>
         </Container>

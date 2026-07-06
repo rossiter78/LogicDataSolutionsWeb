@@ -18,8 +18,7 @@ export const site = {
 export const nav = [
   { href: "/", label: "Home" },
   { href: "/ai-solutions", label: "AI Solutions" },
-  // Enterprise Data stays visually quieter than the AI path.
-  { href: "/enterprise-data", label: "Enterprise Data", quiet: true },
+  { href: "/enterprise-data", label: "Enterprise Data" },
   { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
 ] as const;

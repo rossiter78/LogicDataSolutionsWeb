@@ -107,29 +107,6 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 3.2 Credibility strip */}
-      <section className="border-y border-ink-800 bg-ink-900">
-        <Container className="py-5">
-          <ul className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center font-display text-[0.8rem] font-semibold tracking-wide text-mist">
-            {[
-              "Denodo Partner",
-              "AWS Certified AI Practitioner",
-              "13+ years enterprise data architecture",
-              "NASA manufacturing award",
-            ].map((item, i) => (
-              <li key={item} className="flex items-center gap-3">
-                {i > 0 && (
-                  <span aria-hidden className="text-red-bright">
-                    ·
-                  </span>
-                )}
-                {item}
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
-
       {/* 3.3 The insight / the bridge */}
       <section>
         <Container className="max-w-3xl py-20 lg:py-24">
