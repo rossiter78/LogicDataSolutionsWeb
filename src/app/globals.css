@@ -169,7 +169,27 @@
   animation: sg-fade-in 0.7s ease-out var(--delay, 0s) both;
 }
 
+/* Hero prompt-box caret. Blinks only while the demo loop is animating;
+   the component doesn't render it at all in the settled state. */
+@keyframes hero-caret {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  95% {
+    opacity: 0;
+  }
+}
+.hero-caret {
+  animation: hero-caret 1s steps(1) infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .hero-caret {
+    animation: none !important;
+    opacity: 0 !important;
+  }
   .sg-glow,
   .sg-pop,
   .sg-typing,

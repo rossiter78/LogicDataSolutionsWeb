@@ -1,8 +1,10 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import Container from "@/components/Container";
 import CtaButton from "@/components/CtaButton";
 import SectionLabel from "@/components/SectionLabel";
-import HeroVisual from "@/components/HeroVisual";
+import HeroPrompt from "@/components/HeroPrompt";
+import RotatingWord from "@/components/RotatingWord";
 import RecognitionCard from "@/components/RecognitionCard";
 import { homeRecognitionCards } from "@/lib/recognition";
 import {
@@ -83,18 +85,29 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <Container className="grid items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
           <div className="flex flex-col items-start gap-6">
-            <SectionLabel>AI &amp; Enterprise Data Consulting</SectionLabel>
-            <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
-              AI for your business — even if you&rsquo;re not sure where to
-              start.
+            <div className="sg-fade-in">
+              <SectionLabel>AI &amp; Enterprise Data Consulting</SectionLabel>
+            </div>
+            <h1
+              className="sg-fade-in text-4xl font-bold leading-tight sm:text-5xl"
+              style={{ "--delay": "0.15s" } as CSSProperties}
+            >
+              AI that <RotatingWord />
+              <br />— working inside your business.
             </h1>
-            <p className="max-w-xl text-lg leading-relaxed text-mist">
+            <p
+              className="sg-fade-in max-w-xl text-lg leading-relaxed text-mist"
+              style={{ "--delay": "0.35s" } as CSSProperties}
+            >
               We help you find where AI actually fits, then build it —
               assistants, automations, and custom tools that work in the real
               world, not just in a demo. Built by an engineer with deep
               enterprise data roots, so what we ship holds up after launch day.
             </p>
-            <div className="mt-2 flex flex-wrap gap-4">
+            <div
+              className="sg-fade-in mt-2 flex flex-wrap gap-4"
+              style={{ "--delay": "0.55s" } as CSSProperties}
+            >
               <CtaButton href="/contact">
                 Book a free AI Opportunity Assessment
               </CtaButton>
@@ -103,7 +116,7 @@ export default function Home() {
               </CtaButton>
             </div>
           </div>
-          <HeroVisual className="mx-auto w-full max-w-lg" />
+          <HeroPrompt className="sg-fade-in mx-auto w-full max-w-lg self-center" />
         </Container>
       </section>
 
