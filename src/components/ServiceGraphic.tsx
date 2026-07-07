@@ -325,16 +325,38 @@ function GraphicApp() {
   );
 }
 
-/* 05 - On-prem: AI inside your walls; nothing crosses the boundary. */
+/* 05 - On-prem: private AI on your own hardware. Code moves freely between a
+   developer workstation and an NVIDIA-powered AI server inside a secure
+   boundary; code trying to reach the public cloud is blocked at the wall. */
 function GraphicOnPrem() {
+  const codeGlyph: CSSProperties = {
+    fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+    fontSize: "13px",
+    fontWeight: 700,
+    letterSpacing: "-0.5px",
+  };
   return (
-    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: AI running on your own servers inside a secure boundary: data stays in; nothing reaches the outside cloud.">
-      {/* secure boundary */}
+    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: private AI runs on your own hardware inside a secure boundary. Code moves freely between your developer workstation and an NVIDIA-powered AI server, while code is blocked from leaving to the public cloud.">
+      {/* the public cloud, high above the wall, with the OpenAI mark inside it */}
+      <g transform="translate(124 20)">
+        <path
+          d="M14 40C6 40 0 34 0 26 0 19 5 14 12 13 14 5 22 0 30 0c9 0 16 6 17 15 8 0 15 6 15 13 0 7-6 12-13 12Z"
+          fill="var(--color-ink-800)"
+          stroke="var(--color-titanium)"
+          strokeWidth="1.5"
+        />
+        <image href="/icons/openai-mark.png" x="18" y="9" width="26" height="26" />
+      </g>
+      <text x="155" y="76" textAnchor="middle" style={label}>
+        Public cloud
+      </text>
+
+      {/* secure boundary: your hardware; nothing crosses it */}
       <rect
-        x="70"
-        y="55"
-        width="215"
-        height="200"
+        x="30"
+        y="108"
+        width="250"
+        height="150"
         rx="16"
         fill="none"
         stroke="var(--color-red-bright)"
@@ -343,8 +365,8 @@ function GraphicOnPrem() {
         className="sg-glow"
         style={v({ "--min": "0.4", "--dur": "4s" })}
       />
-      {/* shield */}
-      <g transform="translate(167 40)">
+      {/* shield: the boundary is secure */}
+      <g transform="translate(60 96)">
         <path
           d="M0 4c6 0 10-3 10-3s4 3 10 3v8c0 7-6 11-10 13-4-2-10-6-10-13V4Z"
           fill="var(--color-ink-900)"
@@ -354,31 +376,64 @@ function GraphicOnPrem() {
         <path d="m5.5 11 3.2 3.4L15 8.2" fill="none" stroke="var(--color-red-bright)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       </g>
 
-      {/* server */}
-      <rect x="140" y="115" width="80" height="90" rx="6" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
-      <path d="M140 145h80M140 175h80" stroke="var(--color-titanium)" strokeWidth="1.2" />
-      {["0s", "0.5s", "1s"].map((d, i) => (
-        <circle key={d} cx="153" cy={130 + i * 30} r="3" fill="var(--color-red)" className="sg-glow" style={v({ "--delay": d, "--min": "0.2", "--dur": "2s" })} />
-      ))}
-      <g stroke="var(--color-ink-600)" strokeWidth="1.5">
-        <path d="M166 130h42M166 160h42M166 190h42" />
-      </g>
-      <text x="180" y="238" textAnchor="middle" style={label}>
-        Your infrastructure
+      {/* workstation, AI server, and the code lane between them, nudged down
+          to sit centered in the boundary box */}
+      <g transform="translate(0 18)">
+      {/* developer workstation */}
+      <rect x="57" y="128" width="66" height="46" rx="4" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
+      <rect x="66" y="137" width="30" height="4" rx="2" fill="var(--color-red)" />
+      <rect x="66" y="146" width="42" height="4" rx="2" fill="var(--color-ink-600)" />
+      <rect x="72" y="155" width="30" height="4" rx="2" fill="var(--color-ink-600)" />
+      <rect x="72" y="164" width="22" height="4" rx="2" fill="var(--color-ink-600)" />
+      <rect x="86" y="174" width="8" height="10" fill="var(--color-ink-700)" />
+      <rect x="71" y="184" width="38" height="4" rx="2" fill="var(--color-ink-700)" />
+      <text x="90" y="214" textAnchor="middle" style={label}>
+        Your workstation
       </text>
 
-      {/* data stays inside */}
-      <circle cx="105" cy="180" r="4" fill="var(--color-mist)" className="sg-float" style={v({ "--dur": "3.5s" })} />
-      <circle cx="250" cy="120" r="4" fill="var(--color-mist)" className="sg-float" style={v({ "--dur": "4s", "--delay": "0.8s" })} />
-      <circle cx="248" cy="200" r="3" fill="var(--color-mist)" className="sg-float" style={v({ "--dur": "3s", "--delay": "1.6s" })} />
-
-      {/* the outside, blocked */}
-      <g transform="translate(310 70)" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5">
-        <path d="M9 23a7 7 0 0 1 1.4-13.8 11 11 0 0 1 20.8-1A7.5 7.5 0 0 1 30 23H9Z" />
+      {/* AI server, carrying the NVIDIA mark on a light chip */}
+      <rect x="188" y="118" width="54" height="84" rx="6" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
+      <rect x="193" y="123" width="44" height="32" rx="5" fill="var(--color-offwhite)" stroke="var(--color-titanium)" strokeWidth="1" />
+      <image href="/icons/Nvidia-Logo.png" x="197" y="127" width="36" height="24" />
+      <g stroke="var(--color-ink-600)" strokeWidth="1.5">
+        <path d="M208 170h28M208 184h28" />
       </g>
-      <line x1="222" y1="140" x2="281" y2="110" stroke="var(--color-ink-600)" strokeWidth="1.5" strokeDasharray="4 5" />
-      <g className="sg-glow" style={v({ "--min": "0.5", "--dur": "2.6s" })} stroke="var(--color-red)" strokeWidth="2.2" strokeLinecap="round">
-        <path d="m278 103 12 12M290 103l-12 12" />
+      {["0s", "0.6s"].map((d, i) => (
+        <circle key={d} cx="199" cy={170 + i * 14} r="3" fill="var(--color-red)" className="sg-glow" style={v({ "--delay": d, "--min": "0.2", "--dur": "2s" })} />
+      ))}
+      <text x="215" y="216" textAnchor="middle" style={label}>
+        AI server
+      </text>
+
+      {/* code moving freely between workstation and AI server */}
+      <line x1="125" y1="162" x2="186" y2="162" stroke="var(--color-ink-700)" strokeWidth="1.4" />
+      <text
+        x="128"
+        y="158"
+        textAnchor="middle"
+        className="sg-travel"
+        fill="var(--color-red)"
+        style={{ ...codeGlyph, ...v({ "--tx": "54px", "--dur": "3.2s" }) }}
+      >
+        {"</>"}
+      </text>
+      <text
+        x="184"
+        y="170"
+        textAnchor="middle"
+        className="sg-travel"
+        fill="var(--color-red-bright)"
+        style={{ ...codeGlyph, ...v({ "--tx": "-54px", "--dur": "3.2s", "--delay": "1.6s" }) }}
+      >
+        {"</>"}
+      </text>
+      </g>
+
+      {/* the workstation must not talk to the public cloud: the path is
+          blocked at the firewall wall */}
+      <path d="M98 146 132 62" stroke="var(--color-ink-600)" strokeWidth="1.5" strokeDasharray="4 5" />
+      <g className="sg-glow" style={v({ "--min": "0.5", "--dur": "2.6s" })} stroke="var(--color-red)" strokeWidth="2.4" strokeLinecap="round">
+        <path d="m108 103 10 10M118 103l-10 10" />
       </g>
     </svg>
   );

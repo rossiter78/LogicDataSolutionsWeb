@@ -115,10 +115,11 @@ export const services: Service[] = [
       "Capable AI that runs on your infrastructure, with your data never leaving the building.",
     paras: [
       "Some data cannot go to a third-party API, full stop. That does not mean you have to sit out the AI shift. Open-weight models are good enough now to run serious workloads privately, if someone knows how to deploy and operate them.",
-      "We stand up private AI on your hardware or your cloud, using open-weight models (Llama, Gemma, Qwen, and the GPT-OSS families), tuned for your cost and performance needs.",
+      "We stand up private AI on your hardware, using open-weight models (Llama, Gemma, Qwen, and Mistral families), tuned for your cost and performance needs.",
+      "Deployment runs on trusted, battle-tested frameworks like vLLM and LM Studio.",
     ],
     youGet: [
-      "Private AI running on your own infrastructure, cloud or on-premises",
+      "Private AI running on your own infrastructure",
       "Open-weight model selection and deployment matched to your workload",
       "Air-gapped options for the most sensitive environments",
       "Cost control by keeping inference in-house instead of paying per token",
