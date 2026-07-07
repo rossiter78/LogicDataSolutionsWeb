@@ -1,4 +1,5 @@
 import type { CaseStudy } from "@/lib/caseStudies";
+import { getTestimonial } from "@/lib/testimonials";
 
 /*
   Case-study card. The summary + headline metric read on their own; the full
@@ -25,6 +26,12 @@ export default function CaseStudyCard({ study }: { study: CaseStudy }) {
 
   const eyebrow =
     study.type === "lab-showcase" ? "Built in our lab" : study.client;
+
+  // Quote text is never stored on the study; look it up in the testimonials
+  // source of truth by the slug the study links to.
+  const quote = study.testimonialSlug
+    ? getTestimonial(study.testimonialSlug)
+    : undefined;
 
   const detailRows: [string, string][] = [
     ["The problem", study.problem],
@@ -57,11 +64,11 @@ export default function CaseStudyCard({ study }: { study: CaseStudy }) {
         </ul>
       )}
 
-      {study.quote && (
+      {quote && (
         <blockquote className="mt-6 border-l-2 border-red pl-4 text-sm italic leading-relaxed text-mist">
-          &ldquo;{study.quote.pull}&rdquo;
+          &ldquo;{quote.pull}&rdquo;
           <cite className="mt-2 block not-italic font-display text-xs font-bold uppercase tracking-[0.14em] text-titanium">
-            {study.quote.name} · {study.quote.org}
+            {quote.name} · {quote.org}
           </cite>
         </blockquote>
       )}
@@ -93,18 +100,18 @@ export default function CaseStudyCard({ study }: { study: CaseStudy }) {
           ))}
         </dl>
 
-        {study.quote && (
+        {quote?.full && (
           <figure className="mt-6 border-t border-ink-800 pt-4">
             <figcaption className="font-display text-xs font-bold uppercase tracking-[0.18em] text-titanium">
               In their words
             </figcaption>
             <blockquote className="mt-3 flex flex-col gap-3 border-l-2 border-red pl-4 italic leading-relaxed text-mist">
-              {study.quote.full.map((para, i) => (
+              {quote.full.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
             </blockquote>
             <p className="mt-3 pl-4 font-display text-xs font-bold uppercase tracking-[0.14em] text-titanium">
-              {study.quote.name} · {study.quote.org}
+              {quote.name} · {quote.org}
             </p>
           </figure>
         )}

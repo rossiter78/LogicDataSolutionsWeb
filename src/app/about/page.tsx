@@ -3,7 +3,9 @@ import Link from "next/link";
 import Container from "@/components/Container";
 import CtaButton from "@/components/CtaButton";
 import SectionLabel from "@/components/SectionLabel";
+import TestimonialCard from "@/components/TestimonialCard";
 import { site } from "@/lib/site";
+import { featuredTestimonials } from "@/lib/testimonials";
 
 export const metadata: Metadata = {
   title: "About: Boutique AI & Data Consulting",
@@ -38,15 +40,6 @@ const values = [
     title: "Your ownership, open standards.",
     body: "MCP, open-weight models, and architectures you own and can run yourself. No black boxes, no lock-in.",
   },
-];
-
-/* Placeholder slots - real quotes arriving via the testimonial requests
-   (content-templates.md §2). Layout is final; copy is not. */
-const testimonialPlaceholders = [
-  { tag: "AI project" },
-  { tag: "Enterprise data" },
-  { tag: "Client engagement" },
-  { tag: "Leadership" },
 ];
 
 export default function AboutPage() {
@@ -175,22 +168,8 @@ export default function AboutPage() {
         <Container className="py-16 lg:py-24">
           <h2 className="text-3xl font-bold sm:text-4xl">What clients say.</h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {testimonialPlaceholders.map((t, i) => (
-              <figure
-                key={i}
-                className="flex flex-col gap-4 rounded-lg border border-dashed border-ink-700 bg-ink-950 p-7"
-              >
-                <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-titanium">
-                  {t.tag}
-                </p>
-                <blockquote className="italic leading-relaxed text-titanium">
-                  &ldquo;Testimonial placeholder: final quote and attribution
-                  arriving via the requests already in flight.&rdquo;
-                </blockquote>
-                <figcaption className="mt-auto text-sm text-titanium">
-                  Name, Title, Organization
-                </figcaption>
-              </figure>
+            {featuredTestimonials.map((t) => (
+              <TestimonialCard key={t.slug} testimonial={t} surface="base" />
             ))}
           </div>
           <div className="mt-8">

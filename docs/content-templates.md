@@ -74,26 +74,42 @@ For each engagement Trent can share (anonymized), fill one template. Target 3–
 
 ## 2. Testimonial System
 
-### 2.1 Component shape
+### 2.1 Where testimonials live (single source of truth)
+All quotes are defined once in `src/lib/testimonials.ts`. Nothing else in the
+codebase types quote text; pages and case studies read from that list. The
+`Testimonial` shape:
 ```
-quote_short: [the single strongest sentence - used as the headline]
-quote_full: [2–4 sentences - shown below or on expand]
-name: [full name | first name | omitted]
-title: [title | omitted]
-org: [company | industry descriptor e.g. "energy sector" | omitted]
-attribution_level: [full | name-title | role-industry | anonymous]
-ai_related: [true | false]
-headshot: [path | omitted]
+slug:        stable id (case studies link to it via `testimonialSlug`)
+pull:        short card-face quote (grids + case-study card face)
+full:        full recommendation paragraphs (string[]); optional, powers the
+             "See full testimonial" expander and the case-study "in their words"
+name / title / org
+track:       "ai" | "enterprise-data"
+tag:         small eyebrow label, e.g. "Data architecture"
+featured:    true to show in the home + About "What clients say" grids
+placeholder: true to render a muted "coming soon" card (retire when a real
+             quote takes the slot)
 ```
+
+**How content flows:**
+- **Grids** (home + About "What clients say") render `featuredTestimonials`
+  (every entry with `featured: true`), via the shared `TestimonialCard`. Cards
+  with a `full` quote get a sleek "See full testimonial" expander (native
+  `<details>`, distinct from the Work section's heavier disclosure).
+- **Case studies** show a quote by reference: set `testimonialSlug: "<slug>"`
+  on the study in `caseStudies.ts`. The quote is never copied into the study.
+- The two switches are independent: a quote can appear in the grids only
+  (`featured`), in its case study only (`testimonialSlug`), or both.
 
 ### 2.2 Rules
 - Design for **3 featured** at launch; section must look intentional with 3 and scale gracefully to more.
-- Earmark **at least one slot for `ai_related: true`** - prioritize an AI/agent/RAG testimonial visually (it's the growth story).
+- Prioritize an AI/agent/RAG testimonial (`track: "ai"`) visually as they arrive - it's the growth story. (Launch set is data-practice quotes; earmark the next AI-era quote for a featured slot.)
 - Show the highest attribution the person granted; never invent or upgrade attribution.
 - Beneath featured testimonials, render a **"More recommendations on LinkedIn →"** link to Trent's profile. This lets a small set imply a deeper pile and gives Denodo-affiliated recommenders a personal-capacity home that keeps endorsement implications off the site.
-- The two existing testimonials (Mark Veile; Nestor Rizo-Patron) may be used refreshed, but prioritize new and AI-era quotes as they arrive.
 
-**Action for Trent:** collect testimonials using the request templates already drafted (past-client, AI-project, Denodo-colleague LinkedIn). Record each person's permission and chosen attribution in writing.
+**Live at launch (3 featured):** Mark Veile (Ball Aerospace, also linked from the Ball Aerospace case study via `testimonialSlug`); Matt Harris (Director of Data Solutions); Colleen Miller (University of Illinois). Prioritize new and AI-era quotes as they arrive.
+
+**Action for Trent:** collect testimonials using the request templates already drafted (past-client, AI-project, Denodo-colleague LinkedIn). Record each person's permission and chosen attribution in writing. To add one, append an entry to `src/lib/testimonials.ts` (set `featured: true` to surface it).
 
 ---
 

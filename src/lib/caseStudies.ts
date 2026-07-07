@@ -32,9 +32,10 @@ export type CaseStudy = {
   confidential: boolean;
   // Empty scaffold card - renders as a muted "coming soon" slot with no story.
   placeholder?: boolean;
-  // Client testimonial. `pull` is the short card-face quote; `full` is the
-  // complete recommendation shown inside the expanded story.
-  quote?: { pull: string; full: string[]; name: string; org: string };
+  // Client testimonial for this engagement, linked by slug into
+  // `testimonials.ts` (the single source of truth). The card looks the quote
+  // up and renders it; the text is never duplicated here.
+  testimonialSlug?: string;
 };
 
 export const labShowcases: CaseStudy[] = [
@@ -178,16 +179,6 @@ export const clientOutcomes: CaseStudy[] = [
       "The team could reach unified and governed enterprise data quickly: the cornerstone of the organization's success.",
     tech: ["Denodo", "Data virtualization"],
     confidential: false,
-    quote: {
-      pull: "Trent Rossiter was a true asset to our team. His high performance, customer-centric approach, and logical problem-solving skills have made a positive and lasting impact on our operations.",
-      full: [
-        "Trent Rossiter was a delight to work with because he showed commitment to providing top-tier support and a logical approach to problem-solving. This led to significant improvement in efficiency and effectiveness for my team's operations.",
-        "Trent exhibited an impressive level of dedication to the needs of our organization. His customer-focused mindset made a significant impact on our team's experience with the Denodo platform. He consistently ensured that our users had the tools and resources they need to excel. Whether it's resolving technical issues, offering guidance on best practices, or tailoring solutions to meet our specific requirements, Trent consistently delivered.",
-        "Trent possesses a deep understanding of the Denodo platform and its intricacies, allowing him to develop elegant and efficient solutions for even the most complex issues. His ability to break down problems, analyze them methodically, and implement well-considered solutions was invaluable to our team's success. He was able to identify if the issue was within our span-of-control or needed to be addressed directly by Denodo and then took it one step further by interacting with Denodo Support to define the requirements of the issue and collaborate on a solution.",
-        "Trent Rossiter was a true asset to our team, and I have no doubt that he will be an asset to any organization lucky enough to work with him in the future. His high performance, customer-centric approach, and logical problem-solving skills have made a positive and lasting impact on our operations. Thank you, Trent, for your exceptional contributions to our team's success.",
-      ],
-      name: "Mark Veile",
-      org: "Ball Aerospace",
-    },
+    testimonialSlug: "mark-veile-ball",
   },
 ];
