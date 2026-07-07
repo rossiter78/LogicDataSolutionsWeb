@@ -202,6 +202,12 @@ export default function EnterpriseDataPage() {
               3 to 30+ users through governed citizen development and formal
               training.
             </p>
+            <p className="text-lg leading-relaxed text-mist">
+              For programs that need a larger delivery team, we scale up through
+              partnerships with established consulting firms: a boutique practice
+              can staff enterprise-scale work without diluting the senior
+              ownership, or handing your architecture to a rotating bench.
+            </p>
           </div>
         </Container>
       </section>

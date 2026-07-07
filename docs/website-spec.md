@@ -5,6 +5,8 @@ This is the authoritative content and layout spec. Copy here is final unless mar
 > **Session 2 revision.** §1 (positioning), §3 (Home), §4 (AI Solutions), §5 (Enterprise, standalone-behavior note), and §9 (hero brief) were rewritten to reflect the refined direction: an **AI-forward front of house for SMBs, with Denodo as a credentialed referral annex.** Where older text described a balanced, symmetrical two-track site, this version supersedes it.
 >
 > **Session 3 revision.** §3.1 (H1) and §9 (hero visual) were rewritten again after the animated architecture-diagram hero was built, reviewed, and rejected in favor of a more AI-forward, kinetic hero (a rotating headline paired with a live agent-demo prompt box). The architecture-diagram concept described in older §9 text is superseded - the diagram no longer ships anywhere on the site.
+>
+> **Session 4 revision.** (1) Added a scale/partnerships message that answers the "is a boutique big enough?" objection without undercutting the principal-led positioning: a new §7.7 on About and a second paragraph in §5.6 on Enterprise. Partnerships are framed as reach on demand, not a hand-off; **partner firms are not named on the site.** (2) Reframed §7.4 (About credentials) from a resume-style card grid into a quiet, proof-first pill strip, trimmed to four AI/data-focused certs.
 
 ---
 
@@ -257,6 +259,7 @@ Row of relevant showcases/case studies, led by the most *relatable* build → `/
 
 ### 5.6 Heritage / credibility
 - **Body:** Our principal served as enterprise architect and administrator for the Denodo Platform at a major aerospace company - owning design, installation, upgrades, and roadmap; delivering a proof-of-concept that launched a dedicated Data Science and Data Engineering organization; and scaling the platform community from 3 to 30+ users through governed citizen development and formal training.
+- **Body (scale / partnerships, added Session 4):** For programs that need a larger delivery team, we scale up through partnerships with established consulting firms: a boutique practice can staff enterprise-scale work without diluting the senior ownership, or handing your architecture to a rotating bench. *(Peer-voice register; answers the delivery-capacity objection that bites hardest on large enterprise engagements. Do not name partner firms - decided Session 4.)*
 
 ### 5.7 Proof
 Relevant enterprise outcome stories (anonymized) → `/work`.
@@ -304,8 +307,13 @@ Each card → a detail view (or expandable section) following the case-study tem
 - **H2:** We build in the open - on our own infrastructure.
 - **Body:** We run a private AI development lab - an NVIDIA DGX Spark, containerized workloads, and isolated environments for agent deployment, networked securely - for local model development, architecture validation, and client solution testing. It's how we de-risk client work: we've usually built and broken it ourselves first. Several of the projects in our [work](/work) came out of this lab.
 
-### 7.4 Credentials
-Clean list: Denodo (Architect, Administrator, AI SDK) · AWS Certified AI Practitioner · Cornell University Data Science Certificate · University of Denver MBA (Honors) · B.S. Computer Engineering, *cum laude* · Microsoft Generative AI Engineering Professional Certificate (in progress).
+### 7.4 Credentials (reframed Session 4)
+Reframed away from a resume-style list. It was a 6-item card grid under "Certified across data and AI"; that read like a CV skills matrix, so it was demoted to a quiet trust strip: a confident, proof-first heading over a wrapped row of muted pills. The heading acknowledges and subverts the resume feeling (the "builds, doesn't just advise" pillar), and the certs sit underneath as scannable reassurance for the enterprise/referred visitor rather than as the section's centerpiece.
+- **Section label:** CREDENTIALS
+- **H2:** We'd rather show you the work than the certificates.
+- **Body:** The builds speak first. But the formal record is here if you want it: the training and certifications underneath the work.
+- **Pills (this order, trimmed to four - Session 4):** Denodo Architect, Administrator & AI SDK · AWS Certified AI Practitioner · Microsoft Generative AI Engineering (in progress) · Cornell Data Science Certificate.
+  *(MBA and B.S. Computer Engineering were dropped to keep the strip focused on the AI/data specialization and further reduce the resume read. Order leads with the Denodo + AI credentials.)*
 
 ### 7.5 Approach / values
 Three short values: **Build, don't just advise** · **Foundations first** · **Your ownership, open standards**.
@@ -313,7 +321,15 @@ Three short values: **Build, don't just advise** · **Foundations first** · **Y
 ### 7.6 Testimonials
 Full testimonial block (all available) + LinkedIn recommendations link.
 
-### 7.7 CTA
+### 7.7 Scale / partnerships (added Session 4)
+Placed last before the CTA. Its job is to clear the one objection a boutique invites ("is a one-person shop big enough for my project?") *without* undercutting the principal-led positioning the rest of the page sells. Frame partnerships as reach on demand, never a hand-off: capacity the client gets only when the work needs it. This also sets up the CTA line ("senior expertise, without the agency overhead").
+- **Section label:** SCALE WHEN YOU NEED IT
+- **H2:** Boutique by default, not by limitation.
+- **Body:** You work directly with the principal, and that never changes. But boutique doesn't mean capacity-limited. When a project calls for a larger delivery team, we scale up through partnerships with established consulting firms, so you get the reach of a big firm exactly when the work needs it, without giving up the senior ownership and single point of accountability you came to a boutique for.
+
+*Do not name specific partner firms on the site (decided Session 4). State the capability generically as "established consulting firms."*
+
+### 7.8 CTA
 - **CTA:** Work with us → `/contact`
 
 ---
