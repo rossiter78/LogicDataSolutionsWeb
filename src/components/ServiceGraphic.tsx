@@ -14,108 +14,211 @@ const label: CSSProperties = {
 
 const v = (vars: Record<string, string>) => vars as CSSProperties;
 
-/* 01 - Assessment: a roadmap that lights up step by step. */
+/* 01 - Assessment: your current systems pass through the assessment lens
+   and come out the other side as an ordered, numbered plan. */
 function GraphicAssessment() {
-  const steps = [
-    { x: 80, y: 220, n: "1", t: "Review", d: "0s" },
-    { x: 200, y: 150, n: "2", t: "Prioritize", d: "0.35s" },
-    { x: 320, y: 80, n: "3", t: "Plan", d: "0.7s" },
+  const rows = [
+    { y: 106, d: "1s", w1: 52, w2: 36, primary: true },
+    { y: 146, d: "1.25s", w1: 46, w2: 30, primary: false },
+    { y: 186, d: "1.5s", w1: 50, w2: 34, primary: false },
   ];
   return (
-    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: a three-step roadmap (review, prioritize, plan) lighting up in order.">
-      <line
-        x1="80"
-        y1="220"
-        x2="320"
-        y2="80"
-        stroke="var(--color-ink-600)"
-        strokeWidth="1.5"
-        className="sg-draw"
-        style={v({ "--dash": "280" })}
-      />
+    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: your current systems and data pass through an assessment lens and come out as an ordered, numbered plan.">
+      {/* what you have: slightly askew, unassessed */}
+      <g className="sg-fade-in">
+        <g transform="rotate(-4 75 96)">
+          <rect x="38" y="70" width="74" height="52" rx="6" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
+          <path d="M38 84h74" stroke="var(--color-titanium)" strokeWidth="1.2" />
+          <circle cx="47" cy="77" r="2" fill="var(--color-titanium)" />
+          <rect x="50" y="92" width="44" height="4" rx="2" fill="var(--color-ink-600)" />
+          <rect x="50" y="102" width="30" height="4" rx="2" fill="var(--color-ink-600)" />
+        </g>
+        <text x="123" y="66" style={{ ...label, fontSize: "15px", fill: "var(--color-titanium)", fontWeight: 700 }}>
+          ?
+        </text>
+      </g>
+      <g className="sg-fade-in" style={v({ "--delay": "0.15s" })}>
+        <g fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" transform="translate(42 168) rotate(5)">
+          <ellipse cx="22" cy="7" rx="22" ry="7" />
+          <path d="M0 7v26c0 3.9 9.8 7 22 7s22-3.1 22-7V7" fill="none" />
+          <path d="M0 20c0 3.9 9.8 7 22 7s22-3.1 22-7" fill="none" />
+        </g>
+        <text x="56" y="242" style={{ ...label, fontSize: "14px", fill: "var(--color-titanium)", fontWeight: 700 }}>
+          ?
+        </text>
+      </g>
+      <g className="sg-fade-in" style={v({ "--delay": "0.3s" })}>
+        <g transform="rotate(-6 121 149)">
+          <rect x="104" y="132" width="34" height="34" rx="6" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
+          <circle cx="121" cy="149" r="4" fill="var(--color-red)" />
+        </g>
+      </g>
+      <text x="88" y="262" textAnchor="middle" style={label}>
+        What you have
+      </text>
+
+      {/* the assessment lens */}
+      <g className="sg-fade-in" style={v({ "--delay": "0.5s" })}>
+        <circle
+          cx="196"
+          cy="146"
+          r="27"
+          fill="var(--color-ink-900)"
+          stroke="var(--color-red-bright)"
+          strokeWidth="2"
+          className="sg-glow"
+          style={v({ "--min": "0.5", "--dur": "3.5s" })}
+        />
+        <path d="M186 140a12 12 0 0 1 9-6" stroke="var(--color-red-bright)" strokeWidth="1.6" fill="none" strokeLinecap="round" opacity="0.7" />
+        <line x1="215" y1="167" x2="232" y2="186" stroke="var(--color-red-bright)" strokeWidth="4" strokeLinecap="round" />
+      </g>
+
+      {/* flow: in one side, out the other */}
+      <path d="M142 146h22" stroke="var(--color-ink-600)" strokeWidth="1.5" strokeDasharray="4 5" />
+      <path d="M228 146h36" stroke="var(--color-ink-600)" strokeWidth="1.5" strokeDasharray="4 5" />
+      <path d="M258 141l8 5-8 5" fill="none" stroke="var(--color-ink-600)" strokeWidth="1.5" />
       <circle
+        cx="136"
+        cy="146"
         r="4"
-        cx="80"
-        cy="220"
         fill="var(--color-red)"
         className="sg-travel"
-        style={v({ "--tx": "240px", "--ty": "-140px", "--dur": "5s", "--delay": "1s" })}
+        style={v({ "--tx": "128px", "--dur": "4.5s", "--delay": "1.8s" })}
       />
-      {steps.map((s, i) => (
-        <g key={s.n} className="sg-fade-in" style={v({ "--delay": s.d })}>
+
+      {/* your plan: ordered, prioritized */}
+      <g className="sg-fade-in" style={v({ "--delay": "0.7s" })}>
+        <rect x="272" y="58" width="104" height="176" rx="8" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
+        <path d="M284 78h64" stroke="var(--color-red)" strokeWidth="3" strokeLinecap="round" />
+      </g>
+      {rows.map((r, i) => (
+        <g key={r.y} className="sg-fade-in" style={v({ "--delay": r.d })}>
+          {r.primary && (
+            <circle
+              cx="294"
+              cy={r.y}
+              r="14"
+              fill="none"
+              stroke="var(--color-red-bright)"
+              className="sg-glow"
+              style={v({ "--min": "0.12", "--dur": "3.3s", "--delay": "2.5s" })}
+            />
+          )}
           <circle
-            cx={s.x}
-            cy={s.y}
-            r="26"
-            fill="none"
-            stroke="var(--color-red-bright)"
-            className="sg-glow"
-            style={v({ "--delay": `${i * 1.1}s`, "--min": "0.12", "--dur": "3.3s" })}
+            cx="294"
+            cy={r.y}
+            r="9"
+            fill={r.primary ? "var(--color-red)" : "var(--color-ink-800)"}
+            stroke={r.primary ? "var(--color-red)" : i === 1 ? "var(--color-red)" : "var(--color-titanium)"}
+            strokeWidth="1.6"
           />
-          <circle cx={s.x} cy={s.y} r="20" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
           <text
-            x={s.x}
-            y={s.y + 5}
+            x="294"
+            y={r.y + 4}
             textAnchor="middle"
-            style={{ fontFamily: "var(--font-montserrat)", fontSize: "14px", fontWeight: 700, fill: "var(--color-offwhite)" }}
+            style={{ fontFamily: "var(--font-montserrat)", fontSize: "11px", fontWeight: 700, fill: "var(--color-offwhite)" }}
           >
-            {s.n}
+            {i + 1}
           </text>
-          <text x={s.x} y={s.y + 44} textAnchor="middle" style={label}>
-            {s.t}
-          </text>
+          <rect x="310" y={r.y - 4} width={r.w1} height="4" rx="2" fill="var(--color-ink-600)" />
+          <rect x="310" y={r.y + 5} width={r.w2} height="4" rx="2" fill="var(--color-ink-700)" />
         </g>
       ))}
+      <text x="324" y="262" textAnchor="middle" style={label}>
+        Your plan
+      </text>
     </svg>
   );
 }
 
-/* 02 - RAG chatbot: question → metadata layer → data, answer comes back checked. */
+/* 02 - RAG chatbot: your question reaches the model, the model consults the
+   curated vocabulary, sends the right query to your data, and the checked
+   answer comes back to you. Dashed lines march in the direction of flow. */
 function GraphicRag() {
+  const Arrow = ({ x, y, deg }: { x: number; y: number; deg: number }) => (
+    <g transform={`translate(${x} ${y}) rotate(${deg})`}>
+      <path d="M-6 -4 L0 0 L-6 4" fill="none" stroke="var(--color-ink-600)" strokeWidth="1.5" strokeLinecap="round" />
+    </g>
+  );
+  const pairs = [
+    { y: 56, hot: true },
+    { y: 74, hot: false },
+    { y: 92, hot: false },
+  ];
   return (
-    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: a question flows through a curated business-metadata layer into your data, and a verified answer comes back.">
-      {/* question bubble */}
-      <rect x="40" y="36" width="150" height="58" rx="10" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
-      <path d="M62 94l0 12 12-12Z" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
-      <rect x="58" y="52" width="90" height="5" rx="2.5" fill="var(--color-ink-600)" />
-      <rect x="58" y="64" width="60" height="5" rx="2.5" fill="var(--color-ink-600)" />
+    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: your question goes to an AI model that consults curated metadata (your business vocabulary), sends the right query to your data, and delivers a correct, checked answer back to you.">
+      {/* you ask */}
+      <rect x="24" y="38" width="112" height="58" rx="10" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
+      <path d="M46 96l0 12 12-12Z" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
+      <rect x="40" y="50" width="84" height="5" rx="2.5" fill="var(--color-ink-600)" />
+      <rect x="40" y="63" width="44" height="10" rx="5" fill="none" stroke="var(--color-red-bright)" strokeWidth="1.3" />
+      <rect x="46" y="66.5" width="32" height="3" rx="1.5" fill="var(--color-red-bright)" />
+      <rect x="90" y="65.5" width="30" height="5" rx="2.5" fill="var(--color-ink-600)" />
       {["0s", "0.2s", "0.4s"].map((d, i) => (
-        <circle key={d} cx={150 + i * 12} cy="80" r="3" fill="var(--color-mist)" className="sg-typing" style={v({ "--delay": d })} />
+        <circle key={d} cx={100 + i * 11} cy="84" r="3" fill="var(--color-mist)" className="sg-typing" style={v({ "--delay": d })} />
       ))}
-
-      {/* answer bubble */}
-      <rect x="240" y="50" width="120" height="50" rx="10" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
-      <rect x="256" y="64" width="60" height="5" rx="2.5" fill="var(--color-ink-600)" />
-      <rect x="256" y="78" width="44" height="5" rx="2.5" fill="var(--color-ink-600)" />
-      <g className="sg-pop" style={v({ "--delay": "2.4s", "--dur": "7s" })}>
-        <circle cx="336" cy="75" r="11" fill="var(--color-red)" />
-        <path d="m331 75 3.5 3.5 7-7" fill="none" stroke="var(--color-offwhite)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </g>
-
-      {/* metadata layer */}
-      <rect x="60" y="150" width="280" height="34" rx="8" fill="var(--color-ink-800)" stroke="var(--color-charcoal)" strokeWidth="1.5" />
-      <g stroke="var(--color-ink-600)" strokeWidth="1.5">
-        <path d="M100 158v18M140 158v18M180 158v18M220 158v18M260 158v18M300 158v18" />
-      </g>
-      <path d="M70 190h260" stroke="var(--color-red)" strokeWidth="2.5" strokeLinecap="round" className="sg-glow" style={v({ "--min": "0.5", "--dur": "4s" })} />
-      <text x="200" y="210" textAnchor="middle" style={label}>
-        Curated metadata: your business vocabulary
+      <text x="80" y="126" textAnchor="middle" style={label}>
+        You ask, your way
       </text>
 
-      {/* your data */}
-      <g fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" transform="translate(114 228)">
-        <ellipse cx="26" cy="8" rx="26" ry="8" />
-        <path d="M0 8v28c0 4.4 11.6 8 26 8s26-3.6 26-8V8" fill="none" />
-        <path d="M0 22c0 4.4 11.6 8 26 8s26-3.6 26-8" fill="none" />
+      {/* question flows to the model */}
+      <path d="M140 62 C166 68 180 88 190 110" fill="none" stroke="var(--color-ink-600)" strokeWidth="1.5" className="sg-march" />
+      <Arrow x={190} y={110} deg={66} />
+
+      {/* the model: Claude spark and OpenAI mark in diagonal corners */}
+      <rect x="174" y="114" width="52" height="52" rx="10" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
+      <image href="/icons/claude-spark.png" x="180" y="119" width="21" height="21" />
+      <image href="/icons/openai-mark.png" x="200" y="139" width="21" height="21" />
+      <text x="200" y="186" textAnchor="middle" style={label}>
+        The AI
+      </text>
+
+      {/* curated vocabulary feeding the model */}
+      <rect x="282" y="40" width="96" height="74" rx="8" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
+      {pairs.map((p) => (
+        <g key={p.y}>
+          <rect x="294" y={p.y - 1.5} width="16" height="7" rx="3.5" fill={p.hot ? "var(--color-red)" : "var(--color-ink-600)"} />
+          {p.hot ? (
+            <rect x="316" y={p.y} width="50" height="4" rx="2" fill="var(--color-red-bright)" className="sg-glow" style={v({ "--min": "0.45", "--dur": "3s" })} />
+          ) : (
+            <rect x="316" y={p.y} width="50" height="4" rx="2" fill="var(--color-ink-600)" />
+          )}
+        </g>
+      ))}
+      <text x="330" y="134" textAnchor="middle" style={label}>
+        Your vocabulary, curated
+      </text>
+      <path d="M288 118 C264 132 244 130 228 126" fill="none" stroke="var(--color-ink-600)" strokeWidth="1.5" className="sg-march" style={v({ "--dur": "1.1s" })} />
+      <Arrow x={228} y={126} deg={-166} />
+
+      {/* query out, results back */}
+      <path d="M226 152 C258 158 284 178 300 202" fill="none" stroke="var(--color-ink-600)" strokeWidth="1.5" className="sg-march" style={v({ "--delay": "0.3s" })} />
+      <Arrow x={300} y={202} deg={63} />
+      <path d="M318 196 C306 168 274 152 238 146" fill="none" stroke="var(--color-ink-600)" strokeWidth="1.5" className="sg-march" style={v({ "--delay": "0.6s" })} />
+      <Arrow x={238} y={146} deg={-170} />
+      <g fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" transform="translate(288 206)">
+        <ellipse cx="24" cy="7" rx="24" ry="7" />
+        <path d="M0 7v26c0 3.9 10.7 7 24 7s24-3.1 24-7V7" fill="none" />
+        <path d="M0 20c0 3.9 10.7 7 24 7s24-3.1 24-7" fill="none" />
       </g>
-      <text x="212" y="262" style={label}>
+      <text x="312" y="270" textAnchor="middle" style={label}>
         Your data
       </text>
 
-      {/* flow pulses: question down, into data, answer up */}
-      <circle cx="100" cy="102" r="4" fill="var(--color-red)" className="sg-travel" style={v({ "--ty": "46px", "--dur": "3.5s" })} />
-      <circle cx="140" cy="186" r="4" fill="var(--color-red)" className="sg-travel" style={v({ "--ty": "38px", "--dur": "3.5s", "--delay": "0.9s" })} />
-      <circle cx="300" cy="148" r="4" fill="var(--color-red-bright)" className="sg-travel" style={v({ "--ty": "-44px", "--dur": "3.5s", "--delay": "1.8s" })} />
+      {/* the answer comes back to you */}
+      <path d="M176 168 C164 186 154 198 144 210" fill="none" stroke="var(--color-ink-600)" strokeWidth="1.5" className="sg-march" style={v({ "--delay": "0.9s" })} />
+      <Arrow x={144} y={210} deg={130} />
+      <rect x="24" y="190" width="112" height="52" rx="10" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
+      <path d="M46 242l0 12 12-12Z" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
+      <rect x="40" y="204" width="62" height="5" rx="2.5" fill="var(--color-ink-600)" />
+      <rect x="40" y="216" width="44" height="5" rx="2.5" fill="var(--color-ink-600)" />
+      <g className="sg-pop" style={v({ "--delay": "1.8s", "--dur": "7s" })}>
+        <circle cx="134" cy="192" r="10" fill="var(--color-red)" />
+        <path d="m129.5 192 3.2 3.2 6.4-6.4" fill="none" stroke="var(--color-offwhite)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </g>
+      <text x="80" y="276" textAnchor="middle" style={label}>
+        Correct answer
+      </text>
     </svg>
   );
 }

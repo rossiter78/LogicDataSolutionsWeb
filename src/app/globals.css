@@ -155,6 +155,16 @@
   animation: sg-float var(--dur, 3.5s) ease-in-out var(--delay, 0s) infinite;
 }
 
+@keyframes sg-march {
+  to {
+    stroke-dashoffset: -9;
+  }
+}
+.sg-march {
+  stroke-dasharray: 4 5;
+  animation: sg-march var(--dur, 0.9s) linear var(--delay, 0s) infinite;
+}
+
 @keyframes sg-fade-in {
   from {
     opacity: 0;
@@ -213,6 +223,7 @@
   .sg-typing,
   .sg-fill,
   .sg-float,
+  .sg-march,
   .sg-fade-in {
     animation: none !important;
   }
