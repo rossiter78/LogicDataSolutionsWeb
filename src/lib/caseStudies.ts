@@ -2,15 +2,14 @@
   Case-study content (content-templates.md §1 shape; website-spec §6).
 
   Two groups render on /work:
-  - Lab showcases: the four independent R&D builds, shown in full. Copy is
-    pre-filled from content-templates §1.1 (marked "ready to use - confirm
-    wording"). Headline metrics were bracketed suggestions in the doc; the
-    de-bracketed versions below are defaults pending Trent's sign-off.
-  - Client outcomes: anonymized engagement stories. These are an OPEN ACTION
-    ITEM - Trent supplies each headline metric + one-line outcome, cleared
-    against the relevant NDA (content-templates §1.2). The entries below are
-    layout placeholders drawn from the "suggested starting set"; every metric
-    reads "Pending clearance" until confirmed shareable.
+  - Lab showcases: independent R&D builds, shown in full. Copy is pre-filled
+    from content-templates §1.1 (marked "ready to use - confirm wording").
+    Headline metrics were bracketed suggestions in the doc; the de-bracketed
+    versions below are defaults pending Trent's sign-off.
+  - Client outcomes: real engagement stories, some named with the client's
+    permission, others anonymized. Remaining slots are an OPEN ACTION ITEM -
+    Trent supplies each headline metric + one-line outcome, cleared against the
+    relevant NDA (content-templates §1.2).
 
   Launch ordering (website-spec §6.2): lead with the most relatable builds
   for the SMB visitor (agentic CRM first); let vision/edge sit last as range.
@@ -53,10 +52,10 @@ export const labShowcases: CaseStudy[] = [
     approach:
       "Built from the ground up for agentic workloads, with a clean API and an MCP layer designed for agents first.",
     whatWeBuilt:
-      "A full-stack CRM (Python, Flask, PostgreSQL) with a REST API and a custom MCP server. Local Qwen3-class agents automate day-to-day workflows; a vision pipeline reads business-card images and auto-populates contacts. Built end to end using Claude Code.",
+      "A full-stack CRM (Python, Flask, PostgreSQL) with a REST API and a custom MCP server. Local agents automate day-to-day workflows; a vision pipeline reads business-card images and auto-populates contacts. Built end to end using Claude Code.",
     outcome:
       "Routine CRM workflows run agent-driven, and new contacts populate themselves straight from a photo of a business card.",
-    tech: ["Python", "Flask", "PostgreSQL", "REST API", "MCP", "Qwen3 (local)", "Vision model"],
+    tech: ["Python", "Flask", "PostgreSQL", "REST API", "MCP", "Local inferencing", "Vision model"],
     confidential: false,
   },
   {
@@ -67,7 +66,7 @@ export const labShowcases: CaseStudy[] = [
     client: "Logic Data Solutions lab",
     headlineMetric: "Always-on agents running 24/7",
     summary:
-      "Production-minded agent operations: always-on agents in isolated environments, with high-frequency work deliberately moved off the model for reliability and cost.",
+      "Production-minded agent operations: always-on agents in isolated environments, with high-frequency task components codified in Python and n8n for reliability and cost.",
     problem:
       "Demonstrate production-minded agent operations, not just prototypes.",
     approach:
@@ -80,25 +79,6 @@ export const labShowcases: CaseStudy[] = [
     confidential: false,
   },
   {
-    slug: "rag-chatbot-charter-school",
-    title: "Production RAG chatbot (charter school)",
-    track: "ai",
-    type: "lab-showcase",
-    client: "Colorado charter school",
-    headlineMetric: "Instant, grounded answers to school-policy questions",
-    summary:
-      "A production retrieval chatbot that answers policy questions strictly from the school's own documents.",
-    problem:
-      "Staff and families needed fast, accurate answers from a body of school policy documents.",
-    approach:
-      "A retrieval pipeline grounded strictly in the school's own documents.",
-    whatWeBuilt: "A production RAG chatbot for policy Q&A.",
-    outcome:
-      "Staff and families get instant, document-grounded answers instead of digging through policy PDFs.",
-    tech: ["Python", "LangChain", "LangFlow", "ChromaDB", "pgvector", "Gemini", "Gradio"],
-    confidential: false,
-  },
-  {
     slug: "edge-computer-vision",
     title: "Edge computer vision",
     track: "ai",
@@ -106,59 +86,69 @@ export const labShowcases: CaseStudy[] = [
     client: "Logic Data Solutions lab",
     headlineMetric: "Real-time detection on repurposed edge hardware",
     summary:
-      "Real-time object detection running on constrained hardware, with alerting and a fine-tuning pipeline for domain accuracy.",
+      "Real-time object detection running on constrained edge hardware, with alerting.",
     problem:
       "Run reliable object detection on constrained hardware, with alerting.",
     approach:
-      "Applied vision inference at the edge, plus a fine-tuning pipeline for domain accuracy.",
+      "Applied YOLO vision inference at the edge for real-time detection with alerting.",
     whatWeBuilt:
-      "A real-time YOLO-based detection system on a repurposed mobile device with Telegram alerting, and a YOLO11s fine-tuning pipeline.",
+      "A real-time YOLO-based detection system running on a repurposed Android device via Termux, with Telegram alerting.",
     outcome:
-      "Reliable real-time detection on repurposed hardware, tuned to the objects that actually matter for the use case.",
-    tech: ["Python", "PyTorch", "YOLO / YOLO11s", "Google Colab"],
+      "Reliable real-time detection on repurposed hardware, alerting on the objects that actually matter for the use case.",
+    tech: ["Python", "YOLO", "Android", "Termux"],
+    confidential: false,
+  },
+  {
+    slug: "vision-model-fine-tuning",
+    title: "Fine-tuning a vision model for domain accuracy",
+    track: "ai",
+    type: "lab-showcase",
+    client: "Logic Data Solutions lab",
+    headlineMetric: "Detection accuracy nearly tripled with fine-tuning",
+    summary:
+      "Off-the-shelf vision models see broad, generic categories. We fine-tuned a YOLO model to reliably tell apart specific wildlife species, and detection accuracy climbed from 0.32 to 0.87 mAP over training. The same technique is how you build an automated visual quality check, tuned to the exact defects or parts your business cares about.",
+    problem:
+      "Generic vision models recognize broad categories, but real business use, like an automated quality check on a line, depends on a model reliably spotting the specific things that matter to you, which a general model was never trained to see.",
+    approach:
+      "We used a wildlife species dataset as a stand-in domain and fine-tuned a YOLO model on it, to measure exactly what it takes to move a general detector to expert-level accuracy on a narrow, specialized set of classes.",
+    whatWeBuilt:
+      "A fine-tuning pipeline (Python, YOLO11s, trained in Google Colab) that adapts a general detector into a specialist, plus documentation of the data, labeling, and training effort each step requires.",
+    outcome:
+      "Over training, detection accuracy (mAP@50) rose from 0.32 to 0.87, with precision at 0.85 and recall at 0.80: expert-level on a narrow set of classes. The real value is the transfer: the same pipeline retargets to an AI quality check, teaching a model to catch the specific defects or parts a business needs inspected, instead of settling for generic detection.",
+    tech: ["Python", "YOLO11s", "PyTorch", "Google Colab"],
     confidential: false,
   },
 ];
 
 /*
-  Client outcomes. Two slots are intentional PLACEHOLDERS (empty scaffolds) for
-  stories still to be written/cleared; the third is the Ball Aerospace story,
-  shared with the client's permission (named testimonial from Mark Veile).
+  Client outcomes. Lead with real, cleared stories: the multilingual charter
+  school RAG assistant (AI track) and the Ball Aerospace data-virtualization
+  engagement (enterprise track, named with the client's permission - testimonial
+  from Mark Veile). One trailing slot is an intentional PLACEHOLDER (empty
+  scaffold) for the next story to be written/cleared.
   Denodo is named in body/testimonial text only - no logo, no implication that
   Trent represents Denodo (CLAUDE.md hard rules).
 */
 export const clientOutcomes: CaseStudy[] = [
   {
-    slug: "client-outcome-placeholder-1",
-    title: "",
-    track: "enterprise-data",
+    slug: "rag-chatbot-charter-school",
+    title: "A multilingual policy assistant for a charter school",
+    track: "ai",
     type: "client-outcome",
-    client: "",
-    headlineMetric: "",
-    summary: "",
-    problem: "",
-    approach: "",
-    whatWeBuilt: "",
-    outcome: "",
-    tech: [],
-    confidential: true,
-    placeholder: true,
-  },
-  {
-    slug: "client-outcome-placeholder-2",
-    title: "",
-    track: "enterprise-data",
-    type: "client-outcome",
-    client: "",
-    headlineMetric: "",
-    summary: "",
-    problem: "",
-    approach: "",
-    whatWeBuilt: "",
-    outcome: "",
-    tech: [],
-    confidential: true,
-    placeholder: true,
+    client: "Colorado charter school",
+    headlineMetric: "Fewer front-office calls, answers in every family's language",
+    summary:
+      "A charter school's small front office was answering the same policy questions over and over, many from families who spoke little English. We built a multilingual assistant that replies strictly from the school's own documents, so staff field fewer calls and every family gets a clear answer in their own language.",
+    problem:
+      "A Colorado charter school's front-office staff spent hours answering the same questions about policies, enrollment, schedules, and procedures, all buried across a large body of documents. For the school's many families who speak little or no English, getting a clear answer often meant a phone call, a translated note, or a trip to the office.",
+    approach:
+      "We built a retrieval chatbot grounded strictly in the school's own documents, so every answer traces back to real policy and nothing is invented. Because it understands and responds in the family's own language, the same assistant serves English- and non-English-speaking families alike.",
+    whatWeBuilt:
+      "A production RAG assistant over the school's policy and procedure documents, with multilingual question-and-answer support. Families ask in plain language, in whatever language they are comfortable with, and get accurate answers drawn only from official school documents.",
+    outcome:
+      "Routine policy questions are answered instantly, at any hour, so front-office staff field noticeably fewer repetitive calls. The multilingual support has been especially valuable for the school's non-English-speaking families, who can now get clear, accurate answers on their own, without waiting on a translator or a callback.",
+    tech: ["Python", "LangChain", "LangFlow", "ChromaDB", "pgvector", "Gemini", "Gradio"],
+    confidential: false,
   },
   {
     slug: "ball-aerospace-data-virtualization",
@@ -180,5 +170,21 @@ export const clientOutcomes: CaseStudy[] = [
     tech: ["Denodo", "Data virtualization"],
     confidential: false,
     testimonialSlug: "mark-veile-ball",
+  },
+  {
+    slug: "client-outcome-placeholder-1",
+    title: "",
+    track: "enterprise-data",
+    type: "client-outcome",
+    client: "",
+    headlineMetric: "",
+    summary: "",
+    problem: "",
+    approach: "",
+    whatWeBuilt: "",
+    outcome: "",
+    tech: [],
+    confidential: true,
+    placeholder: true,
   },
 ];
