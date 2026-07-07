@@ -31,7 +31,7 @@ const services = [
   },
   {
     title: "Denodo for AI",
-    body: "Full-stack Denodo AI SDK deployments: vector store, metadata indexing, multi-LLM integration (cloud and on-prem), DeepQuery, and both MCP server variants, Platform MCP and AI SDK MCP.",
+    body: "Full-stack Denodo AI SDK deployments: vector store, metadata indexing, multi-LLM integration (cloud and on-prem), DeepQuery, MCP, and Custom Agents.",
   },
   {
     title: "Integration & performance",
@@ -126,6 +126,21 @@ export default function EnterpriseDataPage() {
               governance and security built in. It&rsquo;s the foundation that
               makes enterprise AI accurate, explainable, and safe.
             </p>
+            <p className="text-lg leading-relaxed text-mist">
+              A unified layer is only half of it. AI is only as good as the
+              metadata that describes the data, and a model can generate the shape
+              of that metadata: tables, columns, relationships. What it cannot
+              generate is your vocabulary, the acronym only finance recognizes or
+              the term that means something different here than anywhere else. That
+              has to come from the business, on purpose, and it needs a place to
+              live. This is where Denodo is the best in the business: its data
+              virtualization gives you unified, real-time access to every source,
+              and its semantic layer gives your language a home, defined once and
+              supplied as trusted context to every AI application you build. Skip
+              that step and you
+              haven&rsquo;t built an assistant, you&rsquo;ve built a confident
+              stranger standing next to your data.
+            </p>
           </div>
         </Container>
       </section>
@@ -173,47 +188,19 @@ export default function EnterpriseDataPage() {
             </h2>
             <p className="text-lg leading-relaxed text-mist">
               We are a <strong className="text-offwhite">Denodo partner</strong>{" "}
-              and an authorized{" "}
-              <strong className="text-offwhite">
-                subcontractor that collaborates directly with Denodo&rsquo;s AI
-                engineering team
-              </strong>
-              , working at the leading edge of the platform&rsquo;s AI features:
-              AI SDK, DeepQuery, and MCP. We extend the open-source AI SDK at the
-              source level (for example, adding OAuth for secure enterprise
-              chatbot deployments), so you&rsquo;re not limited to what&rsquo;s
+              and an authorized subcontractor that collaborates directly with
+              Denodo&rsquo;s AI engineering team, working at the leading edge of
+              the platform&rsquo;s AI features: AI SDK, DeepQuery, and MCP. We
+              extend the open-source AI SDK at the source level, customizing it to
+              fit your specific needs, so you&rsquo;re not limited to what&rsquo;s
               available out of the box.
             </p>
           </div>
         </Container>
       </section>
 
-      {/* 5.6 Heritage / credibility */}
-      <section className="section-grad border-y border-ink-800 bg-ink-900">
-        <Container className="max-w-3xl py-16 lg:py-20">
-          <div className="flex flex-col gap-5">
-            <SectionLabel>Heritage</SectionLabel>
-            <p className="text-lg leading-relaxed text-mist">
-              Our principal served as enterprise architect and administrator for
-              the Denodo Platform at a major aerospace company: owning design,
-              installation, upgrades, and roadmap; delivering a
-              proof-of-concept that launched a dedicated Data Science and Data
-              Engineering organization; and scaling the platform community from
-              3 to 30+ users through governed citizen development and formal
-              training.
-            </p>
-            <p className="text-lg leading-relaxed text-mist">
-              For programs that need a larger delivery team, we scale up through
-              partnerships with established consulting firms: a boutique practice
-              can staff enterprise-scale work without diluting the senior
-              ownership, or handing your architecture to a rotating bench.
-            </p>
-          </div>
-        </Container>
-      </section>
-
       {/* 5.7 Proof - card layout final; contents are an open action item */}
-      <section className="section-grad">
+      <section className="section-grad border-y border-ink-800 bg-ink-900">
         <Container className="py-16 lg:py-24">
           <div className="flex max-w-3xl flex-col gap-4">
             <SectionLabel>Proof</SectionLabel>
