@@ -52,10 +52,10 @@ export const labShowcases: CaseStudy[] = [
     approach:
       "Built from the ground up for agentic workloads, with a clean API and an MCP layer designed for agents first.",
     whatWeBuilt:
-      "A full-stack CRM (Python, Flask, PostgreSQL) with a REST API and a custom MCP server. Local agents automate day-to-day workflows; a vision pipeline reads business-card images and auto-populates contacts. Built end to end using Claude Code.",
+      "A full-stack CRM (Python, Flask, PostgreSQL) with a REST API and a custom MCP server. Overnight, local agents draft the day's outreach; each morning the principal reviews, edits, and sends. A vision pipeline reads business-card images and auto-populates contacts, and an installable progressive web app puts the whole system on a mobile phone. Self-hosted with its own CI/CD pipeline, built end-to-end in-house, co-authored with Claude Code.",
     outcome:
-      "Routine CRM workflows run agent-driven, and new contacts populate themselves straight from a photo of a business card.",
-    tech: ["Python", "Flask", "PostgreSQL", "REST API", "MCP", "Local inferencing", "Vision model"],
+      "It runs the consultancy's pipeline day to day: no lead goes cold, every contact gets a timely touch, and new contacts populate themselves straight from a photo of a business card. The whole system runs locally, with no third-party SaaS.",
+    tech: ["Python", "Flask", "PostgreSQL", "REST API", "MCP", "PWA", "Local inferencing", "Vision model"],
     confidential: false,
   },
   {
@@ -121,15 +121,37 @@ export const labShowcases: CaseStudy[] = [
 ];
 
 /*
-  Client outcomes. Lead with real, cleared stories: the multilingual charter
-  school RAG assistant (AI track) and the Ball Aerospace data-virtualization
-  engagement (enterprise track, named with the client's permission - testimonial
-  from Mark Veile). One trailing slot is an intentional PLACEHOLDER (empty
-  scaffold) for the next story to be written/cleared.
+  Client outcomes. Real, cleared stories: the multilingual charter school RAG
+  assistant (AI track), the Ball Aerospace data-virtualization engagement
+  (enterprise track, named with the client's permission - testimonial from Mark
+  Veile), a Big Ten university's production Denodo rollout (enterprise track,
+  anonymized), and an oil & gas governed-RAG build as a Denodo subcontractor
+  (enterprise track, anonymized). Anonymized stories carry no testimonial yet;
+  link one via testimonialSlug when a quote is cleared.
   Denodo is named in body/testimonial text only - no logo, no implication that
   Trent represents Denodo (CLAUDE.md hard rules).
 */
 export const clientOutcomes: CaseStudy[] = [
+  {
+    slug: "oil-gas-governed-rag",
+    title: "A trustworthy query chatbot, governed at the source",
+    track: "enterprise-data",
+    type: "client-outcome",
+    client: "Oil & gas enterprise",
+    headlineMetric: "Data governance moved out of prompts, into Denodo",
+    summary:
+      "An oil and gas enterprise was building a query RAG chatbot that leaned on system prompts for both security and query writing. We re-based it on governed data: security enforced inside Denodo, and retrieval driven by semantic search over real metadata, so answers are trustworthy and hold up when the data model changes.",
+    problem:
+      "An oil and gas enterprise, already a Denodo customer, was building a query RAG chat system from scratch. Data governance was enforced through system prompts, and query writing relied on prescriptive, hand-written prompt examples. The result was rigid and unpredictable: no one could say with confidence what the LLM would do when a question arrived phrased differently than the examples, and using prompts as the security boundary left real risk that data could leak.",
+    approach:
+      "Working as a Denodo subcontractor, we moved the two hardest responsibilities off the prompt and onto the data foundation. Security became Denodo's job, enforced in the governed layer rather than requested of the model, and retrieval became a matter of meaning rather than matching pre-written phrasings.",
+    whatWeBuilt:
+      "We moved data governance and security into Denodo, so the customer knows with certainty that data cannot be leaked, regardless of how the model behaves. We then enriched Denodo with business and technical metadata and loaded both into a vector database, so the LLM runs semantic search against the user's actual question and retrieves the right context to answer reliably.",
+    outcome:
+      "The chatbot now returns reliable results grounded in governed data, and the security boundary no longer depends on prompt wording. Because retrieval is driven by metadata and meaning, a change in the data model no longer means tens of hours spent rewriting prompts: the system adapts on its own.",
+    tech: ["Denodo", "Data virtualization", "RAG", "Vector database", "Semantic search", "LLM"],
+    confidential: true,
+  },
   {
     slug: "rag-chatbot-charter-school",
     title: "A multilingual policy assistant for a charter school",
@@ -151,6 +173,26 @@ export const clientOutcomes: CaseStudy[] = [
     confidential: false,
   },
   {
+    slug: "big-ten-university-denodo",
+    title: "Taking Denodo to production at university scale",
+    track: "enterprise-data",
+    type: "client-outcome",
+    client: "Big Ten university",
+    headlineMetric: "Hundreds of virtual databases, thousands of users",
+    summary:
+      "A Big Ten university had purchased Denodo and needed to get it fully production-ready. We helped take it live and keep it there: hundreds of virtual databases now serve thousands of users, unifying on-prem systems and every major cloud in one governed layer.",
+    problem:
+      "The university had invested in Denodo but needed help getting the platform fully ready for an enterprise-wide production rollout. Its data lived everywhere: on-prem systems, Snowflake, Microsoft Fabric, Oracle Cloud, AWS, Azure, and GCP, plus a range of SaaS applications, each with its own authentication scheme and data structure.",
+    approach:
+      "We treated Denodo as the single governed access layer over the entire estate, standing up reliable, well-modeled connections to each source and solving the awkward SaaS integrations case by case. Every API was different: authentication, API type (some REST, some OData), and paging all varied from one vendor to the next, calling for a different integration and scaling strategy each time.",
+    whatWeBuilt:
+      "Integrations spanning the university's full data estate: on-prem sources, Snowflake, Microsoft Fabric, Oracle Cloud, AWS, Azure, and GCP databases, plus a handful of SaaS APIs with non-standard authentication and data structures. We also built an automated system that propagates updates from one of their largest source systems, which carries over 12,000 base views, so schema changes flow through on their own. That work alone was projected to save hundreds of hours of manual effort a year, and it lifted a real weight off the support team, who had found keeping that system current a daunting task and no longer have to worry about it.",
+    outcome:
+      "Denodo is fully in production: hundreds of virtual databases serving thousands of users across the university. It has reshaped how the institution thinks about data management, becoming a go-to platform they expect to keep growing. Two years in, we remain their partner of choice for their toughest Denodo challenges.",
+    tech: ["Denodo", "Data virtualization", "Snowflake", "Microsoft Fabric", "Oracle Cloud", "AWS", "Azure", "GCP", "SaaS APIs"],
+    confidential: true,
+  },
+  {
     slug: "ball-aerospace-data-virtualization",
     title: "Data virtualization for a new Data Science organization",
     track: "enterprise-data",
@@ -170,21 +212,5 @@ export const clientOutcomes: CaseStudy[] = [
     tech: ["Denodo", "Data virtualization"],
     confidential: false,
     testimonialSlug: "mark-veile-ball",
-  },
-  {
-    slug: "client-outcome-placeholder-1",
-    title: "",
-    track: "enterprise-data",
-    type: "client-outcome",
-    client: "",
-    headlineMetric: "",
-    summary: "",
-    problem: "",
-    approach: "",
-    whatWeBuilt: "",
-    outcome: "",
-    tech: [],
-    confidential: true,
-    placeholder: true,
   },
 ];

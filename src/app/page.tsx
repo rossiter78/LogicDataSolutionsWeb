@@ -52,9 +52,9 @@ const capabilities = [
 ];
 
 const stats = [
-  { value: "Multi-day analysis → minutes", label: "enterprise data delivery" },
-  { value: "~$800K", label: "redevelopment avoided" },
-  { value: "3 → 30+", label: "platform users scaled" },
+  { value: "Outreach drafted before I wake up", label: "agentic CRM, running nightly" },
+  { value: "No lead goes cold", label: "every contact kept warm" },
+  { value: "100% local, $0 in SaaS", label: "no third-party CRM, your data stays home" },
 ];
 
 const whyUs = [
@@ -216,8 +216,9 @@ export default function Home() {
               <p className="leading-relaxed text-mist">
                 A full-stack CRM built from the ground up for agentic workloads:
                 local AI agents run day-to-day workflows end to end through a
-                custom MCP server, and a vision pipeline reads business cards
-                straight into contacts.
+                custom MCP server, a vision pipeline reads business cards
+                straight into contacts, and a mobile app puts it all in your
+                pocket.
               </p>
               <p className="mt-auto pt-2 font-display text-sm font-bold text-red-bright">
                 Read the case study →

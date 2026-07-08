@@ -44,29 +44,30 @@ const services = [
 ];
 
 /*
-  Proof cards - layout is final; the anonymized outcome stories that fill them
-  are an open action item (Trent supplies the metrics). Each card links out to
-  /work per spec §5.7 / §6.2. Placeholder copy below is intentionally generic
-  and must be replaced before launch.
+  Proof cards - layout is final. All three carry real, anonymized engagements:
+  Aerospace (Ball data-virtualization build), Higher education (Big Ten
+  university production Denodo rollout), and Oil & gas (Denodo-for-AI enablement,
+  governance moved into Denodo + metadata into a vector store for governed RAG).
+  Each card links out to /work per spec §5.7 / §6.2.
 */
 const proofCards = [
   {
     sector: "Aerospace",
-    metric: "Metric to come",
+    metric: "Cornerstone of a new Data Science org",
     placeholder:
-      "Governed Denodo platform build-out and roadmap ownership at a major aerospace manufacturer. Anonymized outcome and numbers pending.",
+      "When a major aerospace manufacturer launched a new Data Science organization, its data warehouse could not feasibly serve the breadth of data the team needed. A governed Denodo virtualization layer became the foundation, unifying enterprise data in real time without copying it.",
   },
   {
-    sector: "Federal / regulated",
-    metric: "Metric to come",
+    sector: "Higher education",
+    metric: "Production Denodo at university scale",
     placeholder:
-      "Secure, real-time data access layer under full governance for a regulated enterprise. Anonymized outcome and numbers pending.",
+      "A Big Ten university needed Denodo taken from purchase to full production. It now unifies on-prem systems and every major cloud in one governed layer: hundreds of virtual databases serving thousands of users, and still growing.",
   },
   {
-    sector: "Enterprise AI enablement",
-    metric: "Metric to come",
+    sector: "Oil & gas",
+    metric: "Governance in Denodo, not in the prompt",
     placeholder:
-      "Denodo-for-AI enablement (AI SDK, DeepQuery, and MCP) connecting an enterprise LLM to live governed data. Anonymized outcome and numbers pending.",
+      "A Denodo customer in oil and gas was building a query RAG chatbot that leaned on system prompts for both data governance and query writing: rigid, and unpredictable when a question was phrased in a new way. As a Denodo subcontractor, we moved security into Denodo, so they know with certainty data cannot leak, and loaded business and technical metadata into a vector database for semantic search. Answers are reliable now, and a change in the data model no longer costs tens of hours of prompt tuning.",
   },
 ];
 

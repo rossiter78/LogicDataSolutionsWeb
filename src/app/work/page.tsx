@@ -66,7 +66,7 @@ export default function WorkPage() {
               permission; others are anonymized to respect confidentiality.
             </p>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
             {clientOutcomes.map((study) => (
               <CaseStudyCard key={study.slug} study={study} />
             ))}
