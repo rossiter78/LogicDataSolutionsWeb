@@ -297,30 +297,30 @@ function GraphicApp() {
         API · MCP
       </text>
 
-      {/* your team */}
-      <g stroke="var(--color-titanium)" strokeWidth="1.5" fill="var(--color-ink-800)">
+      {/* your team, dropped to sit level with the API/MCP box */}
+      <g stroke="var(--color-titanium)" strokeWidth="1.5" fill="var(--color-ink-800)" transform="translate(0 16)">
         <circle cx="55" cy="200" r="9" />
         <path d="M40 226c2-9 8-13 15-13s13 4 15 13" fill="none" />
       </g>
-      <text x="55" y="250" textAnchor="middle" style={label}>
+      <text x="55" y="262" textAnchor="middle" style={label}>
         Your team
       </text>
 
-      {/* AI agents */}
-      <g transform="translate(345 209)">
-        <circle r="13" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
-        <g stroke="var(--color-offwhite)" strokeWidth="1.3" strokeLinecap="round">
-          <path d="M0 -6v3M0 3v3M-6 0h3M3 0h3" />
-        </g>
-        <circle r="2" fill="var(--color-red)" />
+      {/* AI agents: the same "The AI" box used in the RAG graphic, dropped
+          to sit level with the API/MCP box */}
+      <g transform="translate(0 14)">
+        <rect x="328" y="192" width="34" height="34" rx="7" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
+        <image href="/icons/claude-spark.png" x="332" y="196" width="14" height="14" />
+        <image href="/icons/openai-mark.png" x="345" y="209" width="14" height="14" />
       </g>
-      <text x="345" y="250" textAnchor="middle" style={label}>
+      <text x="345" y="262" textAnchor="middle" style={label}>
         AI agents
       </text>
 
-      {/* both sides operate it */}
-      <circle cx="72" cy="223" r="4" fill="var(--color-red)" className="sg-travel" style={v({ "--tx": "34px", "--dur": "3s" })} />
-      <circle cx="328" cy="223" r="4" fill="var(--color-red)" className="sg-travel" style={v({ "--tx": "-34px", "--dur": "3s", "--delay": "1.5s" })} />
+      {/* both sides operate it: dots leave the edge of each icon and vanish at
+          the near edge of the API/MCP box (y 223: the box's vertical center) */}
+      <circle cx="68" cy="223" r="4" fill="var(--color-red)" className="sg-travel" style={v({ "--tx": "42px", "--dur": "2s" })} />
+      <circle cx="328" cy="223" r="4" fill="var(--color-red)" className="sg-travel" style={v({ "--tx": "-38px", "--dur": "2s", "--delay": "1s" })} />
     </svg>
   );
 }
@@ -448,24 +448,35 @@ function GraphicTraining() {
   ];
   return (
     <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: clear AI understanding flowing from one source to a whole team, whose capability grows.">
-      {/* bulb */}
-      <g transform="translate(200 58)">
-        <circle
-          r="17"
-          fill="var(--color-ink-800)"
-          stroke="var(--color-titanium)"
-          strokeWidth="1.5"
-        />
-        <path d="M-5 24h10M-3.5 30h7" stroke="var(--color-titanium)" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M0 -8v6M-5 2h10M-3 6c0 3 1 5 3 6 2-1 3-3 3-6" fill="none" stroke="var(--color-red-bright)" strokeWidth="1.4" strokeLinecap="round" />
-        <g
-          stroke="var(--color-red-bright)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          className="sg-glow"
-          style={v({ "--min": "0.25", "--dur": "3s" })}
-        >
-          <path d="M0 -28v-6M-20 -20l-4-4M20 -20l4-4M-28 0h-6M28 0h6" />
+      {/* the source: a small, quiet AI brain drawn inline. Titanium structure
+          keeps it subtle; a right-side circuit in red is the only accent. Thin
+          "a-ha" spokes radiate from the top, like a moment of understanding. */}
+      <g transform="translate(200 56)">
+        {/* spokes fade slowly in and out, like a bulb catching an idea */}
+        <g stroke="var(--color-red-bright)" strokeWidth="1" strokeLinecap="round" className="sg-glow" style={v({ "--min": "0.1", "--dur": "4.5s" })}>
+          <path d="M0 -26v-8M-12 -23l-4-7M12 -23l4-7M-22 -16l-7-4M22 -16l7-4" />
+        </g>
+        <g fill="none" stroke="var(--color-titanium)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+          {/* central spine + left hemisphere */}
+          <path d="M0 -17V17" />
+          <path d="M0 -17C-9 -18 -16 -12 -15 -5C-21 -4 -21 3 -15 4C-16 11 -9 17 -1 16" />
+          {/* left folds (gyri) */}
+          <path d="M-2 -13C-7 -13 -9 -10 -6 -8" />
+          <path d="M-3 -9C-8 -8 -9 -4 -5 -2" />
+          <path d="M-9 -3C-13 -2 -13 2 -9 3" />
+          <path d="M-2 3C-7 4 -8 8 -4 9" />
+          <path d="M-1 11C-6 12 -6 15 -3 14" />
+          {/* right-side circuit branches */}
+          <path d="M0 -14H7L10 -17" />
+          <path d="M0 -6H9" />
+          <path d="M0 2H13" />
+          <path d="M0 10H8L12 14" />
+        </g>
+        <g fill="var(--color-red)">
+          <circle cx="11" cy="-18" r="2.2" />
+          <circle cx="11" cy="-6" r="2.4" />
+          <circle cx="15" cy="2" r="2.4" />
+          <circle cx="12" cy="14" r="2.4" />
         </g>
       </g>
 

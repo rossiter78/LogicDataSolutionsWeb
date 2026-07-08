@@ -93,7 +93,7 @@ export const services: Service[] = [
       "Full-stack applications built for both your people and your AI agents to use.",
     paras: [
       "Off-the-shelf tools force you to work the way they were built. When you need something purpose-made, we build it, using agentic development tools to move fast without cutting corners on architecture.",
-      "We recently built a complete CRM this way: Python and Flask, a PostgreSQL backend, a REST API layer, and a custom MCP server, designed from the ground up so both humans and AI agents can operate it. It even reads business cards with a vision model and fills in the contact record for you.",
+      "We build custom, AI-enabled applications in popular languages like Python and Next.js, deployed to your own infrastructure or to the cloud provider you already trust: Azure, AWS, or Cloudflare. That includes multi-modal AI applications that work across text, images, and documents, so your software can see and read, not just chat.",
     ],
     youGet: [
       "A custom, AI-native application built around your actual workflow",
