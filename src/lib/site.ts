@@ -5,10 +5,8 @@ export const site = {
   email: "BenjaminRossiter@LogicDataSolutions.com",
   linkedin:
     "https://www.linkedin.com/in/benjamin-trent-rossiter-mba-0157945/",
-  logoIcon:
-    "https://logicdatasolutions.com/wp-content/uploads/2026/02/LogoOnly.svg",
-  logoFull:
-    "https://logicdatasolutions.com/wp-content/uploads/2026/02/Color-logo-no-background.svg",
+  logoIcon: "/icons/LDSLogoOnly.svg",
+  logoFull: "/icons/LDSColorLogoNoBackground.svg",
   // Cal.com event slug backing the /contact booking embed. Public (it's visible
   // in the booking page source), so it's committed as the default here rather
   // than required as a build secret. NEXT_PUBLIC_CAL_LINK overrides it - e.g. to
