@@ -90,6 +90,33 @@ export const testimonials: Testimonial[] = [
       "Working with Trent has been a wonderful experience. His technical expertise, positive attitude, responsiveness, and willingness to help make him an invaluable partner. I am incredibly grateful for everything he does to support our team, and I sincerely appreciate having the opportunity to work with him.",
     ],
   },
+  {
+    slug: "eric-wilka",
+    track: "enterprise-data",
+    tag: "Data virtualization",
+    featured: true,
+    name: "Eric Wilka",
+    title: "Managing Partner and Chief Data Officer",
+    org: "",
+    pull: "Trent expertly worked through dozens of data sources to organize a single virtual layer to serve the whole enterprise, patiently answering every question and consistently solving every challenge along the way.",
+    full: [
+      "There were dozens of legacy datasets, databases, and new warehouses with thousands of users querying each individually. Trent, from Logic Data Solutions, expertly worked through the data sources to organize a single virtual layer to serve the whole enterprise. Trent patiently answered every question and consistently solved every challenge brought up along the way. The project ended not only with the current virtualization layer set, but helped outline future phases and integrations. Working with Trent was a wonderful experience and I'm looking forward to more in the future.",
+    ],
+  },
+  {
+    slug: "norma-bromer-crown-pointe",
+    track: "ai",
+    tag: "AI assistant",
+    featured: true,
+    name: "Norma Bromer",
+    title: "Community Liaison",
+    org: "Crown Pointe Academy",
+    pull: "It has been a good tool for our community. I was able to refer our Spanish-speaking families to it, and they could access the information they needed in their own language.",
+    full: [
+      "The chatbot created for Crown Pointe Academy has been very helpful and effective. As the community liaison for the school, working every day with our families, I can say it has been a good tool for our community.",
+      "It has been especially valuable for our Spanish-speaking families. I was able to refer them to it, and they could access the information they needed in their native language, easily and on their own.",
+    ],
+  },
 ];
 
 /* Quotes that appear in the home + About "What clients say" grids. */

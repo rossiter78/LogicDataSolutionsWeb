@@ -4,7 +4,6 @@ import Container from "@/components/Container";
 import CtaButton from "@/components/CtaButton";
 import SectionLabel from "@/components/SectionLabel";
 import TestimonialCard from "@/components/TestimonialCard";
-import { site } from "@/lib/site";
 import { featuredTestimonials } from "@/lib/testimonials";
 
 export const metadata: Metadata = {
@@ -171,16 +170,6 @@ export default function AboutPage() {
             {featuredTestimonials.map((t) => (
               <TestimonialCard key={t.slug} testimonial={t} surface="base" />
             ))}
-          </div>
-          <div className="mt-8">
-            <a
-              href={site.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-display text-sm font-bold text-red-bright transition-colors hover:text-offwhite"
-            >
-              More recommendations on LinkedIn →
-            </a>
           </div>
         </Container>
       </section>

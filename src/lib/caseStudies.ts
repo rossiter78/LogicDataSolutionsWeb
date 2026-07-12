@@ -121,9 +121,10 @@ export const labShowcases: CaseStudy[] = [
 ];
 
 /*
-  Client outcomes. Real, cleared stories: the multilingual charter school RAG
-  assistant (AI track), the Ball Aerospace data-virtualization engagement
-  (enterprise track, named with the client's permission - testimonial from Mark
+  Client outcomes. Real, cleared stories: the Crown Pointe Academy multilingual
+  RAG assistant (AI track, named with permission - testimonial from Norma
+  Bromer), the Ball Aerospace data-virtualization engagement (enterprise track,
+  named with the client's permission - testimonial from Mark
   Veile), a Big Ten university's production Denodo rollout (enterprise track,
   anonymized), and an oil & gas governed-RAG build as a Denodo subcontractor
   (enterprise track, anonymized). Anonymized stories carry no testimonial yet;
@@ -154,15 +155,15 @@ export const clientOutcomes: CaseStudy[] = [
   },
   {
     slug: "rag-chatbot-charter-school",
-    title: "A multilingual policy assistant for a charter school",
+    title: "A multilingual policy assistant for Crown Pointe Academy",
     track: "ai",
     type: "client-outcome",
-    client: "Colorado charter school",
+    client: "Crown Pointe Academy",
     headlineMetric: "Fewer front-office calls, answers in every family's language",
     summary:
-      "A charter school's small front office was answering the same policy questions over and over, many from families who spoke little English. We built a multilingual assistant that replies strictly from the school's own documents, so staff field fewer calls and every family gets a clear answer in their own language.",
+      "Crown Pointe Academy's small front office was answering the same policy questions over and over, many from families who spoke little English. We built a multilingual assistant that replies strictly from the school's own documents, so staff field fewer calls and every family gets a clear answer in their own language.",
     problem:
-      "A Colorado charter school's front-office staff spent hours answering the same questions about policies, enrollment, schedules, and procedures, all buried across a large body of documents. For the school's many families who speak little or no English, getting a clear answer often meant a phone call, a translated note, or a trip to the office.",
+      "Crown Pointe Academy, a Colorado charter school, had front-office staff spending hours answering the same questions about policies, enrollment, schedules, and procedures, all buried across a large body of documents. For the school's many families who speak little or no English, getting a clear answer often meant a phone call, a translated note, or a trip to the office.",
     approach:
       "We built a retrieval chatbot grounded strictly in the school's own documents, so every answer traces back to real policy and nothing is invented. Because it understands and responds in the family's own language, the same assistant serves English- and non-English-speaking families alike.",
     whatWeBuilt:
@@ -171,6 +172,7 @@ export const clientOutcomes: CaseStudy[] = [
       "Routine policy questions are answered instantly, at any hour, so front-office staff field noticeably fewer repetitive calls. The multilingual support has been especially valuable for the school's non-English-speaking families, who can now get clear, accurate answers on their own, without waiting on a translator or a callback.",
     tech: ["Python", "LangChain", "LangFlow", "ChromaDB", "pgvector", "Gemini", "Gradio"],
     confidential: false,
+    testimonialSlug: "norma-bromer-crown-pointe",
   },
   {
     slug: "big-ten-university-denodo",
