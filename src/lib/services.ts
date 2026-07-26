@@ -18,7 +18,7 @@ export type Service = {
 export const services: Service[] = [
   {
     id: "assessment",
-    title: "First AI Win Assessment",
+    title: "First AI Win Blueprint",
     tagline: "The first win that gets everything else moving.",
     paras: [
       "You know AI belongs in your business somewhere. What you do not have is a first move, so nothing starts. Or you tried something already, and it did not land.",

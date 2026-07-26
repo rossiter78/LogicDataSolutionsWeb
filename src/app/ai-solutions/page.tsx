@@ -58,8 +58,8 @@ export default function AiSolutionsPage() {
               Below is what you can hire us to do next.
             </p>
             <p className="text-lg leading-relaxed text-mist">
-              Every offering begins with a fixed-scope conversation about your
-              goals. No 20-person team, no waiting on a stack of tickets.
+              Every offering begins with a conversation about your goals. No
+              20-person team, no waiting on a stack of tickets.
               Enterprise-grade rigor at the speed a growing business actually
               needs.
             </p>
