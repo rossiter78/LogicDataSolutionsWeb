@@ -293,7 +293,7 @@ export default function Home() {
                 >
                   First AI Win Blueprint
                 </a>{" "}
-                is where we go find it.
+                is where we pin down exactly what to build and what it takes.
               </p>
               <CtaButton href="/contact" className="mt-2">
                 Book your free consultation
