@@ -281,11 +281,12 @@ export default function Home() {
                 Start with a free consultation.
               </h2>
               <p className="max-w-2xl text-lg leading-relaxed text-mist">
-                Not sure where AI fits, or whether your data is ready for it?
-                Bring the fuzzy version. We&rsquo;ll talk through your goals and
-                how your business actually runs, then tell you honestly whether
-                there&rsquo;s something here worth building. No pressure, no
-                obligation. If there is, the{" "}
+                Not sure where AI fits? You don&rsquo;t need to be. Come with no
+                idea at all: if all you know is that AI probably matters for
+                your business, that is enough to start. We&rsquo;ll talk through
+                what you do and how your day actually works, then tell you
+                honestly whether there is something here worth building. No
+                pressure, no obligation. If there is, the{" "}
                 <a
                   href="/ai-solutions#assessment"
                   className="font-semibold text-red-bright hover:text-offwhite"
