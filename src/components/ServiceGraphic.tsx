@@ -15,15 +15,11 @@ const label: CSSProperties = {
 const v = (vars: Record<string, string>) => vars as CSSProperties;
 
 /* 01 - Assessment: your current systems pass through the assessment lens
-   and come out the other side as an ordered, numbered plan. */
+   and come out the other side as one clear first win, live in production.
+   Green here is deliberate: it is the only "systems go" signal on the site. */
 function GraphicAssessment() {
-  const rows = [
-    { y: 106, d: "1s", w1: 52, w2: 36, primary: true },
-    { y: 146, d: "1.25s", w1: 46, w2: 30, primary: false },
-    { y: 186, d: "1.5s", w1: 50, w2: 34, primary: false },
-  ];
   return (
-    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: your current systems and data pass through an assessment lens and come out as an ordered, numbered plan.">
+    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: your current systems and data pass through an assessment lens and come out as one recommended first win, running in production.">
       {/* what you have: slightly askew, unassessed */}
       <g className="sg-fade-in">
         <g transform="rotate(-4 75 96)">
@@ -75,57 +71,36 @@ function GraphicAssessment() {
 
       {/* flow: in one side, out the other */}
       <path d="M142 146h22" stroke="var(--color-ink-600)" strokeWidth="1.5" strokeDasharray="4 5" />
-      <path d="M228 146h36" stroke="var(--color-ink-600)" strokeWidth="1.5" strokeDasharray="4 5" />
-      <path d="M258 141l8 5-8 5" fill="none" stroke="var(--color-ink-600)" strokeWidth="1.5" />
+      <path d="M228 146h28" stroke="var(--color-ink-600)" strokeWidth="1.5" strokeDasharray="4 5" />
+      <path d="M250 141l8 5-8 5" fill="none" stroke="var(--color-ink-600)" strokeWidth="1.5" />
       <circle
         cx="136"
         cy="146"
         r="4"
-        fill="var(--color-red)"
+        fill="var(--color-live)"
         className="sg-travel"
         style={v({ "--tx": "128px", "--dur": "4.5s", "--delay": "1.8s" })}
       />
 
-      {/* your plan: ordered, prioritized */}
+      {/* the first win itself: one thing, built and shipped */}
       <g className="sg-fade-in" style={v({ "--delay": "0.7s" })}>
-        <rect x="272" y="58" width="104" height="176" rx="8" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
-        <path d="M284 78h64" stroke="var(--color-red)" strokeWidth="3" strokeLinecap="round" />
+        <rect x="268" y="126" width="108" height="62" rx="8" fill="var(--color-ink-800)" stroke="var(--color-live)" strokeWidth="2" />
+        <circle cx="294" cy="157" r="13" fill="var(--color-live)" />
+        <path d="m288 157 4 4 7-8" fill="none" stroke="var(--color-offwhite)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="316" y="148" width="48" height="5" rx="2.5" fill="var(--color-ink-600)" />
+        <rect x="316" y="161" width="34" height="5" rx="2.5" fill="var(--color-ink-700)" />
       </g>
-      {rows.map((r, i) => (
-        <g key={r.y} className="sg-fade-in" style={v({ "--delay": r.d })}>
-          {r.primary && (
-            <circle
-              cx="294"
-              cy={r.y}
-              r="14"
-              fill="none"
-              stroke="var(--color-red-bright)"
-              className="sg-glow"
-              style={v({ "--min": "0.12", "--dur": "3.3s", "--delay": "2.5s" })}
-            />
-          )}
-          <circle
-            cx="294"
-            cy={r.y}
-            r="9"
-            fill={r.primary ? "var(--color-red)" : "var(--color-ink-800)"}
-            stroke={r.primary ? "var(--color-red)" : i === 1 ? "var(--color-red)" : "var(--color-titanium)"}
-            strokeWidth="1.6"
-          />
-          <text
-            x="294"
-            y={r.y + 4}
-            textAnchor="middle"
-            style={{ fontFamily: "var(--font-montserrat)", fontSize: "11px", fontWeight: 700, fill: "var(--color-offwhite)" }}
-          >
-            {i + 1}
-          </text>
-          <rect x="310" y={r.y - 4} width={r.w1} height="4" rx="2" fill="var(--color-ink-600)" />
-          <rect x="310" y={r.y + 5} width={r.w2} height="4" rx="2" fill="var(--color-ink-700)" />
-        </g>
-      ))}
+
+      {/* live, not a demo */}
+      <g className="sg-fade-in" style={v({ "--delay": "1.6s" })}>
+        <rect x="278" y="198" width="92" height="22" rx="11" fill="var(--color-ink-900)" stroke="var(--color-ink-600)" strokeWidth="1.2" />
+        <circle cx="292" cy="209" r="3.5" fill="var(--color-live)" />
+        <text x="302" y="213" style={{ ...label, fontSize: "10px" }}>
+          In production
+        </text>
+      </g>
       <text x="324" y="262" textAnchor="middle" style={label}>
-        Your plan
+        Your first win
       </text>
     </svg>
   );
@@ -514,11 +489,88 @@ function GraphicTraining() {
   );
 }
 
+/* 05 - AIDSEF: the AI does the labor on the left, but the merge is a pull
+   request whose checks are green by machinery and whose last gate is a human
+   one, still waiting. The pending ring pulses because it is waiting on you. */
+function GraphicAidsef() {
+  const chips = [
+    { x: 34, y: 96, d: "0s" },
+    { x: 42, y: 130, d: "0.15s" },
+    { x: 34, y: 164, d: "0.3s" },
+  ];
+  const checks = [
+    { y: 120, d: "0.95s", w: 96 },
+    { y: 148, d: "1.2s", w: 78 },
+    { y: 176, d: "1.45s", w: 104 },
+  ];
+  return (
+    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: AI agents do the work on the left, and it arrives as a pull request whose automated checks have passed while the final human approval gate is still open.">
+      {/* the AI doing the labor */}
+      {chips.map((c) => (
+        <g key={c.d} className="sg-fade-in" style={v({ "--delay": c.d })}>
+          <rect x={c.x} y={c.y} width="84" height="26" rx="6" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.3" />
+          <circle cx={c.x + 14} cy={c.y + 13} r="4" fill="var(--color-red)" />
+          <rect x={c.x + 26} y={c.y + 8} width="44" height="4" rx="2" fill="var(--color-ink-600)" />
+          <rect x={c.x + 26} y={c.y + 16} width="30" height="4" rx="2" fill="var(--color-ink-700)" />
+        </g>
+      ))}
+      <text x="76" y="252" textAnchor="middle" style={label}>
+        AI does the labor
+      </text>
+
+      {/* into the pull request */}
+      <path d="M128 143h30" stroke="var(--color-ink-600)" strokeWidth="1.5" strokeDasharray="4 5" />
+      <path d="M152 138l8 5-8 5" fill="none" stroke="var(--color-ink-600)" strokeWidth="1.5" />
+      <circle
+        cx="130"
+        cy="143"
+        r="4"
+        fill="var(--color-red)"
+        className="sg-travel"
+        style={v({ "--tx": "26px", "--dur": "4s", "--delay": "1.2s" })}
+      />
+
+      {/* the pull request: machine checks green, human gate still open */}
+      <g className="sg-fade-in" style={v({ "--delay": "0.55s" })}>
+        <rect x="172" y="62" width="204" height="158" rx="10" fill="var(--color-ink-900)" stroke="var(--color-ink-600)" strokeWidth="1.5" />
+        <path d="M188 96h172" stroke="var(--color-ink-700)" strokeWidth="1.4" />
+        <text x="188" y="88" style={{ ...label, fontSize: "10px", fill: "var(--color-titanium)" }}>
+          Pull request
+        </text>
+      </g>
+      {checks.map((c) => (
+        <g key={c.y} className="sg-fade-in" style={v({ "--delay": c.d })}>
+          <circle cx="196" cy={c.y} r="8" fill="var(--color-live)" />
+          <path d={`m192 ${c.y} 3 3 5.5-6`} fill="none" stroke="var(--color-ink-950)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          <rect x="212" y={c.y - 2.5} width={c.w} height="5" rx="2.5" fill="var(--color-ink-600)" />
+        </g>
+      ))}
+      <g className="sg-fade-in" style={v({ "--delay": "1.7s" })}>
+        <circle
+          cx="196"
+          cy="204"
+          r="8"
+          fill="none"
+          stroke="var(--color-red-bright)"
+          strokeWidth="2"
+          className="sg-glow"
+          style={v({ "--min": "0.3", "--dur": "2.8s" })}
+        />
+        <rect x="212" y="201.5" width="64" height="5" rx="2.5" fill="var(--color-ink-700)" />
+      </g>
+      <text x="274" y="252" textAnchor="middle" style={label}>
+        You hold the gates
+      </text>
+    </svg>
+  );
+}
+
 const graphics: Record<string, () => React.JSX.Element> = {
   assessment: GraphicAssessment,
   "rag-chatbot": GraphicRag,
   "workflow-agent": GraphicAgent,
   "custom-app": GraphicApp,
+  aidsef: GraphicAidsef,
   "on-prem": GraphicOnPrem,
   training: GraphicTraining,
 };

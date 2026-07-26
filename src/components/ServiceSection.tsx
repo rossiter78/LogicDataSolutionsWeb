@@ -26,9 +26,6 @@ export default function ServiceSection({
         </div>
 
         <div className={`flex flex-col items-start gap-5 ${flip ? "lg:order-1" : ""}`}>
-          <p className="font-display text-sm font-bold tracking-[0.2em] text-red-bright">
-            {service.num}
-          </p>
           <h2 className="text-2xl font-bold sm:text-3xl">{service.title}</h2>
           <p className="font-display text-lg font-semibold text-offwhite">
             {service.tagline}

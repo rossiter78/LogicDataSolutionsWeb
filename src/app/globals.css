@@ -28,6 +28,10 @@
 
   /* Secondary text on dark (titanium, brightened for comfortable AA) */
   --color-mist: #a9aeaa;
+
+  /* Systems-go green. Off-palette on purpose, reserved for "this is live"
+     signals in service graphics. Not for text, CTAs, or section accents. */
+  --color-live: #57b98e;
 }
 
 @theme inline {

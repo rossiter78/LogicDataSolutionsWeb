@@ -1,11 +1,10 @@
-/*
+﻿/*
   AI Solutions - service offerings. Copy supplied by Trent (2026-07-06),
   converted to company voice per CLAUDE.md; engagement/pricing lines
   intentionally omitted for now.
 */
 export type Service = {
   id: string;
-  num: string;
   title: string;
   tagline: string;
   paras: string[];
@@ -19,29 +18,27 @@ export type Service = {
 export const services: Service[] = [
   {
     id: "assessment",
-    num: "01",
-    title: "AI Readiness & Architecture Assessment",
-    tagline:
-      "Know exactly what to build, in what order, before you spend a dollar building it.",
+    title: "First AI Win Assessment",
+    tagline: "The first win that gets everything else moving.",
     paras: [
-      "You know AI belongs in your business. You are less sure where to start, and you would rather not pay to learn what not to do. Or maybe you already tried, and the results did not match the promise.",
-      "This is a fixed-scope engagement that looks at your data, your tools, and your goals, then hands you a clear plan.",
+      "You know AI belongs in your business somewhere. What you do not have is a first move, so nothing starts. Or you tried something already, and it did not land.",
+      "We find one use case worth building, drawn from the work your team actually does, and tell you what it takes. Two to three weeks, one recommendation, and we shape it together before we start.",
+      "The target is not a demo. It is one thing running in production that people actually use, because once your team sees AI working for them, the excitement takes hold and the possibilities are unleashed.",
     ],
     youGet: [
-      "A review of your current data, systems, and any AI already in flight",
-      "A prioritized roadmap of what to build, in what order, and why",
-      "A plain-language readout of the security and governance gaps to close first",
-      "A realistic view of cost, effort, and expected payoff for each step",
+      "One recommended build, sized to get you a win",
+      "How it would work, in plain language",
+      "The data and security gaps it depends on",
+      "What it costs, what it returns, and what it unlocks next",
     ],
     bestFor:
-      "Leaders who know AI is coming and want a straight answer on where to begin.",
+      "Organizations that know AI is coming and want a real first move, not a strategy deck.",
     outcome:
-      "You walk away with a plan you understand and can act on, whether you hire us to build it or not.",
-    ctaLabel: "Book Your Assessment",
+      "You stop guessing and start building, with a first move you can act on right away.",
+    ctaLabel: "Find Your First Win",
   },
   {
     id: "rag-chatbot",
-    num: "02",
     title: "Metadata-Driven Query RAG Chatbot",
     tagline:
       "A chatbot that answers real questions about your data, because it speaks your team's language.",
@@ -65,7 +62,6 @@ export const services: Service[] = [
   },
   {
     id: "workflow-agent",
-    num: "03",
     title: "Autonomous Workflow Agent",
     tagline:
       "Hand off the tedious, repetitive work to an agent that does it right every time.",
@@ -87,7 +83,6 @@ export const services: Service[] = [
   },
   {
     id: "custom-app",
-    num: "04",
     title: "Custom AI Application Build",
     tagline:
       "Full-stack applications built for both your people and your AI agents to use.",
@@ -108,8 +103,30 @@ export const services: Service[] = [
     ctaLabel: "Scope Your Build",
   },
   {
+    id: "aidsef",
+    title: "AI-Driven Software Engineering Framework (AIDSEF)",
+    tagline:
+      "Build software with AI that earns your engineers' trust instead of asking for it.",
+    paras: [
+      "Your developers are right to be skeptical. Most AI coding is vibe coding: unreviewed output, no tests, and no record of why anything was built the way it was. This is the opposite of that. It is agentic engineering, the industry's name for the disciplined end of building software with AI.",
+      "This is not a fringe position. Google's 2026 whitepaper on the new software development lifecycle draws the same line: what separates the two is not which AI you use, but how much structure, verification, and human judgment surrounds it.",
+      "AIDSEF is our framework for exactly that. Tests come before code, and the build proves they failed first. Every pull request is reviewed by a different model than the one that wrote it, and every spec, decision, and review lands in Git where your team approves it.",
+      "Your engineers do not lose control, they move up. They co-author the rules, hold every gate, and can veto anything at any point. The AI does the labor. The judgment stays human.",
+    ],
+    youGet: [
+      "A rulebook your engineers co-author: gates, risk tiers, coverage thresholds",
+      "Test-driven development enforced by machinery, not by honor system",
+      "Review on every pull request by a model from a different family than the author",
+      "An audit trail that is just your Git history, ready for whoever asks",
+    ],
+    bestFor:
+      "Teams with real developers who want AI speed without giving up tests, review, or control.",
+    outcome:
+      "Software built at AI speed that clears the same bar as everything else your team ships.",
+    ctaLabel: "Bring AIDSEF to Your Team",
+  },
+  {
     id: "on-prem",
-    num: "05",
     title: "On-Premises & Air-Gapped AI Deployment",
     tagline:
       "Capable AI that runs on your infrastructure, with your data never leaving the building.",
@@ -132,7 +149,6 @@ export const services: Service[] = [
   },
   {
     id: "training",
-    num: "06",
     title: "AI Enablement & Training for Teams",
     tagline: "Get your team fluent in what AI can really do, minus the hype.",
     paras: [

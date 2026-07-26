@@ -67,7 +67,7 @@ export default function AiSolutionsPage() {
         </Container>
       </section>
 
-      {/* The six services */}
+      {/* The services */}
       {services.map((service, i) => (
         <ServiceSection key={service.id} service={service} index={i} />
       ))}
