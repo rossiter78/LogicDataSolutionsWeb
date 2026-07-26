@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 };
 
 /*
-  Enterprise Data & AI Foundations - the "back of house" referral landing page
-  (website-spec §5). Written to stand entirely on its own: enterprise leads
+  Enterprise Data & AI Foundations - the "back of house" referral landing page.
+  Written to stand entirely on its own: enterprise leads
   arrive referred and land here directly, so it carries its own hero, thesis,
   credibility, and CTA. Voice shifts to peer-to-peer expert - denser than the
   AI/front-of-house pages, assumes the reader knows data virtualization.

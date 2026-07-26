@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 };
 
 /*
-  About page (website-spec §7). Company voice, principal named. Structure:
+  About page. Company voice, principal named. Structure:
   hero → story → the lab → credentials → values → testimonials → CTA.
-  Testimonial slots reuse the home-page placeholder pattern (real quotes are
-  an open action item, content-templates.md §2); layout is final, copy is not.
+  The testimonial grid renders `featuredTestimonials` from src/lib/testimonials.ts;
+  to change what appears here, change `featured` there (docs/content-patterns.md §3).
 */
 
 const credentials = [

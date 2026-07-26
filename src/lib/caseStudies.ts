@@ -1,18 +1,14 @@
 /*
-  Case-study content (content-templates.md §1 shape; website-spec §6).
+  Case-study content. Rules and field intent: docs/content-patterns.md §4.
 
   Two groups render on /work:
-  - Lab showcases: independent R&D builds, shown in full. Copy is pre-filled
-    from content-templates §1.1 (marked "ready to use - confirm wording").
-    Headline metrics were bracketed suggestions in the doc; the de-bracketed
-    versions below are defaults pending Trent's sign-off.
+  - Lab showcases: independent R&D builds from our own lab, shown in full.
   - Client outcomes: real engagement stories, some named with the client's
-    permission, others anonymized. Remaining slots are an OPEN ACTION ITEM -
-    Trent supplies each headline metric + one-line outcome, cleared against the
-    relevant NDA (content-templates §1.2).
+    permission, others anonymized. Every metric must be NDA-cleared and
+    rounded; anonymize by default and name only by explicit permission.
 
-  Launch ordering (website-spec §6.2): lead with the most relatable builds
-  for the SMB visitor (agentic CRM first); let vision/edge sit last as range.
+  Ordering: lead with the most relatable builds for the SMB visitor (agentic
+  CRM first); let vision/edge sit last as range.
 */
 
 export type CaseStudy = {

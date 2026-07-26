@@ -1,5 +1,5 @@
 /*
-  Recognition Card content (content-templates.md §4).
+  Recognition Card content (docs/content-patterns.md §5).
   `hiddenCapability` is BUILD-SIDE ONLY - never rendered on the site.
   Ordering rule: hopeful first, any `rescue` card LAST.
 */
@@ -62,5 +62,5 @@ export const catchCard: RecognitionCardData = {
   icon: "spark",
 };
 
-/* Home uses cards 1–4 (rescue last), per content-templates.md §4.4. */
+/* Home uses the same set as /ai-solutions, rescue card last. */
 export const homeRecognitionCards = recognitionCards;

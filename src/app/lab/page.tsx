@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 /*
-  Future home of the interactive demo (content-templates.md §3).
+  Future home of the interactive demo (docs/content-patterns.md §7).
   Route exists so the demo drops in later without a redesign; it is
   intentionally NOT linked from the nav at launch.
 */
