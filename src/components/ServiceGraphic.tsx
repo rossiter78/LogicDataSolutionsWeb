@@ -14,13 +14,13 @@ const label: CSSProperties = {
 
 const v = (vars: Record<string, string>) => vars as CSSProperties;
 
-/* 01 - Assessment: your current systems pass through the assessment lens
+/* 01 - Blueprint: your current systems pass through the Blueprint lens
    and come out the other side as one clear first win, live in production.
    Green here is deliberate: it is the only "systems go" signal on the site. */
 function GraphicAssessment() {
   return (
-    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: your current systems and data pass through an assessment lens and come out as one recommended first win, running in production.">
-      {/* what you have: slightly askew, unassessed */}
+    <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: your current systems and data pass through the Blueprint, and come out as one recommended first win, running in production.">
+      {/* what you have: slightly askew, not yet reviewed */}
       <g className="sg-fade-in">
         <g transform="rotate(-4 75 96)">
           <rect x="38" y="70" width="74" height="52" rx="6" fill="var(--color-ink-800)" stroke="var(--color-titanium)" strokeWidth="1.5" />
@@ -53,7 +53,7 @@ function GraphicAssessment() {
         What you have
       </text>
 
-      {/* the assessment lens */}
+      {/* the Blueprint lens */}
       <g className="sg-fade-in" style={v({ "--delay": "0.5s" })}>
         <circle
           cx="196"

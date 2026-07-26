@@ -108,7 +108,7 @@ export default function HeroPrompt({ className = "" }: { className?: string }) {
   return (
     <Link
       href="/contact"
-      aria-label="Watch an AI assistant answer real business questions from live data. Book a free assessment to ask your own"
+      aria-label="Watch an AI assistant answer real business questions from live data. Book a free consultation to ask your own"
       className={`group block ${className}`}
     >
       <div aria-hidden="true">

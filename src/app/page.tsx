@@ -108,9 +108,7 @@ export default function Home() {
               className="sg-fade-in mt-2 flex flex-wrap gap-4"
               style={{ "--delay": "0.55s" } as CSSProperties}
             >
-              <CtaButton href="/contact">
-                Book a free AI Opportunity Assessment
-              </CtaButton>
+              <CtaButton href="/contact">Book a free consultation</CtaButton>
               <CtaButton href="/work" variant="secondary">
                 See what we&rsquo;ve built
               </CtaButton>
@@ -280,16 +278,24 @@ export default function Home() {
             <div className="flex flex-col items-start gap-5">
               <SectionLabel>A low-risk first step</SectionLabel>
               <h2 className="max-w-2xl text-3xl font-bold sm:text-4xl">
-                Start with a free AI Opportunity Assessment.
+                Start with a free consultation.
               </h2>
               <p className="max-w-2xl text-lg leading-relaxed text-mist">
                 Not sure where AI fits, or whether your data is ready for it?
-                We&rsquo;ll review your goals, systems, and data foundation,
-                then map the highest-value, lowest-risk places to start, with a
-                clear path to production. No pressure, no obligation.
+                Bring the fuzzy version. We&rsquo;ll talk through your goals and
+                how your business actually runs, then tell you honestly whether
+                there&rsquo;s something here worth building. No pressure, no
+                obligation. If there is, the{" "}
+                <a
+                  href="/ai-solutions#assessment"
+                  className="font-semibold text-red-bright hover:text-offwhite"
+                >
+                  First AI Win Blueprint
+                </a>{" "}
+                is where we go find it.
               </p>
               <CtaButton href="/contact" className="mt-2">
-                Book your free assessment
+                Book your free consultation
               </CtaButton>
             </div>
           </div>
@@ -348,7 +354,7 @@ export default function Home() {
             the ones to build it.
           </p>
           <CtaButton href="/contact" className="mt-2">
-            Book a free assessment
+            Book a free consultation
           </CtaButton>
         </Container>
       </section>

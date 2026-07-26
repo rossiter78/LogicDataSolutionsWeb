@@ -5,7 +5,7 @@ import BookingEmbed from "@/components/BookingEmbed";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Book a Free AI Opportunity Assessment",
+  title: "Book a Free Consultation",
   description:
     "A 30-minute conversation about your goals and the most direct path to production AI. No pressure, no obligation.",
 };
@@ -16,7 +16,7 @@ export default function ContactPage() {
       <Container className="max-w-3xl py-20 sm:py-24">
         <SectionLabel>Contact</SectionLabel>
         <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
-          Book a discovery call.
+          Book a free consultation.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-mist">
           A 30-minute conversation about what you&rsquo;re trying to do and the
